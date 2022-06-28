@@ -1,0 +1,6283 @@
+"""Exposes a URL that specifies the behavior of this scalar."""
+directive @specifiedBy(
+  """The URL that specifies the behavior of this scalar."""
+  url: String!
+) on SCALAR
+
+type Ads {
+  id: Int!
+  name: String!
+  position: [AdsPosition!]!
+  url: String!
+  image: String
+  index: Int!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type AdsAvgAggregateOutputType {
+  id: Float
+  index: Float
+}
+
+input AdsAvgOrderByAggregateInput {
+  id: SortOrder
+  index: SortOrder
+}
+
+type AdsCountAggregateOutputType {
+  id: Int!
+  name: Int!
+  position: Int!
+  url: Int!
+  image: Int!
+  index: Int!
+  createdAt: Int!
+  updatedAt: Int!
+  _all: Int!
+}
+
+input AdsCountOrderByAggregateInput {
+  id: SortOrder
+  name: SortOrder
+  position: SortOrder
+  url: SortOrder
+  image: SortOrder
+  index: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+}
+
+input AdsCreateInput {
+  name: String!
+  position: [AdsPosition]
+  url: String!
+  image: String
+  index: Int
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input AdsCreateManyInput {
+  id: Int
+  name: String!
+  position: [AdsPosition]
+  url: String!
+  image: String
+  index: Int
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input AdsCreatepositionInput {
+  set: AdsPosition!
+}
+
+type AdsMaxAggregateOutputType {
+  id: Int
+  name: String
+  url: String
+  image: String
+  index: Int
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input AdsMaxOrderByAggregateInput {
+  id: SortOrder
+  name: SortOrder
+  url: SortOrder
+  image: SortOrder
+  index: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+}
+
+type AdsMinAggregateOutputType {
+  id: Int
+  name: String
+  url: String
+  image: String
+  index: Int
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input AdsMinOrderByAggregateInput {
+  id: SortOrder
+  name: SortOrder
+  url: SortOrder
+  image: SortOrder
+  index: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+}
+
+input AdsOrderByWithAggregationInput {
+  id: SortOrder
+  name: SortOrder
+  position: SortOrder
+  url: SortOrder
+  image: SortOrder
+  index: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  _count: AdsCountOrderByAggregateInput
+  _avg: AdsAvgOrderByAggregateInput
+  _max: AdsMaxOrderByAggregateInput
+  _min: AdsMinOrderByAggregateInput
+  _sum: AdsSumOrderByAggregateInput
+}
+
+input AdsOrderByWithRelationInput {
+  id: SortOrder
+  name: SortOrder
+  position: SortOrder
+  url: SortOrder
+  image: SortOrder
+  index: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+}
+
+enum AdsPosition {
+  CHAPTER_BOTTOM
+  CHAPTER_TOP
+  COMIC_RECOMENDATION
+  HOME_TOP_COMIC
+}
+
+enum AdsScalarFieldEnum {
+  id
+  name
+  position
+  url
+  image
+  index
+  createdAt
+  updatedAt
+}
+
+input AdsScalarWhereWithAggregatesInput {
+  AND: [AdsScalarWhereWithAggregatesInput]
+  OR: [AdsScalarWhereWithAggregatesInput]
+  NOT: [AdsScalarWhereWithAggregatesInput]
+  id: IntWithAggregatesFilter
+  name: StringWithAggregatesFilter
+  position: EnumAdsPositionNullableListFilter
+  url: StringWithAggregatesFilter
+  image: StringNullableWithAggregatesFilter
+  index: IntWithAggregatesFilter
+  createdAt: DateTimeWithAggregatesFilter
+  updatedAt: DateTimeWithAggregatesFilter
+}
+
+type AdsSumAggregateOutputType {
+  id: Int
+  index: Int
+}
+
+input AdsSumOrderByAggregateInput {
+  id: SortOrder
+  index: SortOrder
+}
+
+input AdsUncheckedCreateInput {
+  id: Int
+  name: String!
+  position: [AdsPosition]
+  url: String!
+  image: String
+  index: Int
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input AdsUncheckedUpdateInput {
+  id: IntFieldUpdateOperationsInput
+  name: StringFieldUpdateOperationsInput
+  position: [AdsPosition]
+  url: StringFieldUpdateOperationsInput
+  image: NullableStringFieldUpdateOperationsInput
+  index: IntFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input AdsUncheckedUpdateManyInput {
+  id: IntFieldUpdateOperationsInput
+  name: StringFieldUpdateOperationsInput
+  position: [AdsPosition]
+  url: StringFieldUpdateOperationsInput
+  image: NullableStringFieldUpdateOperationsInput
+  index: IntFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input AdsUpdateInput {
+  name: StringFieldUpdateOperationsInput
+  position: [AdsPosition]
+  url: StringFieldUpdateOperationsInput
+  image: NullableStringFieldUpdateOperationsInput
+  index: IntFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input AdsUpdateManyMutationInput {
+  name: StringFieldUpdateOperationsInput
+  position: [AdsPosition]
+  url: StringFieldUpdateOperationsInput
+  image: NullableStringFieldUpdateOperationsInput
+  index: IntFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input AdsUpdatepositionInput {
+  set: [AdsPosition]
+  push: [AdsPosition]
+}
+
+input AdsWhereInput {
+  AND: [AdsWhereInput]
+  OR: [AdsWhereInput]
+  NOT: [AdsWhereInput]
+  id: IntFilter
+  name: StringFilter
+  position: EnumAdsPositionNullableListFilter
+  url: StringFilter
+  image: StringNullableFilter
+  index: IntFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+}
+
+input AdsWhereUniqueInput {
+  id: Int
+  name: String
+}
+
+type AggregateAds {
+  _count: AdsCountAggregateOutputType
+  _avg: AdsAvgAggregateOutputType
+  _sum: AdsSumAggregateOutputType
+  _min: AdsMinAggregateOutputType
+  _max: AdsMaxAggregateOutputType
+}
+
+type AggregateAuthor {
+  _count: AuthorCountAggregateOutputType
+  _avg: AuthorAvgAggregateOutputType
+  _sum: AuthorSumAggregateOutputType
+  _min: AuthorMinAggregateOutputType
+  _max: AuthorMaxAggregateOutputType
+}
+
+type AggregateChangelog {
+  _count: ChangelogCountAggregateOutputType
+  _avg: ChangelogAvgAggregateOutputType
+  _sum: ChangelogSumAggregateOutputType
+  _min: ChangelogMinAggregateOutputType
+  _max: ChangelogMaxAggregateOutputType
+}
+
+type AggregateChapter {
+  _count: ChapterCountAggregateOutputType
+  _avg: ChapterAvgAggregateOutputType
+  _sum: ChapterSumAggregateOutputType
+  _min: ChapterMinAggregateOutputType
+  _max: ChapterMaxAggregateOutputType
+}
+
+type AggregateComic {
+  _count: ComicCountAggregateOutputType
+  _avg: ComicAvgAggregateOutputType
+  _sum: ComicSumAggregateOutputType
+  _min: ComicMinAggregateOutputType
+  _max: ComicMaxAggregateOutputType
+}
+
+type AggregateComicBookmark {
+  _count: ComicBookmarkCountAggregateOutputType
+  _avg: ComicBookmarkAvgAggregateOutputType
+  _sum: ComicBookmarkSumAggregateOutputType
+  _min: ComicBookmarkMinAggregateOutputType
+  _max: ComicBookmarkMaxAggregateOutputType
+}
+
+type AggregateGenre {
+  _count: GenreCountAggregateOutputType
+  _avg: GenreAvgAggregateOutputType
+  _sum: GenreSumAggregateOutputType
+  _min: GenreMinAggregateOutputType
+  _max: GenreMaxAggregateOutputType
+}
+
+type AggregateMissing {
+  _count: MissingCountAggregateOutputType
+  _avg: MissingAvgAggregateOutputType
+  _sum: MissingSumAggregateOutputType
+  _min: MissingMinAggregateOutputType
+  _max: MissingMaxAggregateOutputType
+}
+
+type AggregatePerfomanceAnalytic {
+  _count: PerfomanceAnalyticCountAggregateOutputType
+  _avg: PerfomanceAnalyticAvgAggregateOutputType
+  _sum: PerfomanceAnalyticSumAggregateOutputType
+  _min: PerfomanceAnalyticMinAggregateOutputType
+  _max: PerfomanceAnalyticMaxAggregateOutputType
+}
+
+type AggregateReport {
+  _count: ReportCountAggregateOutputType
+  _avg: ReportAvgAggregateOutputType
+  _sum: ReportSumAggregateOutputType
+  _min: ReportMinAggregateOutputType
+  _max: ReportMaxAggregateOutputType
+}
+
+type AggregateUser {
+  _count: UserCountAggregateOutputType
+  _avg: UserAvgAggregateOutputType
+  _sum: UserSumAggregateOutputType
+  _min: UserMinAggregateOutputType
+  _max: UserMaxAggregateOutputType
+}
+
+type AggregateViewedChapter {
+  _count: ViewedChapterCountAggregateOutputType
+  _avg: ViewedChapterAvgAggregateOutputType
+  _sum: ViewedChapterSumAggregateOutputType
+  _min: ViewedChapterMinAggregateOutputType
+  _max: ViewedChapterMaxAggregateOutputType
+}
+
+type Author {
+  id: Int!
+  name: String!
+  slug: String!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  comics(where: ComicWhereInput, orderBy: ComicOrderByWithRelationInput, cursor: ComicWhereUniqueInput, take: Int, skip: Int, distinct: ComicScalarFieldEnum): [Comic!]!
+  _count: AuthorCountOutputType!
+}
+
+type AuthorAvgAggregateOutputType {
+  id: Float
+}
+
+input AuthorAvgOrderByAggregateInput {
+  id: SortOrder
+}
+
+type AuthorCountAggregateOutputType {
+  id: Int!
+  name: Int!
+  slug: Int!
+  createdAt: Int!
+  updatedAt: Int!
+  _all: Int!
+}
+
+input AuthorCountOrderByAggregateInput {
+  id: SortOrder
+  name: SortOrder
+  slug: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+}
+
+type AuthorCountOutputType {
+  comics: Int!
+}
+
+input AuthorCreateInput {
+  name: String!
+  slug: String!
+  createdAt: DateTime
+  updatedAt: DateTime
+  comics: ComicCreateNestedManyWithoutAuthorInput
+}
+
+input AuthorCreateManyInput {
+  id: Int
+  name: String!
+  slug: String!
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input AuthorCreateNestedOneWithoutComicsInput {
+  create: AuthorUncheckedCreateWithoutComicsInput
+  connectOrCreate: AuthorCreateOrConnectWithoutComicsInput
+  connect: AuthorWhereUniqueInput
+}
+
+input AuthorCreateOrConnectWithoutComicsInput {
+  where: AuthorWhereUniqueInput!
+  create: AuthorUncheckedCreateWithoutComicsInput!
+}
+
+input AuthorCreateWithoutComicsInput {
+  name: String!
+  slug: String!
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+type AuthorMaxAggregateOutputType {
+  id: Int
+  name: String
+  slug: String
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input AuthorMaxOrderByAggregateInput {
+  id: SortOrder
+  name: SortOrder
+  slug: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+}
+
+type AuthorMinAggregateOutputType {
+  id: Int
+  name: String
+  slug: String
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input AuthorMinOrderByAggregateInput {
+  id: SortOrder
+  name: SortOrder
+  slug: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+}
+
+input AuthorOrderByWithAggregationInput {
+  id: SortOrder
+  name: SortOrder
+  slug: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  _count: AuthorCountOrderByAggregateInput
+  _avg: AuthorAvgOrderByAggregateInput
+  _max: AuthorMaxOrderByAggregateInput
+  _min: AuthorMinOrderByAggregateInput
+  _sum: AuthorSumOrderByAggregateInput
+}
+
+input AuthorOrderByWithRelationInput {
+  id: SortOrder
+  name: SortOrder
+  slug: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  comics: ComicOrderByRelationAggregateInput
+}
+
+input AuthorRelationFilter {
+  is: AuthorWhereInput
+  isNot: AuthorWhereInput
+}
+
+enum AuthorScalarFieldEnum {
+  id
+  name
+  slug
+  createdAt
+  updatedAt
+}
+
+input AuthorScalarWhereWithAggregatesInput {
+  AND: [AuthorScalarWhereWithAggregatesInput]
+  OR: [AuthorScalarWhereWithAggregatesInput]
+  NOT: [AuthorScalarWhereWithAggregatesInput]
+  id: IntWithAggregatesFilter
+  name: StringWithAggregatesFilter
+  slug: StringWithAggregatesFilter
+  createdAt: DateTimeWithAggregatesFilter
+  updatedAt: DateTimeWithAggregatesFilter
+}
+
+type AuthorSearch {
+  authors: [Author]
+  offset: Int
+  limit: Int
+  processingTimeMs: Int
+  total: Int
+  exhaustiveNbHits: Boolean
+}
+
+type AuthorSumAggregateOutputType {
+  id: Int
+}
+
+input AuthorSumOrderByAggregateInput {
+  id: SortOrder
+}
+
+input AuthorUncheckedCreateInput {
+  id: Int
+  name: String!
+  slug: String!
+  createdAt: DateTime
+  updatedAt: DateTime
+  comics: ComicUncheckedCreateNestedManyWithoutAuthorInput
+}
+
+input AuthorUncheckedCreateWithoutComicsInput {
+  id: Int
+  name: String!
+  slug: String!
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input AuthorUncheckedUpdateInput {
+  id: IntFieldUpdateOperationsInput
+  name: StringFieldUpdateOperationsInput
+  slug: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  comics: ComicUncheckedUpdateManyWithoutAuthorInput
+}
+
+input AuthorUncheckedUpdateManyInput {
+  id: IntFieldUpdateOperationsInput
+  name: StringFieldUpdateOperationsInput
+  slug: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input AuthorUncheckedUpdateWithoutComicsInput {
+  id: IntFieldUpdateOperationsInput
+  name: StringFieldUpdateOperationsInput
+  slug: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input AuthorUpdateInput {
+  name: StringFieldUpdateOperationsInput
+  slug: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  comics: ComicUpdateManyWithoutAuthorInput
+}
+
+input AuthorUpdateManyMutationInput {
+  name: StringFieldUpdateOperationsInput
+  slug: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input AuthorUpdateOneRequiredWithoutComicsInput {
+  create: AuthorUncheckedCreateWithoutComicsInput
+  connectOrCreate: AuthorCreateOrConnectWithoutComicsInput
+  upsert: AuthorUpsertWithoutComicsInput
+  connect: AuthorWhereUniqueInput
+  update: AuthorUncheckedUpdateWithoutComicsInput
+}
+
+input AuthorUpdateWithoutComicsInput {
+  name: StringFieldUpdateOperationsInput
+  slug: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input AuthorUpsertWithoutComicsInput {
+  update: AuthorUncheckedUpdateWithoutComicsInput!
+  create: AuthorUncheckedCreateWithoutComicsInput!
+}
+
+input AuthorWhereInput {
+  AND: [AuthorWhereInput]
+  OR: [AuthorWhereInput]
+  NOT: [AuthorWhereInput]
+  id: IntFilter
+  name: StringFilter
+  slug: StringFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  comics: ComicListRelationFilter
+}
+
+input AuthorWhereUniqueInput {
+  id: Int
+  name: String
+  slug: String
+}
+
+type AuthResponse {
+  status: Boolean
+  token: String
+  message: String
+  user: User
+}
+
+type BatchPayload {
+  count: Int!
+}
+
+"""BigInt custom scalar type"""
+scalar BigInt
+
+input BoolFieldUpdateOperationsInput {
+  set: Boolean
+}
+
+input BoolFilter {
+  equals: Boolean
+  not: NestedBoolFilter
+}
+
+input BoolWithAggregatesFilter {
+  equals: Boolean
+  not: NestedBoolWithAggregatesFilter
+  _count: NestedIntFilter
+  _min: NestedBoolFilter
+  _max: NestedBoolFilter
+}
+
+type Changelog {
+  id: Int!
+  version: String!
+  features: [String!]!
+  userId: Int!
+  user: User!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type ChangelogAvgAggregateOutputType {
+  id: Float
+  userId: Float
+}
+
+input ChangelogAvgOrderByAggregateInput {
+  id: SortOrder
+  userId: SortOrder
+}
+
+type ChangelogCountAggregateOutputType {
+  id: Int!
+  version: Int!
+  features: Int!
+  userId: Int!
+  createdAt: Int!
+  updatedAt: Int!
+  _all: Int!
+}
+
+input ChangelogCountOrderByAggregateInput {
+  id: SortOrder
+  version: SortOrder
+  features: SortOrder
+  userId: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+}
+
+input ChangelogCreatefeaturesInput {
+  set: String!
+}
+
+input ChangelogCreateInput {
+  version: String!
+  features: [String]
+  user: UserCreateNestedOneWithoutChangelogsInput!
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input ChangelogCreateManyInput {
+  id: Int
+  version: String!
+  features: [String]
+  userId: Int!
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input ChangelogCreateManyUserInput {
+  id: Int
+  version: String!
+  features: [String]
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input ChangelogCreateManyUserInputEnvelope {
+  data: ChangelogCreateManyUserInput!
+  skipDuplicates: Boolean
+}
+
+input ChangelogCreateNestedManyWithoutUserInput {
+  create: [ChangelogCreateWithoutUserInput]
+  connectOrCreate: [ChangelogCreateOrConnectWithoutUserInput]
+  createMany: ChangelogCreateManyUserInputEnvelope
+  connect: [ChangelogWhereUniqueInput]
+}
+
+input ChangelogCreateOrConnectWithoutUserInput {
+  where: ChangelogWhereUniqueInput!
+  create: ChangelogUncheckedCreateWithoutUserInput!
+}
+
+input ChangelogCreateWithoutUserInput {
+  version: String!
+  features: [String]
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input ChangelogListRelationFilter {
+  every: ChangelogWhereInput
+  some: ChangelogWhereInput
+  none: ChangelogWhereInput
+}
+
+type ChangelogMaxAggregateOutputType {
+  id: Int
+  version: String
+  userId: Int
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input ChangelogMaxOrderByAggregateInput {
+  id: SortOrder
+  version: SortOrder
+  userId: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+}
+
+type ChangelogMinAggregateOutputType {
+  id: Int
+  version: String
+  userId: Int
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input ChangelogMinOrderByAggregateInput {
+  id: SortOrder
+  version: SortOrder
+  userId: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+}
+
+input ChangelogOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input ChangelogOrderByWithAggregationInput {
+  id: SortOrder
+  version: SortOrder
+  features: SortOrder
+  userId: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  _count: ChangelogCountOrderByAggregateInput
+  _avg: ChangelogAvgOrderByAggregateInput
+  _max: ChangelogMaxOrderByAggregateInput
+  _min: ChangelogMinOrderByAggregateInput
+  _sum: ChangelogSumOrderByAggregateInput
+}
+
+input ChangelogOrderByWithRelationInput {
+  id: SortOrder
+  version: SortOrder
+  features: SortOrder
+  userId: SortOrder
+  user: UserOrderByWithRelationInput
+  createdAt: SortOrder
+  updatedAt: SortOrder
+}
+
+enum ChangelogScalarFieldEnum {
+  id
+  version
+  features
+  userId
+  createdAt
+  updatedAt
+}
+
+input ChangelogScalarWhereInput {
+  AND: [ChangelogScalarWhereInput]
+  OR: [ChangelogScalarWhereInput]
+  NOT: [ChangelogScalarWhereInput]
+  id: IntFilter
+  version: StringFilter
+  features: StringNullableListFilter
+  userId: IntFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+}
+
+input ChangelogScalarWhereWithAggregatesInput {
+  AND: [ChangelogScalarWhereWithAggregatesInput]
+  OR: [ChangelogScalarWhereWithAggregatesInput]
+  NOT: [ChangelogScalarWhereWithAggregatesInput]
+  id: IntWithAggregatesFilter
+  version: StringWithAggregatesFilter
+  features: StringNullableListFilter
+  userId: IntWithAggregatesFilter
+  createdAt: DateTimeWithAggregatesFilter
+  updatedAt: DateTimeWithAggregatesFilter
+}
+
+type ChangelogSumAggregateOutputType {
+  id: Int
+  userId: Int
+}
+
+input ChangelogSumOrderByAggregateInput {
+  id: SortOrder
+  userId: SortOrder
+}
+
+input ChangelogUncheckedCreateInput {
+  id: Int
+  version: String!
+  features: [String]
+  userId: Int!
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input ChangelogUncheckedCreateNestedManyWithoutUserInput {
+  create: [ChangelogCreateWithoutUserInput]
+  connectOrCreate: [ChangelogCreateOrConnectWithoutUserInput]
+  createMany: ChangelogCreateManyUserInputEnvelope
+  connect: [ChangelogWhereUniqueInput]
+}
+
+input ChangelogUncheckedCreateWithoutUserInput {
+  id: Int
+  version: String!
+  features: [String]
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input ChangelogUncheckedUpdateInput {
+  id: IntFieldUpdateOperationsInput
+  version: StringFieldUpdateOperationsInput
+  features: [String]
+  userId: IntFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input ChangelogUncheckedUpdateManyInput {
+  id: IntFieldUpdateOperationsInput
+  version: StringFieldUpdateOperationsInput
+  features: [String]
+  userId: IntFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input ChangelogUncheckedUpdateManyWithoutChangelogsInput {
+  id: IntFieldUpdateOperationsInput
+  version: StringFieldUpdateOperationsInput
+  features: [String]
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input ChangelogUncheckedUpdateManyWithoutUserInput {
+  create: [ChangelogCreateWithoutUserInput]
+  connectOrCreate: [ChangelogCreateOrConnectWithoutUserInput]
+  upsert: [ChangelogUpsertWithWhereUniqueWithoutUserInput]
+  createMany: ChangelogCreateManyUserInputEnvelope
+  set: [ChangelogWhereUniqueInput]
+  disconnect: [ChangelogWhereUniqueInput]
+  delete: [ChangelogWhereUniqueInput]
+  connect: [ChangelogWhereUniqueInput]
+  update: [ChangelogUpdateWithWhereUniqueWithoutUserInput]
+  updateMany: [ChangelogUpdateManyWithWhereWithoutUserInput]
+  deleteMany: [ChangelogScalarWhereInput]
+}
+
+input ChangelogUncheckedUpdateWithoutUserInput {
+  id: IntFieldUpdateOperationsInput
+  version: StringFieldUpdateOperationsInput
+  features: [String]
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input ChangelogUpdatefeaturesInput {
+  set: [String]
+  push: [String]
+}
+
+input ChangelogUpdateInput {
+  version: StringFieldUpdateOperationsInput
+  features: [String]
+  user: UserUpdateOneRequiredWithoutChangelogsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input ChangelogUpdateManyMutationInput {
+  version: StringFieldUpdateOperationsInput
+  features: [String]
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input ChangelogUpdateManyWithoutUserInput {
+  create: [ChangelogCreateWithoutUserInput]
+  connectOrCreate: [ChangelogCreateOrConnectWithoutUserInput]
+  upsert: [ChangelogUpsertWithWhereUniqueWithoutUserInput]
+  createMany: ChangelogCreateManyUserInputEnvelope
+  set: [ChangelogWhereUniqueInput]
+  disconnect: [ChangelogWhereUniqueInput]
+  delete: [ChangelogWhereUniqueInput]
+  connect: [ChangelogWhereUniqueInput]
+  update: [ChangelogUpdateWithWhereUniqueWithoutUserInput]
+  updateMany: [ChangelogUpdateManyWithWhereWithoutUserInput]
+  deleteMany: [ChangelogScalarWhereInput]
+}
+
+input ChangelogUpdateManyWithWhereWithoutUserInput {
+  where: ChangelogScalarWhereInput!
+  data: ChangelogUncheckedUpdateManyWithoutChangelogsInput!
+}
+
+input ChangelogUpdateWithoutUserInput {
+  version: StringFieldUpdateOperationsInput
+  features: [String]
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input ChangelogUpdateWithWhereUniqueWithoutUserInput {
+  where: ChangelogWhereUniqueInput!
+  data: ChangelogUncheckedUpdateWithoutUserInput!
+}
+
+input ChangelogUpsertWithWhereUniqueWithoutUserInput {
+  where: ChangelogWhereUniqueInput!
+  update: ChangelogUncheckedUpdateWithoutUserInput!
+  create: ChangelogUncheckedCreateWithoutUserInput!
+}
+
+input ChangelogWhereInput {
+  AND: [ChangelogWhereInput]
+  OR: [ChangelogWhereInput]
+  NOT: [ChangelogWhereInput]
+  id: IntFilter
+  version: StringFilter
+  features: StringNullableListFilter
+  userId: IntFilter
+  user: UserWhereInput
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+}
+
+input ChangelogWhereUniqueInput {
+  id: Int
+}
+
+type Chapter {
+  id: Int!
+  name: Float!
+  title: String
+  cdn: String
+  comic: Comic!
+  quality: ChapterQuality!
+  views: Int!
+  imageCount: Int!
+  originalImageCount: Int!
+  processed: Boolean!
+  needOptimize: Boolean!
+  missing: Boolean!
+  batchs: String
+  imageUrls: [String!]!
+  imageDetails: Json
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  comicId: Int!
+  userviewers(where: ViewedChapterWhereInput, orderBy: ViewedChapterOrderByWithRelationInput, cursor: ViewedChapterWhereUniqueInput, take: Int, skip: Int, distinct: ViewedChapterScalarFieldEnum): [ViewedChapter!]!
+  _count: ChapterCountOutputType!
+}
+
+type ChapterAvgAggregateOutputType {
+  id: Float
+  name: Float
+  views: Float
+  imageCount: Float
+  originalImageCount: Float
+  comicId: Float
+}
+
+input ChapterAvgOrderByAggregateInput {
+  id: SortOrder
+  name: SortOrder
+  views: SortOrder
+  imageCount: SortOrder
+  originalImageCount: SortOrder
+  comicId: SortOrder
+}
+
+type ChapterCountAggregateOutputType {
+  id: Int!
+  name: Int!
+  title: Int!
+  cdn: Int!
+  quality: Int!
+  views: Int!
+  imageCount: Int!
+  originalImageCount: Int!
+  processed: Int!
+  needOptimize: Int!
+  missing: Int!
+  batchs: Int!
+  imageUrls: Int!
+  imageDetails: Int!
+  createdAt: Int!
+  updatedAt: Int!
+  comicId: Int!
+  _all: Int!
+}
+
+input ChapterCountOrderByAggregateInput {
+  id: SortOrder
+  name: SortOrder
+  title: SortOrder
+  cdn: SortOrder
+  quality: SortOrder
+  views: SortOrder
+  imageCount: SortOrder
+  originalImageCount: SortOrder
+  processed: SortOrder
+  needOptimize: SortOrder
+  missing: SortOrder
+  batchs: SortOrder
+  imageUrls: SortOrder
+  imageDetails: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  comicId: SortOrder
+}
+
+type ChapterCountOutputType {
+  userviewers: Int!
+}
+
+input ChapterCreateimageUrlsInput {
+  set: String!
+}
+
+input ChapterCreateInput {
+  name: Float!
+  title: String
+  cdn: String
+  comic: ComicCreateNestedOneWithoutChaptersInput!
+  quality: ChapterQuality
+  views: Int
+  imageCount: Int
+  originalImageCount: Int
+  processed: Boolean
+  needOptimize: Boolean
+  missing: Boolean
+  batchs: String
+  imageUrls: [String]
+  imageDetails: Json
+  createdAt: DateTime
+  updatedAt: DateTime
+  userviewers: ViewedChapterCreateNestedManyWithoutChapterInput
+}
+
+input ChapterCreateManyComicInput {
+  id: Int
+  name: Float!
+  title: String
+  cdn: String
+  quality: ChapterQuality
+  views: Int
+  imageCount: Int
+  originalImageCount: Int
+  processed: Boolean
+  needOptimize: Boolean
+  missing: Boolean
+  batchs: String
+  imageUrls: [String]
+  imageDetails: Json
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input ChapterCreateManyComicInputEnvelope {
+  data: ChapterCreateManyComicInput!
+  skipDuplicates: Boolean
+}
+
+input ChapterCreateManyInput {
+  id: Int
+  name: Float!
+  title: String
+  cdn: String
+  quality: ChapterQuality
+  views: Int
+  imageCount: Int
+  originalImageCount: Int
+  processed: Boolean
+  needOptimize: Boolean
+  missing: Boolean
+  batchs: String
+  imageUrls: [String]
+  imageDetails: Json
+  createdAt: DateTime
+  updatedAt: DateTime
+  comicId: Int!
+}
+
+input ChapterCreateNestedManyWithoutComicInput {
+  create: [ChapterCreateWithoutComicInput]
+  connectOrCreate: [ChapterCreateOrConnectWithoutComicInput]
+  createMany: ChapterCreateManyComicInputEnvelope
+  connect: [ChapterWhereUniqueInput]
+}
+
+input ChapterCreateNestedOneWithoutUserviewersInput {
+  create: ChapterUncheckedCreateWithoutUserviewersInput
+  connectOrCreate: ChapterCreateOrConnectWithoutUserviewersInput
+  connect: ChapterWhereUniqueInput
+}
+
+input ChapterCreateOrConnectWithoutComicInput {
+  where: ChapterWhereUniqueInput!
+  create: ChapterUncheckedCreateWithoutComicInput!
+}
+
+input ChapterCreateOrConnectWithoutUserviewersInput {
+  where: ChapterWhereUniqueInput!
+  create: ChapterUncheckedCreateWithoutUserviewersInput!
+}
+
+input ChapterCreateWithoutComicInput {
+  name: Float!
+  title: String
+  cdn: String
+  quality: ChapterQuality
+  views: Int
+  imageCount: Int
+  originalImageCount: Int
+  processed: Boolean
+  needOptimize: Boolean
+  missing: Boolean
+  batchs: String
+  imageUrls: [String]
+  imageDetails: Json
+  createdAt: DateTime
+  updatedAt: DateTime
+  userviewers: ViewedChapterCreateNestedManyWithoutChapterInput
+}
+
+input ChapterCreateWithoutUserviewersInput {
+  name: Float!
+  title: String
+  cdn: String
+  comic: ComicCreateNestedOneWithoutChaptersInput!
+  quality: ChapterQuality
+  views: Int
+  imageCount: Int
+  originalImageCount: Int
+  processed: Boolean
+  needOptimize: Boolean
+  missing: Boolean
+  batchs: String
+  imageUrls: [String]
+  imageDetails: Json
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input ChapterListRelationFilter {
+  every: ChapterWhereInput
+  some: ChapterWhereInput
+  none: ChapterWhereInput
+}
+
+type ChapterMaxAggregateOutputType {
+  id: Int
+  name: Float
+  title: String
+  cdn: String
+  quality: ChapterQuality
+  views: Int
+  imageCount: Int
+  originalImageCount: Int
+  processed: Boolean
+  needOptimize: Boolean
+  missing: Boolean
+  batchs: String
+  createdAt: DateTime
+  updatedAt: DateTime
+  comicId: Int
+}
+
+input ChapterMaxOrderByAggregateInput {
+  id: SortOrder
+  name: SortOrder
+  title: SortOrder
+  cdn: SortOrder
+  quality: SortOrder
+  views: SortOrder
+  imageCount: SortOrder
+  originalImageCount: SortOrder
+  processed: SortOrder
+  needOptimize: SortOrder
+  missing: SortOrder
+  batchs: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  comicId: SortOrder
+}
+
+type ChapterMinAggregateOutputType {
+  id: Int
+  name: Float
+  title: String
+  cdn: String
+  quality: ChapterQuality
+  views: Int
+  imageCount: Int
+  originalImageCount: Int
+  processed: Boolean
+  needOptimize: Boolean
+  missing: Boolean
+  batchs: String
+  createdAt: DateTime
+  updatedAt: DateTime
+  comicId: Int
+}
+
+input ChapterMinOrderByAggregateInput {
+  id: SortOrder
+  name: SortOrder
+  title: SortOrder
+  cdn: SortOrder
+  quality: SortOrder
+  views: SortOrder
+  imageCount: SortOrder
+  originalImageCount: SortOrder
+  processed: SortOrder
+  needOptimize: SortOrder
+  missing: SortOrder
+  batchs: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  comicId: SortOrder
+}
+
+input ChapterOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input ChapterOrderByWithAggregationInput {
+  id: SortOrder
+  name: SortOrder
+  title: SortOrder
+  cdn: SortOrder
+  quality: SortOrder
+  views: SortOrder
+  imageCount: SortOrder
+  originalImageCount: SortOrder
+  processed: SortOrder
+  needOptimize: SortOrder
+  missing: SortOrder
+  batchs: SortOrder
+  imageUrls: SortOrder
+  imageDetails: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  comicId: SortOrder
+  _count: ChapterCountOrderByAggregateInput
+  _avg: ChapterAvgOrderByAggregateInput
+  _max: ChapterMaxOrderByAggregateInput
+  _min: ChapterMinOrderByAggregateInput
+  _sum: ChapterSumOrderByAggregateInput
+}
+
+input ChapterOrderByWithRelationInput {
+  id: SortOrder
+  name: SortOrder
+  title: SortOrder
+  cdn: SortOrder
+  comic: ComicOrderByWithRelationInput
+  quality: SortOrder
+  views: SortOrder
+  imageCount: SortOrder
+  originalImageCount: SortOrder
+  processed: SortOrder
+  needOptimize: SortOrder
+  missing: SortOrder
+  batchs: SortOrder
+  imageUrls: SortOrder
+  imageDetails: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  comicId: SortOrder
+  userviewers: ViewedChapterOrderByRelationAggregateInput
+}
+
+enum ChapterQuality {
+  HQ
+  LQ
+  NORMAL
+}
+
+input ChapterRelationFilter {
+  is: ChapterWhereInput
+  isNot: ChapterWhereInput
+}
+
+enum ChapterScalarFieldEnum {
+  id
+  name
+  title
+  cdn
+  quality
+  views
+  imageCount
+  originalImageCount
+  processed
+  needOptimize
+  missing
+  batchs
+  imageUrls
+  imageDetails
+  createdAt
+  updatedAt
+  comicId
+}
+
+input ChapterScalarWhereInput {
+  AND: [ChapterScalarWhereInput]
+  OR: [ChapterScalarWhereInput]
+  NOT: [ChapterScalarWhereInput]
+  id: IntFilter
+  name: FloatFilter
+  title: StringNullableFilter
+  cdn: StringNullableFilter
+  quality: EnumChapterQualityFilter
+  views: IntFilter
+  imageCount: IntFilter
+  originalImageCount: IntFilter
+  processed: BoolFilter
+  needOptimize: BoolFilter
+  missing: BoolFilter
+  batchs: StringNullableFilter
+  imageUrls: StringNullableListFilter
+  imageDetails: JsonNullableFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  comicId: IntFilter
+}
+
+input ChapterScalarWhereWithAggregatesInput {
+  AND: [ChapterScalarWhereWithAggregatesInput]
+  OR: [ChapterScalarWhereWithAggregatesInput]
+  NOT: [ChapterScalarWhereWithAggregatesInput]
+  id: IntWithAggregatesFilter
+  name: FloatWithAggregatesFilter
+  title: StringNullableWithAggregatesFilter
+  cdn: StringNullableWithAggregatesFilter
+  quality: EnumChapterQualityWithAggregatesFilter
+  views: IntWithAggregatesFilter
+  imageCount: IntWithAggregatesFilter
+  originalImageCount: IntWithAggregatesFilter
+  processed: BoolWithAggregatesFilter
+  needOptimize: BoolWithAggregatesFilter
+  missing: BoolWithAggregatesFilter
+  batchs: StringNullableWithAggregatesFilter
+  imageUrls: StringNullableListFilter
+  imageDetails: JsonNullableWithAggregatesFilter
+  createdAt: DateTimeWithAggregatesFilter
+  updatedAt: DateTimeWithAggregatesFilter
+  comicId: IntWithAggregatesFilter
+}
+
+type ChapterSumAggregateOutputType {
+  id: Int
+  name: Float
+  views: Int
+  imageCount: Int
+  originalImageCount: Int
+  comicId: Int
+}
+
+input ChapterSumOrderByAggregateInput {
+  id: SortOrder
+  name: SortOrder
+  views: SortOrder
+  imageCount: SortOrder
+  originalImageCount: SortOrder
+  comicId: SortOrder
+}
+
+input ChapterUncheckedCreateInput {
+  id: Int
+  name: Float!
+  title: String
+  cdn: String
+  quality: ChapterQuality
+  views: Int
+  imageCount: Int
+  originalImageCount: Int
+  processed: Boolean
+  needOptimize: Boolean
+  missing: Boolean
+  batchs: String
+  imageUrls: [String]
+  imageDetails: Json
+  createdAt: DateTime
+  updatedAt: DateTime
+  comicId: Int!
+  userviewers: ViewedChapterUncheckedCreateNestedManyWithoutChapterInput
+}
+
+input ChapterUncheckedCreateNestedManyWithoutComicInput {
+  create: [ChapterCreateWithoutComicInput]
+  connectOrCreate: [ChapterCreateOrConnectWithoutComicInput]
+  createMany: ChapterCreateManyComicInputEnvelope
+  connect: [ChapterWhereUniqueInput]
+}
+
+input ChapterUncheckedCreateWithoutComicInput {
+  id: Int
+  name: Float!
+  title: String
+  cdn: String
+  quality: ChapterQuality
+  views: Int
+  imageCount: Int
+  originalImageCount: Int
+  processed: Boolean
+  needOptimize: Boolean
+  missing: Boolean
+  batchs: String
+  imageUrls: [String]
+  imageDetails: Json
+  createdAt: DateTime
+  updatedAt: DateTime
+  userviewers: ViewedChapterUncheckedCreateNestedManyWithoutChapterInput
+}
+
+input ChapterUncheckedCreateWithoutUserviewersInput {
+  id: Int
+  name: Float!
+  title: String
+  cdn: String
+  quality: ChapterQuality
+  views: Int
+  imageCount: Int
+  originalImageCount: Int
+  processed: Boolean
+  needOptimize: Boolean
+  missing: Boolean
+  batchs: String
+  imageUrls: [String]
+  imageDetails: Json
+  createdAt: DateTime
+  updatedAt: DateTime
+  comicId: Int!
+}
+
+input ChapterUncheckedUpdateInput {
+  id: IntFieldUpdateOperationsInput
+  name: FloatFieldUpdateOperationsInput
+  title: NullableStringFieldUpdateOperationsInput
+  cdn: NullableStringFieldUpdateOperationsInput
+  quality: EnumChapterQualityFieldUpdateOperationsInput
+  views: IntFieldUpdateOperationsInput
+  imageCount: IntFieldUpdateOperationsInput
+  originalImageCount: IntFieldUpdateOperationsInput
+  processed: BoolFieldUpdateOperationsInput
+  needOptimize: BoolFieldUpdateOperationsInput
+  missing: BoolFieldUpdateOperationsInput
+  batchs: NullableStringFieldUpdateOperationsInput
+  imageUrls: [String]
+  imageDetails: Json
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  comicId: IntFieldUpdateOperationsInput
+  userviewers: ViewedChapterUncheckedUpdateManyWithoutChapterInput
+}
+
+input ChapterUncheckedUpdateManyInput {
+  id: IntFieldUpdateOperationsInput
+  name: FloatFieldUpdateOperationsInput
+  title: NullableStringFieldUpdateOperationsInput
+  cdn: NullableStringFieldUpdateOperationsInput
+  quality: EnumChapterQualityFieldUpdateOperationsInput
+  views: IntFieldUpdateOperationsInput
+  imageCount: IntFieldUpdateOperationsInput
+  originalImageCount: IntFieldUpdateOperationsInput
+  processed: BoolFieldUpdateOperationsInput
+  needOptimize: BoolFieldUpdateOperationsInput
+  missing: BoolFieldUpdateOperationsInput
+  batchs: NullableStringFieldUpdateOperationsInput
+  imageUrls: [String]
+  imageDetails: Json
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  comicId: IntFieldUpdateOperationsInput
+}
+
+input ChapterUncheckedUpdateManyWithoutChaptersInput {
+  id: IntFieldUpdateOperationsInput
+  name: FloatFieldUpdateOperationsInput
+  title: NullableStringFieldUpdateOperationsInput
+  cdn: NullableStringFieldUpdateOperationsInput
+  quality: EnumChapterQualityFieldUpdateOperationsInput
+  views: IntFieldUpdateOperationsInput
+  imageCount: IntFieldUpdateOperationsInput
+  originalImageCount: IntFieldUpdateOperationsInput
+  processed: BoolFieldUpdateOperationsInput
+  needOptimize: BoolFieldUpdateOperationsInput
+  missing: BoolFieldUpdateOperationsInput
+  batchs: NullableStringFieldUpdateOperationsInput
+  imageUrls: [String]
+  imageDetails: Json
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input ChapterUncheckedUpdateManyWithoutComicInput {
+  create: [ChapterCreateWithoutComicInput]
+  connectOrCreate: [ChapterCreateOrConnectWithoutComicInput]
+  upsert: [ChapterUpsertWithWhereUniqueWithoutComicInput]
+  createMany: ChapterCreateManyComicInputEnvelope
+  set: [ChapterWhereUniqueInput]
+  disconnect: [ChapterWhereUniqueInput]
+  delete: [ChapterWhereUniqueInput]
+  connect: [ChapterWhereUniqueInput]
+  update: [ChapterUpdateWithWhereUniqueWithoutComicInput]
+  updateMany: [ChapterUpdateManyWithWhereWithoutComicInput]
+  deleteMany: [ChapterScalarWhereInput]
+}
+
+input ChapterUncheckedUpdateWithoutComicInput {
+  id: IntFieldUpdateOperationsInput
+  name: FloatFieldUpdateOperationsInput
+  title: NullableStringFieldUpdateOperationsInput
+  cdn: NullableStringFieldUpdateOperationsInput
+  quality: EnumChapterQualityFieldUpdateOperationsInput
+  views: IntFieldUpdateOperationsInput
+  imageCount: IntFieldUpdateOperationsInput
+  originalImageCount: IntFieldUpdateOperationsInput
+  processed: BoolFieldUpdateOperationsInput
+  needOptimize: BoolFieldUpdateOperationsInput
+  missing: BoolFieldUpdateOperationsInput
+  batchs: NullableStringFieldUpdateOperationsInput
+  imageUrls: [String]
+  imageDetails: Json
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  userviewers: ViewedChapterUncheckedUpdateManyWithoutChapterInput
+}
+
+input ChapterUncheckedUpdateWithoutUserviewersInput {
+  id: IntFieldUpdateOperationsInput
+  name: FloatFieldUpdateOperationsInput
+  title: NullableStringFieldUpdateOperationsInput
+  cdn: NullableStringFieldUpdateOperationsInput
+  quality: EnumChapterQualityFieldUpdateOperationsInput
+  views: IntFieldUpdateOperationsInput
+  imageCount: IntFieldUpdateOperationsInput
+  originalImageCount: IntFieldUpdateOperationsInput
+  processed: BoolFieldUpdateOperationsInput
+  needOptimize: BoolFieldUpdateOperationsInput
+  missing: BoolFieldUpdateOperationsInput
+  batchs: NullableStringFieldUpdateOperationsInput
+  imageUrls: [String]
+  imageDetails: Json
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  comicId: IntFieldUpdateOperationsInput
+}
+
+input ChapterUpdateimageUrlsInput {
+  set: [String]
+  push: [String]
+}
+
+input ChapterUpdateInput {
+  name: FloatFieldUpdateOperationsInput
+  title: NullableStringFieldUpdateOperationsInput
+  cdn: NullableStringFieldUpdateOperationsInput
+  comic: ComicUpdateOneRequiredWithoutChaptersInput
+  quality: EnumChapterQualityFieldUpdateOperationsInput
+  views: IntFieldUpdateOperationsInput
+  imageCount: IntFieldUpdateOperationsInput
+  originalImageCount: IntFieldUpdateOperationsInput
+  processed: BoolFieldUpdateOperationsInput
+  needOptimize: BoolFieldUpdateOperationsInput
+  missing: BoolFieldUpdateOperationsInput
+  batchs: NullableStringFieldUpdateOperationsInput
+  imageUrls: [String]
+  imageDetails: Json
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  userviewers: ViewedChapterUpdateManyWithoutChapterInput
+}
+
+input ChapterUpdateManyMutationInput {
+  name: FloatFieldUpdateOperationsInput
+  title: NullableStringFieldUpdateOperationsInput
+  cdn: NullableStringFieldUpdateOperationsInput
+  quality: EnumChapterQualityFieldUpdateOperationsInput
+  views: IntFieldUpdateOperationsInput
+  imageCount: IntFieldUpdateOperationsInput
+  originalImageCount: IntFieldUpdateOperationsInput
+  processed: BoolFieldUpdateOperationsInput
+  needOptimize: BoolFieldUpdateOperationsInput
+  missing: BoolFieldUpdateOperationsInput
+  batchs: NullableStringFieldUpdateOperationsInput
+  imageUrls: [String]
+  imageDetails: Json
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input ChapterUpdateManyWithoutComicInput {
+  create: [ChapterCreateWithoutComicInput]
+  connectOrCreate: [ChapterCreateOrConnectWithoutComicInput]
+  upsert: [ChapterUpsertWithWhereUniqueWithoutComicInput]
+  createMany: ChapterCreateManyComicInputEnvelope
+  set: [ChapterWhereUniqueInput]
+  disconnect: [ChapterWhereUniqueInput]
+  delete: [ChapterWhereUniqueInput]
+  connect: [ChapterWhereUniqueInput]
+  update: [ChapterUpdateWithWhereUniqueWithoutComicInput]
+  updateMany: [ChapterUpdateManyWithWhereWithoutComicInput]
+  deleteMany: [ChapterScalarWhereInput]
+}
+
+input ChapterUpdateManyWithWhereWithoutComicInput {
+  where: ChapterScalarWhereInput!
+  data: ChapterUncheckedUpdateManyWithoutChaptersInput!
+}
+
+input ChapterUpdateOneRequiredWithoutUserviewersInput {
+  create: ChapterUncheckedCreateWithoutUserviewersInput
+  connectOrCreate: ChapterCreateOrConnectWithoutUserviewersInput
+  upsert: ChapterUpsertWithoutUserviewersInput
+  connect: ChapterWhereUniqueInput
+  update: ChapterUncheckedUpdateWithoutUserviewersInput
+}
+
+input ChapterUpdateWithoutComicInput {
+  name: FloatFieldUpdateOperationsInput
+  title: NullableStringFieldUpdateOperationsInput
+  cdn: NullableStringFieldUpdateOperationsInput
+  quality: EnumChapterQualityFieldUpdateOperationsInput
+  views: IntFieldUpdateOperationsInput
+  imageCount: IntFieldUpdateOperationsInput
+  originalImageCount: IntFieldUpdateOperationsInput
+  processed: BoolFieldUpdateOperationsInput
+  needOptimize: BoolFieldUpdateOperationsInput
+  missing: BoolFieldUpdateOperationsInput
+  batchs: NullableStringFieldUpdateOperationsInput
+  imageUrls: [String]
+  imageDetails: Json
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  userviewers: ViewedChapterUpdateManyWithoutChapterInput
+}
+
+input ChapterUpdateWithoutUserviewersInput {
+  name: FloatFieldUpdateOperationsInput
+  title: NullableStringFieldUpdateOperationsInput
+  cdn: NullableStringFieldUpdateOperationsInput
+  comic: ComicUpdateOneRequiredWithoutChaptersInput
+  quality: EnumChapterQualityFieldUpdateOperationsInput
+  views: IntFieldUpdateOperationsInput
+  imageCount: IntFieldUpdateOperationsInput
+  originalImageCount: IntFieldUpdateOperationsInput
+  processed: BoolFieldUpdateOperationsInput
+  needOptimize: BoolFieldUpdateOperationsInput
+  missing: BoolFieldUpdateOperationsInput
+  batchs: NullableStringFieldUpdateOperationsInput
+  imageUrls: [String]
+  imageDetails: Json
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input ChapterUpdateWithWhereUniqueWithoutComicInput {
+  where: ChapterWhereUniqueInput!
+  data: ChapterUncheckedUpdateWithoutComicInput!
+}
+
+input ChapterUpsertWithoutUserviewersInput {
+  update: ChapterUncheckedUpdateWithoutUserviewersInput!
+  create: ChapterUncheckedCreateWithoutUserviewersInput!
+}
+
+input ChapterUpsertWithWhereUniqueWithoutComicInput {
+  where: ChapterWhereUniqueInput!
+  update: ChapterUncheckedUpdateWithoutComicInput!
+  create: ChapterUncheckedCreateWithoutComicInput!
+}
+
+input ChapterWhereInput {
+  AND: [ChapterWhereInput]
+  OR: [ChapterWhereInput]
+  NOT: [ChapterWhereInput]
+  id: IntFilter
+  name: FloatFilter
+  title: StringNullableFilter
+  cdn: StringNullableFilter
+  comic: ComicWhereInput
+  quality: EnumChapterQualityFilter
+  views: IntFilter
+  imageCount: IntFilter
+  originalImageCount: IntFilter
+  processed: BoolFilter
+  needOptimize: BoolFilter
+  missing: BoolFilter
+  batchs: StringNullableFilter
+  imageUrls: StringNullableListFilter
+  imageDetails: JsonNullableFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  comicId: IntFilter
+  userviewers: ViewedChapterListRelationFilter
+}
+
+input ChapterWhereUniqueInput {
+  id: Int
+}
+
+type Comic {
+  id: Int!
+  name: String!
+  slug: String!
+  thumb: String!
+  type: String!
+  thumbWide: String
+  altName: Json
+  isHentai: Boolean!
+  released: DateTime!
+  author: Author!
+  rating: Float!
+  views: Int!
+  viewsHourly: Int!
+  viewsDaily: Int!
+  viewsWeek: Int!
+  description: String
+  status: String
+  age: String
+  concept: String
+  lastChapterUpdateAt: DateTime!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  authorId: Int!
+  chapters(where: ChapterWhereInput, orderBy: ChapterOrderByWithRelationInput, cursor: ChapterWhereUniqueInput, take: Int, skip: Int, distinct: ChapterScalarFieldEnum): [Chapter!]!
+  genres(where: GenreWhereInput, orderBy: GenreOrderByWithRelationInput, cursor: GenreWhereUniqueInput, take: Int, skip: Int, distinct: GenreScalarFieldEnum): [Genre!]!
+  userbookmarks(where: ComicBookmarkWhereInput, orderBy: ComicBookmarkOrderByWithRelationInput, cursor: ComicBookmarkWhereUniqueInput, take: Int, skip: Int, distinct: ComicBookmarkScalarFieldEnum): [ComicBookmark!]!
+  _count: ComicCountOutputType!
+}
+
+type ComicAvgAggregateOutputType {
+  id: Float
+  rating: Float
+  views: Float
+  viewsHourly: Float
+  viewsDaily: Float
+  viewsWeek: Float
+  authorId: Float
+}
+
+input ComicAvgOrderByAggregateInput {
+  id: SortOrder
+  rating: SortOrder
+  views: SortOrder
+  viewsHourly: SortOrder
+  viewsDaily: SortOrder
+  viewsWeek: SortOrder
+  authorId: SortOrder
+}
+
+type ComicBookmark {
+  id: Int!
+  comicId: Int!
+  comic: Comic!
+  userId: Int!
+  user: User!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type ComicBookmarkAvgAggregateOutputType {
+  id: Float
+  comicId: Float
+  userId: Float
+}
+
+input ComicBookmarkAvgOrderByAggregateInput {
+  id: SortOrder
+  comicId: SortOrder
+  userId: SortOrder
+}
+
+type ComicBookmarkCountAggregateOutputType {
+  id: Int!
+  comicId: Int!
+  userId: Int!
+  createdAt: Int!
+  updatedAt: Int!
+  _all: Int!
+}
+
+input ComicBookmarkCountOrderByAggregateInput {
+  id: SortOrder
+  comicId: SortOrder
+  userId: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+}
+
+input ComicBookmarkCreateInput {
+  comic: ComicCreateNestedOneWithoutUserbookmarksInput!
+  user: UserCreateNestedOneWithoutComicbookmarksInput!
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input ComicBookmarkCreateManyComicInput {
+  id: Int
+  userId: Int!
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input ComicBookmarkCreateManyComicInputEnvelope {
+  data: ComicBookmarkCreateManyComicInput!
+  skipDuplicates: Boolean
+}
+
+input ComicBookmarkCreateManyInput {
+  id: Int
+  comicId: Int!
+  userId: Int!
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input ComicBookmarkCreateManyUserInput {
+  id: Int
+  comicId: Int!
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input ComicBookmarkCreateManyUserInputEnvelope {
+  data: ComicBookmarkCreateManyUserInput!
+  skipDuplicates: Boolean
+}
+
+input ComicBookmarkCreateNestedManyWithoutComicInput {
+  create: [ComicBookmarkCreateWithoutComicInput]
+  connectOrCreate: [ComicBookmarkCreateOrConnectWithoutComicInput]
+  createMany: ComicBookmarkCreateManyComicInputEnvelope
+  connect: [ComicBookmarkWhereUniqueInput]
+}
+
+input ComicBookmarkCreateNestedManyWithoutUserInput {
+  create: [ComicBookmarkCreateWithoutUserInput]
+  connectOrCreate: [ComicBookmarkCreateOrConnectWithoutUserInput]
+  createMany: ComicBookmarkCreateManyUserInputEnvelope
+  connect: [ComicBookmarkWhereUniqueInput]
+}
+
+input ComicBookmarkCreateOrConnectWithoutComicInput {
+  where: ComicBookmarkWhereUniqueInput!
+  create: ComicBookmarkUncheckedCreateWithoutComicInput!
+}
+
+input ComicBookmarkCreateOrConnectWithoutUserInput {
+  where: ComicBookmarkWhereUniqueInput!
+  create: ComicBookmarkUncheckedCreateWithoutUserInput!
+}
+
+input ComicBookmarkCreateWithoutComicInput {
+  user: UserCreateNestedOneWithoutComicbookmarksInput!
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input ComicBookmarkCreateWithoutUserInput {
+  comic: ComicCreateNestedOneWithoutUserbookmarksInput!
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input ComicBookmarkListRelationFilter {
+  every: ComicBookmarkWhereInput
+  some: ComicBookmarkWhereInput
+  none: ComicBookmarkWhereInput
+}
+
+type ComicBookmarkMaxAggregateOutputType {
+  id: Int
+  comicId: Int
+  userId: Int
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input ComicBookmarkMaxOrderByAggregateInput {
+  id: SortOrder
+  comicId: SortOrder
+  userId: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+}
+
+type ComicBookmarkMinAggregateOutputType {
+  id: Int
+  comicId: Int
+  userId: Int
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input ComicBookmarkMinOrderByAggregateInput {
+  id: SortOrder
+  comicId: SortOrder
+  userId: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+}
+
+input ComicBookmarkOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input ComicBookmarkOrderByWithAggregationInput {
+  id: SortOrder
+  comicId: SortOrder
+  userId: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  _count: ComicBookmarkCountOrderByAggregateInput
+  _avg: ComicBookmarkAvgOrderByAggregateInput
+  _max: ComicBookmarkMaxOrderByAggregateInput
+  _min: ComicBookmarkMinOrderByAggregateInput
+  _sum: ComicBookmarkSumOrderByAggregateInput
+}
+
+input ComicBookmarkOrderByWithRelationInput {
+  id: SortOrder
+  comicId: SortOrder
+  comic: ComicOrderByWithRelationInput
+  userId: SortOrder
+  user: UserOrderByWithRelationInput
+  createdAt: SortOrder
+  updatedAt: SortOrder
+}
+
+enum ComicBookmarkScalarFieldEnum {
+  id
+  comicId
+  userId
+  createdAt
+  updatedAt
+}
+
+input ComicBookmarkScalarWhereInput {
+  AND: [ComicBookmarkScalarWhereInput]
+  OR: [ComicBookmarkScalarWhereInput]
+  NOT: [ComicBookmarkScalarWhereInput]
+  id: IntFilter
+  comicId: IntFilter
+  userId: IntFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+}
+
+input ComicBookmarkScalarWhereWithAggregatesInput {
+  AND: [ComicBookmarkScalarWhereWithAggregatesInput]
+  OR: [ComicBookmarkScalarWhereWithAggregatesInput]
+  NOT: [ComicBookmarkScalarWhereWithAggregatesInput]
+  id: IntWithAggregatesFilter
+  comicId: IntWithAggregatesFilter
+  userId: IntWithAggregatesFilter
+  createdAt: DateTimeWithAggregatesFilter
+  updatedAt: DateTimeWithAggregatesFilter
+}
+
+type ComicBookmarkSumAggregateOutputType {
+  id: Int
+  comicId: Int
+  userId: Int
+}
+
+input ComicBookmarkSumOrderByAggregateInput {
+  id: SortOrder
+  comicId: SortOrder
+  userId: SortOrder
+}
+
+input ComicBookmarkUncheckedCreateInput {
+  id: Int
+  comicId: Int!
+  userId: Int!
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input ComicBookmarkUncheckedCreateNestedManyWithoutComicInput {
+  create: [ComicBookmarkCreateWithoutComicInput]
+  connectOrCreate: [ComicBookmarkCreateOrConnectWithoutComicInput]
+  createMany: ComicBookmarkCreateManyComicInputEnvelope
+  connect: [ComicBookmarkWhereUniqueInput]
+}
+
+input ComicBookmarkUncheckedCreateNestedManyWithoutUserInput {
+  create: [ComicBookmarkCreateWithoutUserInput]
+  connectOrCreate: [ComicBookmarkCreateOrConnectWithoutUserInput]
+  createMany: ComicBookmarkCreateManyUserInputEnvelope
+  connect: [ComicBookmarkWhereUniqueInput]
+}
+
+input ComicBookmarkUncheckedCreateWithoutComicInput {
+  id: Int
+  userId: Int!
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input ComicBookmarkUncheckedCreateWithoutUserInput {
+  id: Int
+  comicId: Int!
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input ComicBookmarkUncheckedUpdateInput {
+  id: IntFieldUpdateOperationsInput
+  comicId: IntFieldUpdateOperationsInput
+  userId: IntFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input ComicBookmarkUncheckedUpdateManyInput {
+  id: IntFieldUpdateOperationsInput
+  comicId: IntFieldUpdateOperationsInput
+  userId: IntFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input ComicBookmarkUncheckedUpdateManyWithoutComicbookmarksInput {
+  id: IntFieldUpdateOperationsInput
+  comicId: IntFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input ComicBookmarkUncheckedUpdateManyWithoutComicInput {
+  create: [ComicBookmarkCreateWithoutComicInput]
+  connectOrCreate: [ComicBookmarkCreateOrConnectWithoutComicInput]
+  upsert: [ComicBookmarkUpsertWithWhereUniqueWithoutComicInput]
+  createMany: ComicBookmarkCreateManyComicInputEnvelope
+  set: [ComicBookmarkWhereUniqueInput]
+  disconnect: [ComicBookmarkWhereUniqueInput]
+  delete: [ComicBookmarkWhereUniqueInput]
+  connect: [ComicBookmarkWhereUniqueInput]
+  update: [ComicBookmarkUpdateWithWhereUniqueWithoutComicInput]
+  updateMany: [ComicBookmarkUpdateManyWithWhereWithoutComicInput]
+  deleteMany: [ComicBookmarkScalarWhereInput]
+}
+
+input ComicBookmarkUncheckedUpdateManyWithoutUserbookmarksInput {
+  id: IntFieldUpdateOperationsInput
+  userId: IntFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input ComicBookmarkUncheckedUpdateManyWithoutUserInput {
+  create: [ComicBookmarkCreateWithoutUserInput]
+  connectOrCreate: [ComicBookmarkCreateOrConnectWithoutUserInput]
+  upsert: [ComicBookmarkUpsertWithWhereUniqueWithoutUserInput]
+  createMany: ComicBookmarkCreateManyUserInputEnvelope
+  set: [ComicBookmarkWhereUniqueInput]
+  disconnect: [ComicBookmarkWhereUniqueInput]
+  delete: [ComicBookmarkWhereUniqueInput]
+  connect: [ComicBookmarkWhereUniqueInput]
+  update: [ComicBookmarkUpdateWithWhereUniqueWithoutUserInput]
+  updateMany: [ComicBookmarkUpdateManyWithWhereWithoutUserInput]
+  deleteMany: [ComicBookmarkScalarWhereInput]
+}
+
+input ComicBookmarkUncheckedUpdateWithoutComicInput {
+  id: IntFieldUpdateOperationsInput
+  userId: IntFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input ComicBookmarkUncheckedUpdateWithoutUserInput {
+  id: IntFieldUpdateOperationsInput
+  comicId: IntFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input ComicBookmarkUpdateInput {
+  comic: ComicUpdateOneRequiredWithoutUserbookmarksInput
+  user: UserUpdateOneRequiredWithoutComicbookmarksInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input ComicBookmarkUpdateManyMutationInput {
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input ComicBookmarkUpdateManyWithoutComicInput {
+  create: [ComicBookmarkCreateWithoutComicInput]
+  connectOrCreate: [ComicBookmarkCreateOrConnectWithoutComicInput]
+  upsert: [ComicBookmarkUpsertWithWhereUniqueWithoutComicInput]
+  createMany: ComicBookmarkCreateManyComicInputEnvelope
+  set: [ComicBookmarkWhereUniqueInput]
+  disconnect: [ComicBookmarkWhereUniqueInput]
+  delete: [ComicBookmarkWhereUniqueInput]
+  connect: [ComicBookmarkWhereUniqueInput]
+  update: [ComicBookmarkUpdateWithWhereUniqueWithoutComicInput]
+  updateMany: [ComicBookmarkUpdateManyWithWhereWithoutComicInput]
+  deleteMany: [ComicBookmarkScalarWhereInput]
+}
+
+input ComicBookmarkUpdateManyWithoutUserInput {
+  create: [ComicBookmarkCreateWithoutUserInput]
+  connectOrCreate: [ComicBookmarkCreateOrConnectWithoutUserInput]
+  upsert: [ComicBookmarkUpsertWithWhereUniqueWithoutUserInput]
+  createMany: ComicBookmarkCreateManyUserInputEnvelope
+  set: [ComicBookmarkWhereUniqueInput]
+  disconnect: [ComicBookmarkWhereUniqueInput]
+  delete: [ComicBookmarkWhereUniqueInput]
+  connect: [ComicBookmarkWhereUniqueInput]
+  update: [ComicBookmarkUpdateWithWhereUniqueWithoutUserInput]
+  updateMany: [ComicBookmarkUpdateManyWithWhereWithoutUserInput]
+  deleteMany: [ComicBookmarkScalarWhereInput]
+}
+
+input ComicBookmarkUpdateManyWithWhereWithoutComicInput {
+  where: ComicBookmarkScalarWhereInput!
+  data: ComicBookmarkUncheckedUpdateManyWithoutUserbookmarksInput!
+}
+
+input ComicBookmarkUpdateManyWithWhereWithoutUserInput {
+  where: ComicBookmarkScalarWhereInput!
+  data: ComicBookmarkUncheckedUpdateManyWithoutComicbookmarksInput!
+}
+
+input ComicBookmarkUpdateWithoutComicInput {
+  user: UserUpdateOneRequiredWithoutComicbookmarksInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input ComicBookmarkUpdateWithoutUserInput {
+  comic: ComicUpdateOneRequiredWithoutUserbookmarksInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input ComicBookmarkUpdateWithWhereUniqueWithoutComicInput {
+  where: ComicBookmarkWhereUniqueInput!
+  data: ComicBookmarkUncheckedUpdateWithoutComicInput!
+}
+
+input ComicBookmarkUpdateWithWhereUniqueWithoutUserInput {
+  where: ComicBookmarkWhereUniqueInput!
+  data: ComicBookmarkUncheckedUpdateWithoutUserInput!
+}
+
+input ComicBookmarkUpsertWithWhereUniqueWithoutComicInput {
+  where: ComicBookmarkWhereUniqueInput!
+  update: ComicBookmarkUncheckedUpdateWithoutComicInput!
+  create: ComicBookmarkUncheckedCreateWithoutComicInput!
+}
+
+input ComicBookmarkUpsertWithWhereUniqueWithoutUserInput {
+  where: ComicBookmarkWhereUniqueInput!
+  update: ComicBookmarkUncheckedUpdateWithoutUserInput!
+  create: ComicBookmarkUncheckedCreateWithoutUserInput!
+}
+
+input ComicBookmarkWhereInput {
+  AND: [ComicBookmarkWhereInput]
+  OR: [ComicBookmarkWhereInput]
+  NOT: [ComicBookmarkWhereInput]
+  id: IntFilter
+  comicId: IntFilter
+  comic: ComicWhereInput
+  userId: IntFilter
+  user: UserWhereInput
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+}
+
+input ComicBookmarkWhereUniqueInput {
+  id: Int
+}
+
+type ComicCountAggregateOutputType {
+  id: Int!
+  name: Int!
+  slug: Int!
+  thumb: Int!
+  type: Int!
+  thumbWide: Int!
+  altName: Int!
+  isHentai: Int!
+  released: Int!
+  rating: Int!
+  views: Int!
+  viewsHourly: Int!
+  viewsDaily: Int!
+  viewsWeek: Int!
+  description: Int!
+  status: Int!
+  age: Int!
+  concept: Int!
+  lastChapterUpdateAt: Int!
+  createdAt: Int!
+  updatedAt: Int!
+  authorId: Int!
+  _all: Int!
+}
+
+input ComicCountOrderByAggregateInput {
+  id: SortOrder
+  name: SortOrder
+  slug: SortOrder
+  thumb: SortOrder
+  type: SortOrder
+  thumbWide: SortOrder
+  altName: SortOrder
+  isHentai: SortOrder
+  released: SortOrder
+  rating: SortOrder
+  views: SortOrder
+  viewsHourly: SortOrder
+  viewsDaily: SortOrder
+  viewsWeek: SortOrder
+  description: SortOrder
+  status: SortOrder
+  age: SortOrder
+  concept: SortOrder
+  lastChapterUpdateAt: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  authorId: SortOrder
+}
+
+type ComicCountOutputType {
+  chapters: Int!
+  genres: Int!
+  userbookmarks: Int!
+}
+
+input ComicCreateInput {
+  name: String!
+  slug: String!
+  thumb: String!
+  type: String!
+  thumbWide: String
+  altName: Json
+  isHentai: Boolean
+  released: DateTime
+  author: AuthorCreateNestedOneWithoutComicsInput!
+  rating: Float
+  views: Int
+  viewsHourly: Int
+  viewsDaily: Int
+  viewsWeek: Int
+  description: String
+  status: String
+  age: String
+  concept: String
+  lastChapterUpdateAt: DateTime
+  createdAt: DateTime
+  updatedAt: DateTime
+  chapters: ChapterCreateNestedManyWithoutComicInput
+  genres: GenreCreateNestedManyWithoutComicsInput
+  userbookmarks: ComicBookmarkCreateNestedManyWithoutComicInput
+}
+
+input ComicCreateManyAuthorInput {
+  id: Int
+  name: String!
+  slug: String!
+  thumb: String!
+  type: String!
+  thumbWide: String
+  altName: Json
+  isHentai: Boolean
+  released: DateTime
+  rating: Float
+  views: Int
+  viewsHourly: Int
+  viewsDaily: Int
+  viewsWeek: Int
+  description: String
+  status: String
+  age: String
+  concept: String
+  lastChapterUpdateAt: DateTime
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input ComicCreateManyAuthorInputEnvelope {
+  data: ComicCreateManyAuthorInput!
+  skipDuplicates: Boolean
+}
+
+input ComicCreateManyInput {
+  id: Int
+  name: String!
+  slug: String!
+  thumb: String!
+  type: String!
+  thumbWide: String
+  altName: Json
+  isHentai: Boolean
+  released: DateTime
+  rating: Float
+  views: Int
+  viewsHourly: Int
+  viewsDaily: Int
+  viewsWeek: Int
+  description: String
+  status: String
+  age: String
+  concept: String
+  lastChapterUpdateAt: DateTime
+  createdAt: DateTime
+  updatedAt: DateTime
+  authorId: Int!
+}
+
+input ComicCreateNestedManyWithoutAuthorInput {
+  create: [ComicCreateWithoutAuthorInput]
+  connectOrCreate: [ComicCreateOrConnectWithoutAuthorInput]
+  createMany: ComicCreateManyAuthorInputEnvelope
+  connect: [ComicWhereUniqueInput]
+}
+
+input ComicCreateNestedManyWithoutGenresInput {
+  create: [ComicCreateWithoutGenresInput]
+  connectOrCreate: [ComicCreateOrConnectWithoutGenresInput]
+  connect: [ComicWhereUniqueInput]
+}
+
+input ComicCreateNestedOneWithoutChaptersInput {
+  create: ComicUncheckedCreateWithoutChaptersInput
+  connectOrCreate: ComicCreateOrConnectWithoutChaptersInput
+  connect: ComicWhereUniqueInput
+}
+
+input ComicCreateNestedOneWithoutUserbookmarksInput {
+  create: ComicUncheckedCreateWithoutUserbookmarksInput
+  connectOrCreate: ComicCreateOrConnectWithoutUserbookmarksInput
+  connect: ComicWhereUniqueInput
+}
+
+input ComicCreateOrConnectWithoutAuthorInput {
+  where: ComicWhereUniqueInput!
+  create: ComicUncheckedCreateWithoutAuthorInput!
+}
+
+input ComicCreateOrConnectWithoutChaptersInput {
+  where: ComicWhereUniqueInput!
+  create: ComicUncheckedCreateWithoutChaptersInput!
+}
+
+input ComicCreateOrConnectWithoutGenresInput {
+  where: ComicWhereUniqueInput!
+  create: ComicUncheckedCreateWithoutGenresInput!
+}
+
+input ComicCreateOrConnectWithoutUserbookmarksInput {
+  where: ComicWhereUniqueInput!
+  create: ComicUncheckedCreateWithoutUserbookmarksInput!
+}
+
+input ComicCreateWithoutAuthorInput {
+  name: String!
+  slug: String!
+  thumb: String!
+  type: String!
+  thumbWide: String
+  altName: Json
+  isHentai: Boolean
+  released: DateTime
+  rating: Float
+  views: Int
+  viewsHourly: Int
+  viewsDaily: Int
+  viewsWeek: Int
+  description: String
+  status: String
+  age: String
+  concept: String
+  lastChapterUpdateAt: DateTime
+  createdAt: DateTime
+  updatedAt: DateTime
+  chapters: ChapterCreateNestedManyWithoutComicInput
+  genres: GenreCreateNestedManyWithoutComicsInput
+  userbookmarks: ComicBookmarkCreateNestedManyWithoutComicInput
+}
+
+input ComicCreateWithoutChaptersInput {
+  name: String!
+  slug: String!
+  thumb: String!
+  type: String!
+  thumbWide: String
+  altName: Json
+  isHentai: Boolean
+  released: DateTime
+  author: AuthorCreateNestedOneWithoutComicsInput!
+  rating: Float
+  views: Int
+  viewsHourly: Int
+  viewsDaily: Int
+  viewsWeek: Int
+  description: String
+  status: String
+  age: String
+  concept: String
+  lastChapterUpdateAt: DateTime
+  createdAt: DateTime
+  updatedAt: DateTime
+  genres: GenreCreateNestedManyWithoutComicsInput
+  userbookmarks: ComicBookmarkCreateNestedManyWithoutComicInput
+}
+
+input ComicCreateWithoutGenresInput {
+  name: String!
+  slug: String!
+  thumb: String!
+  type: String!
+  thumbWide: String
+  altName: Json
+  isHentai: Boolean
+  released: DateTime
+  author: AuthorCreateNestedOneWithoutComicsInput!
+  rating: Float
+  views: Int
+  viewsHourly: Int
+  viewsDaily: Int
+  viewsWeek: Int
+  description: String
+  status: String
+  age: String
+  concept: String
+  lastChapterUpdateAt: DateTime
+  createdAt: DateTime
+  updatedAt: DateTime
+  chapters: ChapterCreateNestedManyWithoutComicInput
+  userbookmarks: ComicBookmarkCreateNestedManyWithoutComicInput
+}
+
+input ComicCreateWithoutUserbookmarksInput {
+  name: String!
+  slug: String!
+  thumb: String!
+  type: String!
+  thumbWide: String
+  altName: Json
+  isHentai: Boolean
+  released: DateTime
+  author: AuthorCreateNestedOneWithoutComicsInput!
+  rating: Float
+  views: Int
+  viewsHourly: Int
+  viewsDaily: Int
+  viewsWeek: Int
+  description: String
+  status: String
+  age: String
+  concept: String
+  lastChapterUpdateAt: DateTime
+  createdAt: DateTime
+  updatedAt: DateTime
+  chapters: ChapterCreateNestedManyWithoutComicInput
+  genres: GenreCreateNestedManyWithoutComicsInput
+}
+
+input ComicListRelationFilter {
+  every: ComicWhereInput
+  some: ComicWhereInput
+  none: ComicWhereInput
+}
+
+type ComicMaxAggregateOutputType {
+  id: Int
+  name: String
+  slug: String
+  thumb: String
+  type: String
+  thumbWide: String
+  isHentai: Boolean
+  released: DateTime
+  rating: Float
+  views: Int
+  viewsHourly: Int
+  viewsDaily: Int
+  viewsWeek: Int
+  description: String
+  status: String
+  age: String
+  concept: String
+  lastChapterUpdateAt: DateTime
+  createdAt: DateTime
+  updatedAt: DateTime
+  authorId: Int
+}
+
+input ComicMaxOrderByAggregateInput {
+  id: SortOrder
+  name: SortOrder
+  slug: SortOrder
+  thumb: SortOrder
+  type: SortOrder
+  thumbWide: SortOrder
+  isHentai: SortOrder
+  released: SortOrder
+  rating: SortOrder
+  views: SortOrder
+  viewsHourly: SortOrder
+  viewsDaily: SortOrder
+  viewsWeek: SortOrder
+  description: SortOrder
+  status: SortOrder
+  age: SortOrder
+  concept: SortOrder
+  lastChapterUpdateAt: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  authorId: SortOrder
+}
+
+type ComicMinAggregateOutputType {
+  id: Int
+  name: String
+  slug: String
+  thumb: String
+  type: String
+  thumbWide: String
+  isHentai: Boolean
+  released: DateTime
+  rating: Float
+  views: Int
+  viewsHourly: Int
+  viewsDaily: Int
+  viewsWeek: Int
+  description: String
+  status: String
+  age: String
+  concept: String
+  lastChapterUpdateAt: DateTime
+  createdAt: DateTime
+  updatedAt: DateTime
+  authorId: Int
+}
+
+input ComicMinOrderByAggregateInput {
+  id: SortOrder
+  name: SortOrder
+  slug: SortOrder
+  thumb: SortOrder
+  type: SortOrder
+  thumbWide: SortOrder
+  isHentai: SortOrder
+  released: SortOrder
+  rating: SortOrder
+  views: SortOrder
+  viewsHourly: SortOrder
+  viewsDaily: SortOrder
+  viewsWeek: SortOrder
+  description: SortOrder
+  status: SortOrder
+  age: SortOrder
+  concept: SortOrder
+  lastChapterUpdateAt: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  authorId: SortOrder
+}
+
+input ComicOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input ComicOrderByWithAggregationInput {
+  id: SortOrder
+  name: SortOrder
+  slug: SortOrder
+  thumb: SortOrder
+  type: SortOrder
+  thumbWide: SortOrder
+  altName: SortOrder
+  isHentai: SortOrder
+  released: SortOrder
+  rating: SortOrder
+  views: SortOrder
+  viewsHourly: SortOrder
+  viewsDaily: SortOrder
+  viewsWeek: SortOrder
+  description: SortOrder
+  status: SortOrder
+  age: SortOrder
+  concept: SortOrder
+  lastChapterUpdateAt: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  authorId: SortOrder
+  _count: ComicCountOrderByAggregateInput
+  _avg: ComicAvgOrderByAggregateInput
+  _max: ComicMaxOrderByAggregateInput
+  _min: ComicMinOrderByAggregateInput
+  _sum: ComicSumOrderByAggregateInput
+}
+
+input ComicOrderByWithRelationInput {
+  id: SortOrder
+  name: SortOrder
+  slug: SortOrder
+  thumb: SortOrder
+  type: SortOrder
+  thumbWide: SortOrder
+  altName: SortOrder
+  isHentai: SortOrder
+  released: SortOrder
+  author: AuthorOrderByWithRelationInput
+  rating: SortOrder
+  views: SortOrder
+  viewsHourly: SortOrder
+  viewsDaily: SortOrder
+  viewsWeek: SortOrder
+  description: SortOrder
+  status: SortOrder
+  age: SortOrder
+  concept: SortOrder
+  lastChapterUpdateAt: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  authorId: SortOrder
+  chapters: ChapterOrderByRelationAggregateInput
+  genres: GenreOrderByRelationAggregateInput
+  userbookmarks: ComicBookmarkOrderByRelationAggregateInput
+}
+
+input ComicRelationFilter {
+  is: ComicWhereInput
+  isNot: ComicWhereInput
+}
+
+enum ComicScalarFieldEnum {
+  id
+  name
+  slug
+  thumb
+  type
+  thumbWide
+  altName
+  isHentai
+  released
+  rating
+  views
+  viewsHourly
+  viewsDaily
+  viewsWeek
+  description
+  status
+  age
+  concept
+  lastChapterUpdateAt
+  createdAt
+  updatedAt
+  authorId
+}
+
+input ComicScalarWhereInput {
+  AND: [ComicScalarWhereInput]
+  OR: [ComicScalarWhereInput]
+  NOT: [ComicScalarWhereInput]
+  id: IntFilter
+  name: StringFilter
+  slug: StringFilter
+  thumb: StringFilter
+  type: StringFilter
+  thumbWide: StringNullableFilter
+  altName: JsonNullableFilter
+  isHentai: BoolFilter
+  released: DateTimeFilter
+  rating: FloatFilter
+  views: IntFilter
+  viewsHourly: IntFilter
+  viewsDaily: IntFilter
+  viewsWeek: IntFilter
+  description: StringNullableFilter
+  status: StringNullableFilter
+  age: StringNullableFilter
+  concept: StringNullableFilter
+  lastChapterUpdateAt: DateTimeFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  authorId: IntFilter
+}
+
+input ComicScalarWhereWithAggregatesInput {
+  AND: [ComicScalarWhereWithAggregatesInput]
+  OR: [ComicScalarWhereWithAggregatesInput]
+  NOT: [ComicScalarWhereWithAggregatesInput]
+  id: IntWithAggregatesFilter
+  name: StringWithAggregatesFilter
+  slug: StringWithAggregatesFilter
+  thumb: StringWithAggregatesFilter
+  type: StringWithAggregatesFilter
+  thumbWide: StringNullableWithAggregatesFilter
+  altName: JsonNullableWithAggregatesFilter
+  isHentai: BoolWithAggregatesFilter
+  released: DateTimeWithAggregatesFilter
+  rating: FloatWithAggregatesFilter
+  views: IntWithAggregatesFilter
+  viewsHourly: IntWithAggregatesFilter
+  viewsDaily: IntWithAggregatesFilter
+  viewsWeek: IntWithAggregatesFilter
+  description: StringNullableWithAggregatesFilter
+  status: StringNullableWithAggregatesFilter
+  age: StringNullableWithAggregatesFilter
+  concept: StringNullableWithAggregatesFilter
+  lastChapterUpdateAt: DateTimeWithAggregatesFilter
+  createdAt: DateTimeWithAggregatesFilter
+  updatedAt: DateTimeWithAggregatesFilter
+  authorId: IntWithAggregatesFilter
+}
+
+type ComicSearch {
+  comics: [Comic]
+  offset: Int
+  limit: Int
+  processingTimeMs: Int
+  total: Int
+  exhaustiveNbHits: Boolean
+}
+
+type ComicSumAggregateOutputType {
+  id: Int
+  rating: Float
+  views: Int
+  viewsHourly: Int
+  viewsDaily: Int
+  viewsWeek: Int
+  authorId: Int
+}
+
+input ComicSumOrderByAggregateInput {
+  id: SortOrder
+  rating: SortOrder
+  views: SortOrder
+  viewsHourly: SortOrder
+  viewsDaily: SortOrder
+  viewsWeek: SortOrder
+  authorId: SortOrder
+}
+
+input ComicUncheckedCreateInput {
+  id: Int
+  name: String!
+  slug: String!
+  thumb: String!
+  type: String!
+  thumbWide: String
+  altName: Json
+  isHentai: Boolean
+  released: DateTime
+  rating: Float
+  views: Int
+  viewsHourly: Int
+  viewsDaily: Int
+  viewsWeek: Int
+  description: String
+  status: String
+  age: String
+  concept: String
+  lastChapterUpdateAt: DateTime
+  createdAt: DateTime
+  updatedAt: DateTime
+  authorId: Int!
+  chapters: ChapterUncheckedCreateNestedManyWithoutComicInput
+  genres: GenreUncheckedCreateNestedManyWithoutComicsInput
+  userbookmarks: ComicBookmarkUncheckedCreateNestedManyWithoutComicInput
+}
+
+input ComicUncheckedCreateNestedManyWithoutAuthorInput {
+  create: [ComicCreateWithoutAuthorInput]
+  connectOrCreate: [ComicCreateOrConnectWithoutAuthorInput]
+  createMany: ComicCreateManyAuthorInputEnvelope
+  connect: [ComicWhereUniqueInput]
+}
+
+input ComicUncheckedCreateNestedManyWithoutGenresInput {
+  create: [ComicCreateWithoutGenresInput]
+  connectOrCreate: [ComicCreateOrConnectWithoutGenresInput]
+  connect: [ComicWhereUniqueInput]
+}
+
+input ComicUncheckedCreateWithoutAuthorInput {
+  id: Int
+  name: String!
+  slug: String!
+  thumb: String!
+  type: String!
+  thumbWide: String
+  altName: Json
+  isHentai: Boolean
+  released: DateTime
+  rating: Float
+  views: Int
+  viewsHourly: Int
+  viewsDaily: Int
+  viewsWeek: Int
+  description: String
+  status: String
+  age: String
+  concept: String
+  lastChapterUpdateAt: DateTime
+  createdAt: DateTime
+  updatedAt: DateTime
+  chapters: ChapterUncheckedCreateNestedManyWithoutComicInput
+  genres: GenreUncheckedCreateNestedManyWithoutComicsInput
+  userbookmarks: ComicBookmarkUncheckedCreateNestedManyWithoutComicInput
+}
+
+input ComicUncheckedCreateWithoutChaptersInput {
+  id: Int
+  name: String!
+  slug: String!
+  thumb: String!
+  type: String!
+  thumbWide: String
+  altName: Json
+  isHentai: Boolean
+  released: DateTime
+  rating: Float
+  views: Int
+  viewsHourly: Int
+  viewsDaily: Int
+  viewsWeek: Int
+  description: String
+  status: String
+  age: String
+  concept: String
+  lastChapterUpdateAt: DateTime
+  createdAt: DateTime
+  updatedAt: DateTime
+  authorId: Int!
+  genres: GenreUncheckedCreateNestedManyWithoutComicsInput
+  userbookmarks: ComicBookmarkUncheckedCreateNestedManyWithoutComicInput
+}
+
+input ComicUncheckedCreateWithoutGenresInput {
+  id: Int
+  name: String!
+  slug: String!
+  thumb: String!
+  type: String!
+  thumbWide: String
+  altName: Json
+  isHentai: Boolean
+  released: DateTime
+  rating: Float
+  views: Int
+  viewsHourly: Int
+  viewsDaily: Int
+  viewsWeek: Int
+  description: String
+  status: String
+  age: String
+  concept: String
+  lastChapterUpdateAt: DateTime
+  createdAt: DateTime
+  updatedAt: DateTime
+  authorId: Int!
+  chapters: ChapterUncheckedCreateNestedManyWithoutComicInput
+  userbookmarks: ComicBookmarkUncheckedCreateNestedManyWithoutComicInput
+}
+
+input ComicUncheckedCreateWithoutUserbookmarksInput {
+  id: Int
+  name: String!
+  slug: String!
+  thumb: String!
+  type: String!
+  thumbWide: String
+  altName: Json
+  isHentai: Boolean
+  released: DateTime
+  rating: Float
+  views: Int
+  viewsHourly: Int
+  viewsDaily: Int
+  viewsWeek: Int
+  description: String
+  status: String
+  age: String
+  concept: String
+  lastChapterUpdateAt: DateTime
+  createdAt: DateTime
+  updatedAt: DateTime
+  authorId: Int!
+  chapters: ChapterUncheckedCreateNestedManyWithoutComicInput
+  genres: GenreUncheckedCreateNestedManyWithoutComicsInput
+}
+
+input ComicUncheckedUpdateInput {
+  id: IntFieldUpdateOperationsInput
+  name: StringFieldUpdateOperationsInput
+  slug: StringFieldUpdateOperationsInput
+  thumb: StringFieldUpdateOperationsInput
+  type: StringFieldUpdateOperationsInput
+  thumbWide: NullableStringFieldUpdateOperationsInput
+  altName: Json
+  isHentai: BoolFieldUpdateOperationsInput
+  released: DateTimeFieldUpdateOperationsInput
+  rating: FloatFieldUpdateOperationsInput
+  views: IntFieldUpdateOperationsInput
+  viewsHourly: IntFieldUpdateOperationsInput
+  viewsDaily: IntFieldUpdateOperationsInput
+  viewsWeek: IntFieldUpdateOperationsInput
+  description: NullableStringFieldUpdateOperationsInput
+  status: NullableStringFieldUpdateOperationsInput
+  age: NullableStringFieldUpdateOperationsInput
+  concept: NullableStringFieldUpdateOperationsInput
+  lastChapterUpdateAt: DateTimeFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  authorId: IntFieldUpdateOperationsInput
+  chapters: ChapterUncheckedUpdateManyWithoutComicInput
+  genres: GenreUncheckedUpdateManyWithoutComicsInput
+  userbookmarks: ComicBookmarkUncheckedUpdateManyWithoutComicInput
+}
+
+input ComicUncheckedUpdateManyInput {
+  id: IntFieldUpdateOperationsInput
+  name: StringFieldUpdateOperationsInput
+  slug: StringFieldUpdateOperationsInput
+  thumb: StringFieldUpdateOperationsInput
+  type: StringFieldUpdateOperationsInput
+  thumbWide: NullableStringFieldUpdateOperationsInput
+  altName: Json
+  isHentai: BoolFieldUpdateOperationsInput
+  released: DateTimeFieldUpdateOperationsInput
+  rating: FloatFieldUpdateOperationsInput
+  views: IntFieldUpdateOperationsInput
+  viewsHourly: IntFieldUpdateOperationsInput
+  viewsDaily: IntFieldUpdateOperationsInput
+  viewsWeek: IntFieldUpdateOperationsInput
+  description: NullableStringFieldUpdateOperationsInput
+  status: NullableStringFieldUpdateOperationsInput
+  age: NullableStringFieldUpdateOperationsInput
+  concept: NullableStringFieldUpdateOperationsInput
+  lastChapterUpdateAt: DateTimeFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  authorId: IntFieldUpdateOperationsInput
+}
+
+input ComicUncheckedUpdateManyWithoutAuthorInput {
+  create: [ComicCreateWithoutAuthorInput]
+  connectOrCreate: [ComicCreateOrConnectWithoutAuthorInput]
+  upsert: [ComicUpsertWithWhereUniqueWithoutAuthorInput]
+  createMany: ComicCreateManyAuthorInputEnvelope
+  set: [ComicWhereUniqueInput]
+  disconnect: [ComicWhereUniqueInput]
+  delete: [ComicWhereUniqueInput]
+  connect: [ComicWhereUniqueInput]
+  update: [ComicUpdateWithWhereUniqueWithoutAuthorInput]
+  updateMany: [ComicUpdateManyWithWhereWithoutAuthorInput]
+  deleteMany: [ComicScalarWhereInput]
+}
+
+input ComicUncheckedUpdateManyWithoutComicsInput {
+  id: IntFieldUpdateOperationsInput
+  name: StringFieldUpdateOperationsInput
+  slug: StringFieldUpdateOperationsInput
+  thumb: StringFieldUpdateOperationsInput
+  type: StringFieldUpdateOperationsInput
+  thumbWide: NullableStringFieldUpdateOperationsInput
+  altName: Json
+  isHentai: BoolFieldUpdateOperationsInput
+  released: DateTimeFieldUpdateOperationsInput
+  rating: FloatFieldUpdateOperationsInput
+  views: IntFieldUpdateOperationsInput
+  viewsHourly: IntFieldUpdateOperationsInput
+  viewsDaily: IntFieldUpdateOperationsInput
+  viewsWeek: IntFieldUpdateOperationsInput
+  description: NullableStringFieldUpdateOperationsInput
+  status: NullableStringFieldUpdateOperationsInput
+  age: NullableStringFieldUpdateOperationsInput
+  concept: NullableStringFieldUpdateOperationsInput
+  lastChapterUpdateAt: DateTimeFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input ComicUncheckedUpdateManyWithoutGenresInput {
+  create: [ComicCreateWithoutGenresInput]
+  connectOrCreate: [ComicCreateOrConnectWithoutGenresInput]
+  upsert: [ComicUpsertWithWhereUniqueWithoutGenresInput]
+  set: [ComicWhereUniqueInput]
+  disconnect: [ComicWhereUniqueInput]
+  delete: [ComicWhereUniqueInput]
+  connect: [ComicWhereUniqueInput]
+  update: [ComicUpdateWithWhereUniqueWithoutGenresInput]
+  updateMany: [ComicUpdateManyWithWhereWithoutGenresInput]
+  deleteMany: [ComicScalarWhereInput]
+}
+
+input ComicUncheckedUpdateWithoutAuthorInput {
+  id: IntFieldUpdateOperationsInput
+  name: StringFieldUpdateOperationsInput
+  slug: StringFieldUpdateOperationsInput
+  thumb: StringFieldUpdateOperationsInput
+  type: StringFieldUpdateOperationsInput
+  thumbWide: NullableStringFieldUpdateOperationsInput
+  altName: Json
+  isHentai: BoolFieldUpdateOperationsInput
+  released: DateTimeFieldUpdateOperationsInput
+  rating: FloatFieldUpdateOperationsInput
+  views: IntFieldUpdateOperationsInput
+  viewsHourly: IntFieldUpdateOperationsInput
+  viewsDaily: IntFieldUpdateOperationsInput
+  viewsWeek: IntFieldUpdateOperationsInput
+  description: NullableStringFieldUpdateOperationsInput
+  status: NullableStringFieldUpdateOperationsInput
+  age: NullableStringFieldUpdateOperationsInput
+  concept: NullableStringFieldUpdateOperationsInput
+  lastChapterUpdateAt: DateTimeFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  chapters: ChapterUncheckedUpdateManyWithoutComicInput
+  genres: GenreUncheckedUpdateManyWithoutComicsInput
+  userbookmarks: ComicBookmarkUncheckedUpdateManyWithoutComicInput
+}
+
+input ComicUncheckedUpdateWithoutChaptersInput {
+  id: IntFieldUpdateOperationsInput
+  name: StringFieldUpdateOperationsInput
+  slug: StringFieldUpdateOperationsInput
+  thumb: StringFieldUpdateOperationsInput
+  type: StringFieldUpdateOperationsInput
+  thumbWide: NullableStringFieldUpdateOperationsInput
+  altName: Json
+  isHentai: BoolFieldUpdateOperationsInput
+  released: DateTimeFieldUpdateOperationsInput
+  rating: FloatFieldUpdateOperationsInput
+  views: IntFieldUpdateOperationsInput
+  viewsHourly: IntFieldUpdateOperationsInput
+  viewsDaily: IntFieldUpdateOperationsInput
+  viewsWeek: IntFieldUpdateOperationsInput
+  description: NullableStringFieldUpdateOperationsInput
+  status: NullableStringFieldUpdateOperationsInput
+  age: NullableStringFieldUpdateOperationsInput
+  concept: NullableStringFieldUpdateOperationsInput
+  lastChapterUpdateAt: DateTimeFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  authorId: IntFieldUpdateOperationsInput
+  genres: GenreUncheckedUpdateManyWithoutComicsInput
+  userbookmarks: ComicBookmarkUncheckedUpdateManyWithoutComicInput
+}
+
+input ComicUncheckedUpdateWithoutGenresInput {
+  id: IntFieldUpdateOperationsInput
+  name: StringFieldUpdateOperationsInput
+  slug: StringFieldUpdateOperationsInput
+  thumb: StringFieldUpdateOperationsInput
+  type: StringFieldUpdateOperationsInput
+  thumbWide: NullableStringFieldUpdateOperationsInput
+  altName: Json
+  isHentai: BoolFieldUpdateOperationsInput
+  released: DateTimeFieldUpdateOperationsInput
+  rating: FloatFieldUpdateOperationsInput
+  views: IntFieldUpdateOperationsInput
+  viewsHourly: IntFieldUpdateOperationsInput
+  viewsDaily: IntFieldUpdateOperationsInput
+  viewsWeek: IntFieldUpdateOperationsInput
+  description: NullableStringFieldUpdateOperationsInput
+  status: NullableStringFieldUpdateOperationsInput
+  age: NullableStringFieldUpdateOperationsInput
+  concept: NullableStringFieldUpdateOperationsInput
+  lastChapterUpdateAt: DateTimeFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  authorId: IntFieldUpdateOperationsInput
+  chapters: ChapterUncheckedUpdateManyWithoutComicInput
+  userbookmarks: ComicBookmarkUncheckedUpdateManyWithoutComicInput
+}
+
+input ComicUncheckedUpdateWithoutUserbookmarksInput {
+  id: IntFieldUpdateOperationsInput
+  name: StringFieldUpdateOperationsInput
+  slug: StringFieldUpdateOperationsInput
+  thumb: StringFieldUpdateOperationsInput
+  type: StringFieldUpdateOperationsInput
+  thumbWide: NullableStringFieldUpdateOperationsInput
+  altName: Json
+  isHentai: BoolFieldUpdateOperationsInput
+  released: DateTimeFieldUpdateOperationsInput
+  rating: FloatFieldUpdateOperationsInput
+  views: IntFieldUpdateOperationsInput
+  viewsHourly: IntFieldUpdateOperationsInput
+  viewsDaily: IntFieldUpdateOperationsInput
+  viewsWeek: IntFieldUpdateOperationsInput
+  description: NullableStringFieldUpdateOperationsInput
+  status: NullableStringFieldUpdateOperationsInput
+  age: NullableStringFieldUpdateOperationsInput
+  concept: NullableStringFieldUpdateOperationsInput
+  lastChapterUpdateAt: DateTimeFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  authorId: IntFieldUpdateOperationsInput
+  chapters: ChapterUncheckedUpdateManyWithoutComicInput
+  genres: GenreUncheckedUpdateManyWithoutComicsInput
+}
+
+input ComicUpdateInput {
+  name: StringFieldUpdateOperationsInput
+  slug: StringFieldUpdateOperationsInput
+  thumb: StringFieldUpdateOperationsInput
+  type: StringFieldUpdateOperationsInput
+  thumbWide: NullableStringFieldUpdateOperationsInput
+  altName: Json
+  isHentai: BoolFieldUpdateOperationsInput
+  released: DateTimeFieldUpdateOperationsInput
+  author: AuthorUpdateOneRequiredWithoutComicsInput
+  rating: FloatFieldUpdateOperationsInput
+  views: IntFieldUpdateOperationsInput
+  viewsHourly: IntFieldUpdateOperationsInput
+  viewsDaily: IntFieldUpdateOperationsInput
+  viewsWeek: IntFieldUpdateOperationsInput
+  description: NullableStringFieldUpdateOperationsInput
+  status: NullableStringFieldUpdateOperationsInput
+  age: NullableStringFieldUpdateOperationsInput
+  concept: NullableStringFieldUpdateOperationsInput
+  lastChapterUpdateAt: DateTimeFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  chapters: ChapterUpdateManyWithoutComicInput
+  genres: GenreUpdateManyWithoutComicsInput
+  userbookmarks: ComicBookmarkUpdateManyWithoutComicInput
+}
+
+input ComicUpdateManyMutationInput {
+  name: StringFieldUpdateOperationsInput
+  slug: StringFieldUpdateOperationsInput
+  thumb: StringFieldUpdateOperationsInput
+  type: StringFieldUpdateOperationsInput
+  thumbWide: NullableStringFieldUpdateOperationsInput
+  altName: Json
+  isHentai: BoolFieldUpdateOperationsInput
+  released: DateTimeFieldUpdateOperationsInput
+  rating: FloatFieldUpdateOperationsInput
+  views: IntFieldUpdateOperationsInput
+  viewsHourly: IntFieldUpdateOperationsInput
+  viewsDaily: IntFieldUpdateOperationsInput
+  viewsWeek: IntFieldUpdateOperationsInput
+  description: NullableStringFieldUpdateOperationsInput
+  status: NullableStringFieldUpdateOperationsInput
+  age: NullableStringFieldUpdateOperationsInput
+  concept: NullableStringFieldUpdateOperationsInput
+  lastChapterUpdateAt: DateTimeFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input ComicUpdateManyWithoutAuthorInput {
+  create: [ComicCreateWithoutAuthorInput]
+  connectOrCreate: [ComicCreateOrConnectWithoutAuthorInput]
+  upsert: [ComicUpsertWithWhereUniqueWithoutAuthorInput]
+  createMany: ComicCreateManyAuthorInputEnvelope
+  set: [ComicWhereUniqueInput]
+  disconnect: [ComicWhereUniqueInput]
+  delete: [ComicWhereUniqueInput]
+  connect: [ComicWhereUniqueInput]
+  update: [ComicUpdateWithWhereUniqueWithoutAuthorInput]
+  updateMany: [ComicUpdateManyWithWhereWithoutAuthorInput]
+  deleteMany: [ComicScalarWhereInput]
+}
+
+input ComicUpdateManyWithoutGenresInput {
+  create: [ComicCreateWithoutGenresInput]
+  connectOrCreate: [ComicCreateOrConnectWithoutGenresInput]
+  upsert: [ComicUpsertWithWhereUniqueWithoutGenresInput]
+  set: [ComicWhereUniqueInput]
+  disconnect: [ComicWhereUniqueInput]
+  delete: [ComicWhereUniqueInput]
+  connect: [ComicWhereUniqueInput]
+  update: [ComicUpdateWithWhereUniqueWithoutGenresInput]
+  updateMany: [ComicUpdateManyWithWhereWithoutGenresInput]
+  deleteMany: [ComicScalarWhereInput]
+}
+
+input ComicUpdateManyWithWhereWithoutAuthorInput {
+  where: ComicScalarWhereInput!
+  data: ComicUncheckedUpdateManyWithoutComicsInput!
+}
+
+input ComicUpdateManyWithWhereWithoutGenresInput {
+  where: ComicScalarWhereInput!
+  data: ComicUncheckedUpdateManyWithoutComicsInput!
+}
+
+input ComicUpdateOneRequiredWithoutChaptersInput {
+  create: ComicUncheckedCreateWithoutChaptersInput
+  connectOrCreate: ComicCreateOrConnectWithoutChaptersInput
+  upsert: ComicUpsertWithoutChaptersInput
+  connect: ComicWhereUniqueInput
+  update: ComicUncheckedUpdateWithoutChaptersInput
+}
+
+input ComicUpdateOneRequiredWithoutUserbookmarksInput {
+  create: ComicUncheckedCreateWithoutUserbookmarksInput
+  connectOrCreate: ComicCreateOrConnectWithoutUserbookmarksInput
+  upsert: ComicUpsertWithoutUserbookmarksInput
+  connect: ComicWhereUniqueInput
+  update: ComicUncheckedUpdateWithoutUserbookmarksInput
+}
+
+input ComicUpdateWithoutAuthorInput {
+  name: StringFieldUpdateOperationsInput
+  slug: StringFieldUpdateOperationsInput
+  thumb: StringFieldUpdateOperationsInput
+  type: StringFieldUpdateOperationsInput
+  thumbWide: NullableStringFieldUpdateOperationsInput
+  altName: Json
+  isHentai: BoolFieldUpdateOperationsInput
+  released: DateTimeFieldUpdateOperationsInput
+  rating: FloatFieldUpdateOperationsInput
+  views: IntFieldUpdateOperationsInput
+  viewsHourly: IntFieldUpdateOperationsInput
+  viewsDaily: IntFieldUpdateOperationsInput
+  viewsWeek: IntFieldUpdateOperationsInput
+  description: NullableStringFieldUpdateOperationsInput
+  status: NullableStringFieldUpdateOperationsInput
+  age: NullableStringFieldUpdateOperationsInput
+  concept: NullableStringFieldUpdateOperationsInput
+  lastChapterUpdateAt: DateTimeFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  chapters: ChapterUpdateManyWithoutComicInput
+  genres: GenreUpdateManyWithoutComicsInput
+  userbookmarks: ComicBookmarkUpdateManyWithoutComicInput
+}
+
+input ComicUpdateWithoutChaptersInput {
+  name: StringFieldUpdateOperationsInput
+  slug: StringFieldUpdateOperationsInput
+  thumb: StringFieldUpdateOperationsInput
+  type: StringFieldUpdateOperationsInput
+  thumbWide: NullableStringFieldUpdateOperationsInput
+  altName: Json
+  isHentai: BoolFieldUpdateOperationsInput
+  released: DateTimeFieldUpdateOperationsInput
+  author: AuthorUpdateOneRequiredWithoutComicsInput
+  rating: FloatFieldUpdateOperationsInput
+  views: IntFieldUpdateOperationsInput
+  viewsHourly: IntFieldUpdateOperationsInput
+  viewsDaily: IntFieldUpdateOperationsInput
+  viewsWeek: IntFieldUpdateOperationsInput
+  description: NullableStringFieldUpdateOperationsInput
+  status: NullableStringFieldUpdateOperationsInput
+  age: NullableStringFieldUpdateOperationsInput
+  concept: NullableStringFieldUpdateOperationsInput
+  lastChapterUpdateAt: DateTimeFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  genres: GenreUpdateManyWithoutComicsInput
+  userbookmarks: ComicBookmarkUpdateManyWithoutComicInput
+}
+
+input ComicUpdateWithoutGenresInput {
+  name: StringFieldUpdateOperationsInput
+  slug: StringFieldUpdateOperationsInput
+  thumb: StringFieldUpdateOperationsInput
+  type: StringFieldUpdateOperationsInput
+  thumbWide: NullableStringFieldUpdateOperationsInput
+  altName: Json
+  isHentai: BoolFieldUpdateOperationsInput
+  released: DateTimeFieldUpdateOperationsInput
+  author: AuthorUpdateOneRequiredWithoutComicsInput
+  rating: FloatFieldUpdateOperationsInput
+  views: IntFieldUpdateOperationsInput
+  viewsHourly: IntFieldUpdateOperationsInput
+  viewsDaily: IntFieldUpdateOperationsInput
+  viewsWeek: IntFieldUpdateOperationsInput
+  description: NullableStringFieldUpdateOperationsInput
+  status: NullableStringFieldUpdateOperationsInput
+  age: NullableStringFieldUpdateOperationsInput
+  concept: NullableStringFieldUpdateOperationsInput
+  lastChapterUpdateAt: DateTimeFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  chapters: ChapterUpdateManyWithoutComicInput
+  userbookmarks: ComicBookmarkUpdateManyWithoutComicInput
+}
+
+input ComicUpdateWithoutUserbookmarksInput {
+  name: StringFieldUpdateOperationsInput
+  slug: StringFieldUpdateOperationsInput
+  thumb: StringFieldUpdateOperationsInput
+  type: StringFieldUpdateOperationsInput
+  thumbWide: NullableStringFieldUpdateOperationsInput
+  altName: Json
+  isHentai: BoolFieldUpdateOperationsInput
+  released: DateTimeFieldUpdateOperationsInput
+  author: AuthorUpdateOneRequiredWithoutComicsInput
+  rating: FloatFieldUpdateOperationsInput
+  views: IntFieldUpdateOperationsInput
+  viewsHourly: IntFieldUpdateOperationsInput
+  viewsDaily: IntFieldUpdateOperationsInput
+  viewsWeek: IntFieldUpdateOperationsInput
+  description: NullableStringFieldUpdateOperationsInput
+  status: NullableStringFieldUpdateOperationsInput
+  age: NullableStringFieldUpdateOperationsInput
+  concept: NullableStringFieldUpdateOperationsInput
+  lastChapterUpdateAt: DateTimeFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  chapters: ChapterUpdateManyWithoutComicInput
+  genres: GenreUpdateManyWithoutComicsInput
+}
+
+input ComicUpdateWithWhereUniqueWithoutAuthorInput {
+  where: ComicWhereUniqueInput!
+  data: ComicUncheckedUpdateWithoutAuthorInput!
+}
+
+input ComicUpdateWithWhereUniqueWithoutGenresInput {
+  where: ComicWhereUniqueInput!
+  data: ComicUncheckedUpdateWithoutGenresInput!
+}
+
+input ComicUpsertWithoutChaptersInput {
+  update: ComicUncheckedUpdateWithoutChaptersInput!
+  create: ComicUncheckedCreateWithoutChaptersInput!
+}
+
+input ComicUpsertWithoutUserbookmarksInput {
+  update: ComicUncheckedUpdateWithoutUserbookmarksInput!
+  create: ComicUncheckedCreateWithoutUserbookmarksInput!
+}
+
+input ComicUpsertWithWhereUniqueWithoutAuthorInput {
+  where: ComicWhereUniqueInput!
+  update: ComicUncheckedUpdateWithoutAuthorInput!
+  create: ComicUncheckedCreateWithoutAuthorInput!
+}
+
+input ComicUpsertWithWhereUniqueWithoutGenresInput {
+  where: ComicWhereUniqueInput!
+  update: ComicUncheckedUpdateWithoutGenresInput!
+  create: ComicUncheckedCreateWithoutGenresInput!
+}
+
+input ComicWhereInput {
+  AND: [ComicWhereInput]
+  OR: [ComicWhereInput]
+  NOT: [ComicWhereInput]
+  id: IntFilter
+  name: StringFilter
+  slug: StringFilter
+  thumb: StringFilter
+  type: StringFilter
+  thumbWide: StringNullableFilter
+  altName: JsonNullableFilter
+  isHentai: BoolFilter
+  released: DateTimeFilter
+  author: AuthorWhereInput
+  rating: FloatFilter
+  views: IntFilter
+  viewsHourly: IntFilter
+  viewsDaily: IntFilter
+  viewsWeek: IntFilter
+  description: StringNullableFilter
+  status: StringNullableFilter
+  age: StringNullableFilter
+  concept: StringNullableFilter
+  lastChapterUpdateAt: DateTimeFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  authorId: IntFilter
+  chapters: ChapterListRelationFilter
+  genres: GenreListRelationFilter
+  userbookmarks: ComicBookmarkListRelationFilter
+}
+
+input ComicWhereUniqueInput {
+  id: Int
+  name: String
+  slug: String
+}
+
+"""Date custom scalar type"""
+scalar DateTime
+
+input DateTimeFieldUpdateOperationsInput {
+  set: DateTime
+}
+
+input DateTimeFilter {
+  equals: DateTime
+  in: [DateTime]
+  notIn: [DateTime]
+  lt: DateTime
+  lte: DateTime
+  gt: DateTime
+  gte: DateTime
+  not: NestedDateTimeFilter
+}
+
+input DateTimeWithAggregatesFilter {
+  equals: DateTime
+  in: [DateTime]
+  notIn: [DateTime]
+  lt: DateTime
+  lte: DateTime
+  gt: DateTime
+  gte: DateTime
+  not: NestedDateTimeWithAggregatesFilter
+  _count: NestedIntFilter
+  _min: NestedDateTimeFilter
+  _max: NestedDateTimeFilter
+}
+
+"""Decimal custom scalar type"""
+scalar Decimal
+
+input EnumAdsPositionNullableListFilter {
+  equals: [AdsPosition]
+  has: AdsPosition
+  hasEvery: [AdsPosition]
+  hasSome: [AdsPosition]
+  isEmpty: Boolean
+}
+
+input EnumChapterQualityFieldUpdateOperationsInput {
+  set: ChapterQuality
+}
+
+input EnumChapterQualityFilter {
+  equals: ChapterQuality
+  in: [ChapterQuality]
+  notIn: [ChapterQuality]
+  not: NestedEnumChapterQualityFilter
+}
+
+input EnumChapterQualityWithAggregatesFilter {
+  equals: ChapterQuality
+  in: [ChapterQuality]
+  notIn: [ChapterQuality]
+  not: NestedEnumChapterQualityWithAggregatesFilter
+  _count: NestedIntFilter
+  _min: NestedEnumChapterQualityFilter
+  _max: NestedEnumChapterQualityFilter
+}
+
+input FloatFieldUpdateOperationsInput {
+  set: Float
+  increment: Float
+  decrement: Float
+  multiply: Float
+  divide: Float
+}
+
+input FloatFilter {
+  equals: Float
+  in: [Float]
+  notIn: [Float]
+  lt: Float
+  lte: Float
+  gt: Float
+  gte: Float
+  not: NestedFloatFilter
+}
+
+input FloatWithAggregatesFilter {
+  equals: Float
+  in: [Float]
+  notIn: [Float]
+  lt: Float
+  lte: Float
+  gt: Float
+  gte: Float
+  not: NestedFloatWithAggregatesFilter
+  _count: NestedIntFilter
+  _avg: NestedFloatFilter
+  _sum: NestedFloatFilter
+  _min: NestedFloatFilter
+  _max: NestedFloatFilter
+}
+
+type Genre {
+  id: Int!
+  name: String!
+  slug: String!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  comics(where: ComicWhereInput, orderBy: ComicOrderByWithRelationInput, cursor: ComicWhereUniqueInput, take: Int, skip: Int, distinct: ComicScalarFieldEnum): [Comic!]!
+  _count: GenreCountOutputType!
+}
+
+type GenreAvgAggregateOutputType {
+  id: Float
+}
+
+input GenreAvgOrderByAggregateInput {
+  id: SortOrder
+}
+
+type GenreCountAggregateOutputType {
+  id: Int!
+  name: Int!
+  slug: Int!
+  createdAt: Int!
+  updatedAt: Int!
+  _all: Int!
+}
+
+input GenreCountOrderByAggregateInput {
+  id: SortOrder
+  name: SortOrder
+  slug: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+}
+
+type GenreCountOutputType {
+  comics: Int!
+}
+
+input GenreCreateInput {
+  name: String!
+  slug: String!
+  createdAt: DateTime
+  updatedAt: DateTime
+  comics: ComicCreateNestedManyWithoutGenresInput
+}
+
+input GenreCreateManyInput {
+  id: Int
+  name: String!
+  slug: String!
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input GenreCreateNestedManyWithoutComicsInput {
+  create: [GenreCreateWithoutComicsInput]
+  connectOrCreate: [GenreCreateOrConnectWithoutComicsInput]
+  connect: [GenreWhereUniqueInput]
+}
+
+input GenreCreateOrConnectWithoutComicsInput {
+  where: GenreWhereUniqueInput!
+  create: GenreUncheckedCreateWithoutComicsInput!
+}
+
+input GenreCreateWithoutComicsInput {
+  name: String!
+  slug: String!
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input GenreListRelationFilter {
+  every: GenreWhereInput
+  some: GenreWhereInput
+  none: GenreWhereInput
+}
+
+type GenreMaxAggregateOutputType {
+  id: Int
+  name: String
+  slug: String
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input GenreMaxOrderByAggregateInput {
+  id: SortOrder
+  name: SortOrder
+  slug: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+}
+
+type GenreMinAggregateOutputType {
+  id: Int
+  name: String
+  slug: String
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input GenreMinOrderByAggregateInput {
+  id: SortOrder
+  name: SortOrder
+  slug: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+}
+
+input GenreOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input GenreOrderByWithAggregationInput {
+  id: SortOrder
+  name: SortOrder
+  slug: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  _count: GenreCountOrderByAggregateInput
+  _avg: GenreAvgOrderByAggregateInput
+  _max: GenreMaxOrderByAggregateInput
+  _min: GenreMinOrderByAggregateInput
+  _sum: GenreSumOrderByAggregateInput
+}
+
+input GenreOrderByWithRelationInput {
+  id: SortOrder
+  name: SortOrder
+  slug: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  comics: ComicOrderByRelationAggregateInput
+}
+
+enum GenreScalarFieldEnum {
+  id
+  name
+  slug
+  createdAt
+  updatedAt
+}
+
+input GenreScalarWhereInput {
+  AND: [GenreScalarWhereInput]
+  OR: [GenreScalarWhereInput]
+  NOT: [GenreScalarWhereInput]
+  id: IntFilter
+  name: StringFilter
+  slug: StringFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+}
+
+input GenreScalarWhereWithAggregatesInput {
+  AND: [GenreScalarWhereWithAggregatesInput]
+  OR: [GenreScalarWhereWithAggregatesInput]
+  NOT: [GenreScalarWhereWithAggregatesInput]
+  id: IntWithAggregatesFilter
+  name: StringWithAggregatesFilter
+  slug: StringWithAggregatesFilter
+  createdAt: DateTimeWithAggregatesFilter
+  updatedAt: DateTimeWithAggregatesFilter
+}
+
+type GenreSearch {
+  authors: [Genre]
+  offset: Int
+  limit: Int
+  processingTimeMs: Int
+  total: Int
+  exhaustiveNbHits: Boolean
+}
+
+type GenreSumAggregateOutputType {
+  id: Int
+}
+
+input GenreSumOrderByAggregateInput {
+  id: SortOrder
+}
+
+input GenreUncheckedCreateInput {
+  id: Int
+  name: String!
+  slug: String!
+  createdAt: DateTime
+  updatedAt: DateTime
+  comics: ComicUncheckedCreateNestedManyWithoutGenresInput
+}
+
+input GenreUncheckedCreateNestedManyWithoutComicsInput {
+  create: [GenreCreateWithoutComicsInput]
+  connectOrCreate: [GenreCreateOrConnectWithoutComicsInput]
+  connect: [GenreWhereUniqueInput]
+}
+
+input GenreUncheckedCreateWithoutComicsInput {
+  id: Int
+  name: String!
+  slug: String!
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input GenreUncheckedUpdateInput {
+  id: IntFieldUpdateOperationsInput
+  name: StringFieldUpdateOperationsInput
+  slug: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  comics: ComicUncheckedUpdateManyWithoutGenresInput
+}
+
+input GenreUncheckedUpdateManyInput {
+  id: IntFieldUpdateOperationsInput
+  name: StringFieldUpdateOperationsInput
+  slug: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input GenreUncheckedUpdateManyWithoutComicsInput {
+  create: [GenreCreateWithoutComicsInput]
+  connectOrCreate: [GenreCreateOrConnectWithoutComicsInput]
+  upsert: [GenreUpsertWithWhereUniqueWithoutComicsInput]
+  set: [GenreWhereUniqueInput]
+  disconnect: [GenreWhereUniqueInput]
+  delete: [GenreWhereUniqueInput]
+  connect: [GenreWhereUniqueInput]
+  update: [GenreUpdateWithWhereUniqueWithoutComicsInput]
+  updateMany: [GenreUpdateManyWithWhereWithoutComicsInput]
+  deleteMany: [GenreScalarWhereInput]
+}
+
+input GenreUncheckedUpdateManyWithoutGenresInput {
+  id: IntFieldUpdateOperationsInput
+  name: StringFieldUpdateOperationsInput
+  slug: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input GenreUncheckedUpdateWithoutComicsInput {
+  id: IntFieldUpdateOperationsInput
+  name: StringFieldUpdateOperationsInput
+  slug: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input GenreUpdateInput {
+  name: StringFieldUpdateOperationsInput
+  slug: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  comics: ComicUpdateManyWithoutGenresInput
+}
+
+input GenreUpdateManyMutationInput {
+  name: StringFieldUpdateOperationsInput
+  slug: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input GenreUpdateManyWithoutComicsInput {
+  create: [GenreCreateWithoutComicsInput]
+  connectOrCreate: [GenreCreateOrConnectWithoutComicsInput]
+  upsert: [GenreUpsertWithWhereUniqueWithoutComicsInput]
+  set: [GenreWhereUniqueInput]
+  disconnect: [GenreWhereUniqueInput]
+  delete: [GenreWhereUniqueInput]
+  connect: [GenreWhereUniqueInput]
+  update: [GenreUpdateWithWhereUniqueWithoutComicsInput]
+  updateMany: [GenreUpdateManyWithWhereWithoutComicsInput]
+  deleteMany: [GenreScalarWhereInput]
+}
+
+input GenreUpdateManyWithWhereWithoutComicsInput {
+  where: GenreScalarWhereInput!
+  data: GenreUncheckedUpdateManyWithoutGenresInput!
+}
+
+input GenreUpdateWithoutComicsInput {
+  name: StringFieldUpdateOperationsInput
+  slug: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input GenreUpdateWithWhereUniqueWithoutComicsInput {
+  where: GenreWhereUniqueInput!
+  data: GenreUncheckedUpdateWithoutComicsInput!
+}
+
+input GenreUpsertWithWhereUniqueWithoutComicsInput {
+  where: GenreWhereUniqueInput!
+  update: GenreUncheckedUpdateWithoutComicsInput!
+  create: GenreUncheckedCreateWithoutComicsInput!
+}
+
+input GenreWhereInput {
+  AND: [GenreWhereInput]
+  OR: [GenreWhereInput]
+  NOT: [GenreWhereInput]
+  id: IntFilter
+  name: StringFilter
+  slug: StringFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  comics: ComicListRelationFilter
+}
+
+input GenreWhereUniqueInput {
+  id: Int
+  name: String
+  slug: String
+}
+
+input IntFieldUpdateOperationsInput {
+  set: Int
+  increment: Int
+  decrement: Int
+  multiply: Int
+  divide: Int
+}
+
+input IntFilter {
+  equals: Int
+  in: [Int]
+  notIn: [Int]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: NestedIntFilter
+}
+
+input IntNullableFilter {
+  equals: Int
+  in: [Int]
+  notIn: [Int]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: NestedIntNullableFilter
+}
+
+input IntNullableWithAggregatesFilter {
+  equals: Int
+  in: [Int]
+  notIn: [Int]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: NestedIntNullableWithAggregatesFilter
+  _count: NestedIntNullableFilter
+  _avg: NestedFloatNullableFilter
+  _sum: NestedIntNullableFilter
+  _min: NestedIntNullableFilter
+  _max: NestedIntNullableFilter
+}
+
+input IntWithAggregatesFilter {
+  equals: Int
+  in: [Int]
+  notIn: [Int]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: NestedIntWithAggregatesFilter
+  _count: NestedIntFilter
+  _avg: NestedFloatFilter
+  _sum: NestedIntFilter
+  _min: NestedIntFilter
+  _max: NestedIntFilter
+}
+
+"""Json custom scalar type"""
+scalar Json
+
+input JsonNullableFilter {
+  equals: Json
+  not: Json
+}
+
+input JsonNullableWithAggregatesFilter {
+  equals: Json
+  not: Json
+  _count: NestedIntNullableFilter
+  _min: NestedJsonNullableFilter
+  _max: NestedJsonNullableFilter
+}
+
+enum JsonNullValueFilter {
+  DbNull
+  JsonNull
+  AnyNull
+}
+
+"""
+The `JSONObject` scalar type represents JSON objects as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+"""
+scalar JSONObject
+
+type Missing {
+  id: Int!
+  data: String!
+  context: String!
+  resolved: Boolean!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type MissingAvgAggregateOutputType {
+  id: Float
+}
+
+input MissingAvgOrderByAggregateInput {
+  id: SortOrder
+}
+
+type MissingCountAggregateOutputType {
+  id: Int!
+  data: Int!
+  context: Int!
+  resolved: Int!
+  createdAt: Int!
+  updatedAt: Int!
+  _all: Int!
+}
+
+input MissingCountOrderByAggregateInput {
+  id: SortOrder
+  data: SortOrder
+  context: SortOrder
+  resolved: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+}
+
+input MissingCreateInput {
+  data: String!
+  context: String!
+  resolved: Boolean
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input MissingCreateManyInput {
+  id: Int
+  data: String!
+  context: String!
+  resolved: Boolean
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+type MissingMaxAggregateOutputType {
+  id: Int
+  data: String
+  context: String
+  resolved: Boolean
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input MissingMaxOrderByAggregateInput {
+  id: SortOrder
+  data: SortOrder
+  context: SortOrder
+  resolved: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+}
+
+type MissingMinAggregateOutputType {
+  id: Int
+  data: String
+  context: String
+  resolved: Boolean
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input MissingMinOrderByAggregateInput {
+  id: SortOrder
+  data: SortOrder
+  context: SortOrder
+  resolved: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+}
+
+input MissingOrderByWithAggregationInput {
+  id: SortOrder
+  data: SortOrder
+  context: SortOrder
+  resolved: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  _count: MissingCountOrderByAggregateInput
+  _avg: MissingAvgOrderByAggregateInput
+  _max: MissingMaxOrderByAggregateInput
+  _min: MissingMinOrderByAggregateInput
+  _sum: MissingSumOrderByAggregateInput
+}
+
+input MissingOrderByWithRelationInput {
+  id: SortOrder
+  data: SortOrder
+  context: SortOrder
+  resolved: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+}
+
+enum MissingScalarFieldEnum {
+  id
+  data
+  context
+  resolved
+  createdAt
+  updatedAt
+}
+
+input MissingScalarWhereWithAggregatesInput {
+  AND: [MissingScalarWhereWithAggregatesInput]
+  OR: [MissingScalarWhereWithAggregatesInput]
+  NOT: [MissingScalarWhereWithAggregatesInput]
+  id: IntWithAggregatesFilter
+  data: StringWithAggregatesFilter
+  context: StringWithAggregatesFilter
+  resolved: BoolWithAggregatesFilter
+  createdAt: DateTimeWithAggregatesFilter
+  updatedAt: DateTimeWithAggregatesFilter
+}
+
+type MissingSumAggregateOutputType {
+  id: Int
+}
+
+input MissingSumOrderByAggregateInput {
+  id: SortOrder
+}
+
+input MissingUncheckedCreateInput {
+  id: Int
+  data: String!
+  context: String!
+  resolved: Boolean
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input MissingUncheckedUpdateInput {
+  id: IntFieldUpdateOperationsInput
+  data: StringFieldUpdateOperationsInput
+  context: StringFieldUpdateOperationsInput
+  resolved: BoolFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input MissingUncheckedUpdateManyInput {
+  id: IntFieldUpdateOperationsInput
+  data: StringFieldUpdateOperationsInput
+  context: StringFieldUpdateOperationsInput
+  resolved: BoolFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input MissingUpdateInput {
+  data: StringFieldUpdateOperationsInput
+  context: StringFieldUpdateOperationsInput
+  resolved: BoolFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input MissingUpdateManyMutationInput {
+  data: StringFieldUpdateOperationsInput
+  context: StringFieldUpdateOperationsInput
+  resolved: BoolFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input MissingWhereInput {
+  AND: [MissingWhereInput]
+  OR: [MissingWhereInput]
+  NOT: [MissingWhereInput]
+  id: IntFilter
+  data: StringFilter
+  context: StringFilter
+  resolved: BoolFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+}
+
+input MissingWhereUniqueInput {
+  id: Int
+}
+
+type Mutation {
+  createOneChangelog(data: ChangelogCreateInput!): Changelog!
+  updateOneChangelog(data: ChangelogUpdateInput!, where: ChangelogWhereUniqueInput!): Changelog!
+  upsertOneChangelog(where: ChangelogWhereUniqueInput!, create: ChangelogCreateInput!, update: ChangelogUpdateInput!): Changelog!
+  deleteOneChangelog(where: ChangelogWhereUniqueInput!): Changelog
+  updateManyChangelog(data: ChangelogUpdateManyMutationInput!, where: ChangelogWhereInput): BatchPayload!
+  deleteManyChangelog(where: ChangelogWhereInput): BatchPayload!
+  createOneViewedChapter(data: ViewedChapterCreateInput!): ViewedChapter!
+  updateOneViewedChapter(data: ViewedChapterUpdateInput!, where: ViewedChapterWhereUniqueInput!): ViewedChapter!
+  upsertOneViewedChapter(where: ViewedChapterWhereUniqueInput!, create: ViewedChapterCreateInput!, update: ViewedChapterUpdateInput!): ViewedChapter!
+  deleteOneViewedChapter(where: ViewedChapterWhereUniqueInput!): ViewedChapter
+  updateManyViewedChapter(data: ViewedChapterUpdateManyMutationInput!, where: ViewedChapterWhereInput): BatchPayload!
+  deleteManyViewedChapter(where: ViewedChapterWhereInput): BatchPayload!
+  createOneComicBookmark(data: ComicBookmarkCreateInput!): ComicBookmark!
+  updateOneComicBookmark(data: ComicBookmarkUpdateInput!, where: ComicBookmarkWhereUniqueInput!): ComicBookmark!
+  upsertOneComicBookmark(where: ComicBookmarkWhereUniqueInput!, create: ComicBookmarkCreateInput!, update: ComicBookmarkUpdateInput!): ComicBookmark!
+  deleteOneComicBookmark(where: ComicBookmarkWhereUniqueInput!): ComicBookmark
+  updateManyComicBookmark(data: ComicBookmarkUpdateManyMutationInput!, where: ComicBookmarkWhereInput): BatchPayload!
+  deleteManyComicBookmark(where: ComicBookmarkWhereInput): BatchPayload!
+  createOneReport(data: ReportCreateInput!): Report!
+  updateOneReport(data: ReportUpdateInput!, where: ReportWhereUniqueInput!): Report!
+  upsertOneReport(where: ReportWhereUniqueInput!, create: ReportCreateInput!, update: ReportUpdateInput!): Report!
+  deleteOneReport(where: ReportWhereUniqueInput!): Report
+  updateManyReport(data: ReportUpdateManyMutationInput!, where: ReportWhereInput): BatchPayload!
+  deleteManyReport(where: ReportWhereInput): BatchPayload!
+  createOneMissing(data: MissingCreateInput!): Missing!
+  updateOneMissing(data: MissingUpdateInput!, where: MissingWhereUniqueInput!): Missing!
+  upsertOneMissing(where: MissingWhereUniqueInput!, create: MissingCreateInput!, update: MissingUpdateInput!): Missing!
+  deleteOneMissing(where: MissingWhereUniqueInput!): Missing
+  updateManyMissing(data: MissingUpdateManyMutationInput!, where: MissingWhereInput): BatchPayload!
+  deleteManyMissing(where: MissingWhereInput): BatchPayload!
+  createOneChapter(data: ChapterCreateInput!): Chapter!
+  updateOneChapter(data: ChapterUpdateInput!, where: ChapterWhereUniqueInput!): Chapter!
+  upsertOneChapter(where: ChapterWhereUniqueInput!, create: ChapterCreateInput!, update: ChapterUpdateInput!): Chapter!
+  deleteOneChapter(where: ChapterWhereUniqueInput!): Chapter
+  updateManyChapter(data: ChapterUpdateManyMutationInput!, where: ChapterWhereInput): BatchPayload!
+  deleteManyChapter(where: ChapterWhereInput): BatchPayload!
+  createOneComic(data: ComicCreateInput!): Comic!
+  updateOneComic(data: ComicUpdateInput!, where: ComicWhereUniqueInput!): Comic!
+  upsertOneComic(where: ComicWhereUniqueInput!, create: ComicCreateInput!, update: ComicUpdateInput!): Comic!
+  deleteOneComic(where: ComicWhereUniqueInput!): Comic
+  updateManyComic(data: ComicUpdateManyMutationInput!, where: ComicWhereInput): BatchPayload!
+  deleteManyComic(where: ComicWhereInput): BatchPayload!
+  createOnePerfomanceAnalytic(data: PerfomanceAnalyticCreateInput!): PerfomanceAnalytic!
+  updateOnePerfomanceAnalytic(data: PerfomanceAnalyticUpdateInput!, where: PerfomanceAnalyticWhereUniqueInput!): PerfomanceAnalytic!
+  upsertOnePerfomanceAnalytic(where: PerfomanceAnalyticWhereUniqueInput!, create: PerfomanceAnalyticCreateInput!, update: PerfomanceAnalyticUpdateInput!): PerfomanceAnalytic!
+  deleteOnePerfomanceAnalytic(where: PerfomanceAnalyticWhereUniqueInput!): PerfomanceAnalytic
+  updateManyPerfomanceAnalytic(data: PerfomanceAnalyticUpdateManyMutationInput!, where: PerfomanceAnalyticWhereInput): BatchPayload!
+  deleteManyPerfomanceAnalytic(where: PerfomanceAnalyticWhereInput): BatchPayload!
+  createOneAds(data: AdsCreateInput!): Ads!
+  updateOneAds(data: AdsUpdateInput!, where: AdsWhereUniqueInput!): Ads!
+  upsertOneAds(where: AdsWhereUniqueInput!, create: AdsCreateInput!, update: AdsUpdateInput!): Ads!
+  deleteOneAds(where: AdsWhereUniqueInput!): Ads
+  updateManyAds(data: AdsUpdateManyMutationInput!, where: AdsWhereInput): BatchPayload!
+  deleteManyAds(where: AdsWhereInput): BatchPayload!
+  createOneGenre(data: GenreCreateInput!): Genre!
+  updateOneGenre(data: GenreUpdateInput!, where: GenreWhereUniqueInput!): Genre!
+  upsertOneGenre(where: GenreWhereUniqueInput!, create: GenreCreateInput!, update: GenreUpdateInput!): Genre!
+  deleteOneGenre(where: GenreWhereUniqueInput!): Genre
+  updateManyGenre(data: GenreUpdateManyMutationInput!, where: GenreWhereInput): BatchPayload!
+  deleteManyGenre(where: GenreWhereInput): BatchPayload!
+  createOneAuthor(data: AuthorCreateInput!): Author!
+  updateOneAuthor(data: AuthorUpdateInput!, where: AuthorWhereUniqueInput!): Author!
+  upsertOneAuthor(where: AuthorWhereUniqueInput!, create: AuthorCreateInput!, update: AuthorUpdateInput!): Author!
+  deleteOneAuthor(where: AuthorWhereUniqueInput!): Author
+  updateManyAuthor(data: AuthorUpdateManyMutationInput!, where: AuthorWhereInput): BatchPayload!
+  deleteManyAuthor(where: AuthorWhereInput): BatchPayload!
+  createOneUser(data: UserCreateInput!): User!
+  updateOneUser(data: UserUpdateInput!, where: UserWhereUniqueInput!): User!
+  upsertOneUser(where: UserWhereUniqueInput!, create: UserCreateInput!, update: UserUpdateInput!): User!
+  deleteOneUser(where: UserWhereUniqueInput!): User
+  updateManyUser(data: UserUpdateManyMutationInput!, where: UserWhereInput): BatchPayload!
+  deleteManyUser(where: UserWhereInput): BatchPayload!
+  uploadFile(file: Upload, path: String!): Boolean
+  reportMissing(context: String!, data: String!): Boolean
+  reportView(id: Int!, context: String!): Boolean
+  sanityEclipse(slug: String!, chapter: JSONObject): SanityEclipse
+  sanityCheck(name: String!, thumb: String!, author: String!, thumbWide: String, description: String, released: String, type: String, genres: [String]): SanityCheck
+  login(email: String!, password: String!): AuthResponse
+  register(email: String!, name: String!, password: String!): AuthResponse
+}
+
+input NestedBoolFilter {
+  equals: Boolean
+  not: NestedBoolFilter
+}
+
+input NestedBoolWithAggregatesFilter {
+  equals: Boolean
+  not: NestedBoolWithAggregatesFilter
+  _count: NestedIntFilter
+  _min: NestedBoolFilter
+  _max: NestedBoolFilter
+}
+
+input NestedDateTimeFilter {
+  equals: DateTime
+  in: [DateTime]
+  notIn: [DateTime]
+  lt: DateTime
+  lte: DateTime
+  gt: DateTime
+  gte: DateTime
+  not: NestedDateTimeFilter
+}
+
+input NestedDateTimeWithAggregatesFilter {
+  equals: DateTime
+  in: [DateTime]
+  notIn: [DateTime]
+  lt: DateTime
+  lte: DateTime
+  gt: DateTime
+  gte: DateTime
+  not: NestedDateTimeWithAggregatesFilter
+  _count: NestedIntFilter
+  _min: NestedDateTimeFilter
+  _max: NestedDateTimeFilter
+}
+
+input NestedEnumChapterQualityFilter {
+  equals: ChapterQuality
+  in: [ChapterQuality]
+  notIn: [ChapterQuality]
+  not: NestedEnumChapterQualityFilter
+}
+
+input NestedEnumChapterQualityWithAggregatesFilter {
+  equals: ChapterQuality
+  in: [ChapterQuality]
+  notIn: [ChapterQuality]
+  not: NestedEnumChapterQualityWithAggregatesFilter
+  _count: NestedIntFilter
+  _min: NestedEnumChapterQualityFilter
+  _max: NestedEnumChapterQualityFilter
+}
+
+input NestedFloatFilter {
+  equals: Float
+  in: [Float]
+  notIn: [Float]
+  lt: Float
+  lte: Float
+  gt: Float
+  gte: Float
+  not: NestedFloatFilter
+}
+
+input NestedFloatNullableFilter {
+  equals: Float
+  in: [Float]
+  notIn: [Float]
+  lt: Float
+  lte: Float
+  gt: Float
+  gte: Float
+  not: NestedFloatNullableFilter
+}
+
+input NestedFloatWithAggregatesFilter {
+  equals: Float
+  in: [Float]
+  notIn: [Float]
+  lt: Float
+  lte: Float
+  gt: Float
+  gte: Float
+  not: NestedFloatWithAggregatesFilter
+  _count: NestedIntFilter
+  _avg: NestedFloatFilter
+  _sum: NestedFloatFilter
+  _min: NestedFloatFilter
+  _max: NestedFloatFilter
+}
+
+input NestedIntFilter {
+  equals: Int
+  in: [Int]
+  notIn: [Int]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: NestedIntFilter
+}
+
+input NestedIntNullableFilter {
+  equals: Int
+  in: [Int]
+  notIn: [Int]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: NestedIntNullableFilter
+}
+
+input NestedIntNullableWithAggregatesFilter {
+  equals: Int
+  in: [Int]
+  notIn: [Int]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: NestedIntNullableWithAggregatesFilter
+  _count: NestedIntNullableFilter
+  _avg: NestedFloatNullableFilter
+  _sum: NestedIntNullableFilter
+  _min: NestedIntNullableFilter
+  _max: NestedIntNullableFilter
+}
+
+input NestedIntWithAggregatesFilter {
+  equals: Int
+  in: [Int]
+  notIn: [Int]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: NestedIntWithAggregatesFilter
+  _count: NestedIntFilter
+  _avg: NestedFloatFilter
+  _sum: NestedIntFilter
+  _min: NestedIntFilter
+  _max: NestedIntFilter
+}
+
+input NestedJsonNullableFilter {
+  equals: Json
+  not: Json
+}
+
+input NestedStringFilter {
+  equals: String
+  in: [String]
+  notIn: [String]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  not: NestedStringFilter
+}
+
+input NestedStringNullableFilter {
+  equals: String
+  in: [String]
+  notIn: [String]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  not: NestedStringNullableFilter
+}
+
+input NestedStringNullableWithAggregatesFilter {
+  equals: String
+  in: [String]
+  notIn: [String]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  not: NestedStringNullableWithAggregatesFilter
+  _count: NestedIntNullableFilter
+  _min: NestedStringNullableFilter
+  _max: NestedStringNullableFilter
+}
+
+input NestedStringWithAggregatesFilter {
+  equals: String
+  in: [String]
+  notIn: [String]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  not: NestedStringWithAggregatesFilter
+  _count: NestedIntFilter
+  _min: NestedStringFilter
+  _max: NestedStringFilter
+}
+
+input NullableIntFieldUpdateOperationsInput {
+  set: Int
+  increment: Int
+  decrement: Int
+  multiply: Int
+  divide: Int
+}
+
+enum NullableJsonNullValueInput {
+  DbNull
+  JsonNull
+}
+
+input NullableStringFieldUpdateOperationsInput {
+  set: String
+}
+
+type PerfomanceAnalytic {
+  id: Int!
+  operationName: String!
+  query: String!
+  variables: String!
+  time: Float!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type PerfomanceAnalyticAvgAggregateOutputType {
+  id: Float
+  time: Float
+}
+
+input PerfomanceAnalyticAvgOrderByAggregateInput {
+  id: SortOrder
+  time: SortOrder
+}
+
+type PerfomanceAnalyticCountAggregateOutputType {
+  id: Int!
+  operationName: Int!
+  query: Int!
+  variables: Int!
+  time: Int!
+  createdAt: Int!
+  updatedAt: Int!
+  _all: Int!
+}
+
+input PerfomanceAnalyticCountOrderByAggregateInput {
+  id: SortOrder
+  operationName: SortOrder
+  query: SortOrder
+  variables: SortOrder
+  time: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+}
+
+input PerfomanceAnalyticCreateInput {
+  operationName: String!
+  query: String!
+  variables: String!
+  time: Float!
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input PerfomanceAnalyticCreateManyInput {
+  id: Int
+  operationName: String!
+  query: String!
+  variables: String!
+  time: Float!
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+type PerfomanceAnalyticMaxAggregateOutputType {
+  id: Int
+  operationName: String
+  query: String
+  variables: String
+  time: Float
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input PerfomanceAnalyticMaxOrderByAggregateInput {
+  id: SortOrder
+  operationName: SortOrder
+  query: SortOrder
+  variables: SortOrder
+  time: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+}
+
+type PerfomanceAnalyticMinAggregateOutputType {
+  id: Int
+  operationName: String
+  query: String
+  variables: String
+  time: Float
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input PerfomanceAnalyticMinOrderByAggregateInput {
+  id: SortOrder
+  operationName: SortOrder
+  query: SortOrder
+  variables: SortOrder
+  time: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+}
+
+input PerfomanceAnalyticOrderByWithAggregationInput {
+  id: SortOrder
+  operationName: SortOrder
+  query: SortOrder
+  variables: SortOrder
+  time: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  _count: PerfomanceAnalyticCountOrderByAggregateInput
+  _avg: PerfomanceAnalyticAvgOrderByAggregateInput
+  _max: PerfomanceAnalyticMaxOrderByAggregateInput
+  _min: PerfomanceAnalyticMinOrderByAggregateInput
+  _sum: PerfomanceAnalyticSumOrderByAggregateInput
+}
+
+input PerfomanceAnalyticOrderByWithRelationInput {
+  id: SortOrder
+  operationName: SortOrder
+  query: SortOrder
+  variables: SortOrder
+  time: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+}
+
+enum PerfomanceAnalyticScalarFieldEnum {
+  id
+  operationName
+  query
+  variables
+  time
+  createdAt
+  updatedAt
+}
+
+input PerfomanceAnalyticScalarWhereWithAggregatesInput {
+  AND: [PerfomanceAnalyticScalarWhereWithAggregatesInput]
+  OR: [PerfomanceAnalyticScalarWhereWithAggregatesInput]
+  NOT: [PerfomanceAnalyticScalarWhereWithAggregatesInput]
+  id: IntWithAggregatesFilter
+  operationName: StringWithAggregatesFilter
+  query: StringWithAggregatesFilter
+  variables: StringWithAggregatesFilter
+  time: FloatWithAggregatesFilter
+  createdAt: DateTimeWithAggregatesFilter
+  updatedAt: DateTimeWithAggregatesFilter
+}
+
+type PerfomanceAnalyticSumAggregateOutputType {
+  id: Int
+  time: Float
+}
+
+input PerfomanceAnalyticSumOrderByAggregateInput {
+  id: SortOrder
+  time: SortOrder
+}
+
+input PerfomanceAnalyticUncheckedCreateInput {
+  id: Int
+  operationName: String!
+  query: String!
+  variables: String!
+  time: Float!
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input PerfomanceAnalyticUncheckedUpdateInput {
+  id: IntFieldUpdateOperationsInput
+  operationName: StringFieldUpdateOperationsInput
+  query: StringFieldUpdateOperationsInput
+  variables: StringFieldUpdateOperationsInput
+  time: FloatFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input PerfomanceAnalyticUncheckedUpdateManyInput {
+  id: IntFieldUpdateOperationsInput
+  operationName: StringFieldUpdateOperationsInput
+  query: StringFieldUpdateOperationsInput
+  variables: StringFieldUpdateOperationsInput
+  time: FloatFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input PerfomanceAnalyticUpdateInput {
+  operationName: StringFieldUpdateOperationsInput
+  query: StringFieldUpdateOperationsInput
+  variables: StringFieldUpdateOperationsInput
+  time: FloatFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input PerfomanceAnalyticUpdateManyMutationInput {
+  operationName: StringFieldUpdateOperationsInput
+  query: StringFieldUpdateOperationsInput
+  variables: StringFieldUpdateOperationsInput
+  time: FloatFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input PerfomanceAnalyticWhereInput {
+  AND: [PerfomanceAnalyticWhereInput]
+  OR: [PerfomanceAnalyticWhereInput]
+  NOT: [PerfomanceAnalyticWhereInput]
+  id: IntFilter
+  operationName: StringFilter
+  query: StringFilter
+  variables: StringFilter
+  time: FloatFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+}
+
+input PerfomanceAnalyticWhereUniqueInput {
+  id: Int
+}
+
+type Query {
+  findUniqueChangelog(where: ChangelogWhereUniqueInput!): Changelog
+  findFirstChangelog(where: ChangelogWhereInput, orderBy: [ChangelogOrderByWithRelationInput], cursor: ChangelogWhereUniqueInput, take: Int, skip: Int, distinct: [ChangelogScalarFieldEnum]): Changelog
+  findManyChangelog(where: ChangelogWhereInput, orderBy: [ChangelogOrderByWithRelationInput], cursor: ChangelogWhereUniqueInput, take: Int, skip: Int, distinct: [ChangelogScalarFieldEnum]): [Changelog!]!
+  findManyChangelogCount(where: ChangelogWhereInput, orderBy: [ChangelogOrderByWithRelationInput], cursor: ChangelogWhereUniqueInput, take: Int, skip: Int, distinct: [ChangelogScalarFieldEnum]): Int!
+  aggregateChangelog(where: ChangelogWhereInput, orderBy: [ChangelogOrderByWithRelationInput], cursor: ChangelogWhereUniqueInput, take: Int, skip: Int): AggregateChangelog
+  findUniqueViewedChapter(where: ViewedChapterWhereUniqueInput!): ViewedChapter
+  findFirstViewedChapter(where: ViewedChapterWhereInput, orderBy: [ViewedChapterOrderByWithRelationInput], cursor: ViewedChapterWhereUniqueInput, take: Int, skip: Int, distinct: [ViewedChapterScalarFieldEnum]): ViewedChapter
+  findManyViewedChapter(where: ViewedChapterWhereInput, orderBy: [ViewedChapterOrderByWithRelationInput], cursor: ViewedChapterWhereUniqueInput, take: Int, skip: Int, distinct: [ViewedChapterScalarFieldEnum]): [ViewedChapter!]!
+  findManyViewedChapterCount(where: ViewedChapterWhereInput, orderBy: [ViewedChapterOrderByWithRelationInput], cursor: ViewedChapterWhereUniqueInput, take: Int, skip: Int, distinct: [ViewedChapterScalarFieldEnum]): Int!
+  aggregateViewedChapter(where: ViewedChapterWhereInput, orderBy: [ViewedChapterOrderByWithRelationInput], cursor: ViewedChapterWhereUniqueInput, take: Int, skip: Int): AggregateViewedChapter
+  findUniqueComicBookmark(where: ComicBookmarkWhereUniqueInput!): ComicBookmark
+  findFirstComicBookmark(where: ComicBookmarkWhereInput, orderBy: [ComicBookmarkOrderByWithRelationInput], cursor: ComicBookmarkWhereUniqueInput, take: Int, skip: Int, distinct: [ComicBookmarkScalarFieldEnum]): ComicBookmark
+  findManyComicBookmark(where: ComicBookmarkWhereInput, orderBy: [ComicBookmarkOrderByWithRelationInput], cursor: ComicBookmarkWhereUniqueInput, take: Int, skip: Int, distinct: [ComicBookmarkScalarFieldEnum]): [ComicBookmark!]!
+  findManyComicBookmarkCount(where: ComicBookmarkWhereInput, orderBy: [ComicBookmarkOrderByWithRelationInput], cursor: ComicBookmarkWhereUniqueInput, take: Int, skip: Int, distinct: [ComicBookmarkScalarFieldEnum]): Int!
+  aggregateComicBookmark(where: ComicBookmarkWhereInput, orderBy: [ComicBookmarkOrderByWithRelationInput], cursor: ComicBookmarkWhereUniqueInput, take: Int, skip: Int): AggregateComicBookmark
+  findUniqueReport(where: ReportWhereUniqueInput!): Report
+  findFirstReport(where: ReportWhereInput, orderBy: [ReportOrderByWithRelationInput], cursor: ReportWhereUniqueInput, take: Int, skip: Int, distinct: [ReportScalarFieldEnum]): Report
+  findManyReport(where: ReportWhereInput, orderBy: [ReportOrderByWithRelationInput], cursor: ReportWhereUniqueInput, take: Int, skip: Int, distinct: [ReportScalarFieldEnum]): [Report!]!
+  findManyReportCount(where: ReportWhereInput, orderBy: [ReportOrderByWithRelationInput], cursor: ReportWhereUniqueInput, take: Int, skip: Int, distinct: [ReportScalarFieldEnum]): Int!
+  aggregateReport(where: ReportWhereInput, orderBy: [ReportOrderByWithRelationInput], cursor: ReportWhereUniqueInput, take: Int, skip: Int): AggregateReport
+  findUniqueMissing(where: MissingWhereUniqueInput!): Missing
+  findFirstMissing(where: MissingWhereInput, orderBy: [MissingOrderByWithRelationInput], cursor: MissingWhereUniqueInput, take: Int, skip: Int, distinct: [MissingScalarFieldEnum]): Missing
+  findManyMissing(where: MissingWhereInput, orderBy: [MissingOrderByWithRelationInput], cursor: MissingWhereUniqueInput, take: Int, skip: Int, distinct: [MissingScalarFieldEnum]): [Missing!]!
+  findManyMissingCount(where: MissingWhereInput, orderBy: [MissingOrderByWithRelationInput], cursor: MissingWhereUniqueInput, take: Int, skip: Int, distinct: [MissingScalarFieldEnum]): Int!
+  aggregateMissing(where: MissingWhereInput, orderBy: [MissingOrderByWithRelationInput], cursor: MissingWhereUniqueInput, take: Int, skip: Int): AggregateMissing
+  findUniqueChapter(where: ChapterWhereUniqueInput!): Chapter
+  findFirstChapter(where: ChapterWhereInput, orderBy: [ChapterOrderByWithRelationInput], cursor: ChapterWhereUniqueInput, take: Int, skip: Int, distinct: [ChapterScalarFieldEnum]): Chapter
+  findManyChapter(where: ChapterWhereInput, orderBy: [ChapterOrderByWithRelationInput], cursor: ChapterWhereUniqueInput, take: Int, skip: Int, distinct: [ChapterScalarFieldEnum]): [Chapter!]!
+  findManyChapterCount(where: ChapterWhereInput, orderBy: [ChapterOrderByWithRelationInput], cursor: ChapterWhereUniqueInput, take: Int, skip: Int, distinct: [ChapterScalarFieldEnum]): Int!
+  aggregateChapter(where: ChapterWhereInput, orderBy: [ChapterOrderByWithRelationInput], cursor: ChapterWhereUniqueInput, take: Int, skip: Int): AggregateChapter
+  findUniqueComic(where: ComicWhereUniqueInput!): Comic
+  findFirstComic(where: ComicWhereInput, orderBy: [ComicOrderByWithRelationInput], cursor: ComicWhereUniqueInput, take: Int, skip: Int, distinct: [ComicScalarFieldEnum]): Comic
+  findManyComic(where: ComicWhereInput, orderBy: [ComicOrderByWithRelationInput], cursor: ComicWhereUniqueInput, take: Int, skip: Int, distinct: [ComicScalarFieldEnum]): [Comic!]!
+  findManyComicCount(where: ComicWhereInput, orderBy: [ComicOrderByWithRelationInput], cursor: ComicWhereUniqueInput, take: Int, skip: Int, distinct: [ComicScalarFieldEnum]): Int!
+  aggregateComic(where: ComicWhereInput, orderBy: [ComicOrderByWithRelationInput], cursor: ComicWhereUniqueInput, take: Int, skip: Int): AggregateComic
+  findUniquePerfomanceAnalytic(where: PerfomanceAnalyticWhereUniqueInput!): PerfomanceAnalytic
+  findFirstPerfomanceAnalytic(where: PerfomanceAnalyticWhereInput, orderBy: [PerfomanceAnalyticOrderByWithRelationInput], cursor: PerfomanceAnalyticWhereUniqueInput, take: Int, skip: Int, distinct: [PerfomanceAnalyticScalarFieldEnum]): PerfomanceAnalytic
+  findManyPerfomanceAnalytic(where: PerfomanceAnalyticWhereInput, orderBy: [PerfomanceAnalyticOrderByWithRelationInput], cursor: PerfomanceAnalyticWhereUniqueInput, take: Int, skip: Int, distinct: [PerfomanceAnalyticScalarFieldEnum]): [PerfomanceAnalytic!]!
+  findManyPerfomanceAnalyticCount(where: PerfomanceAnalyticWhereInput, orderBy: [PerfomanceAnalyticOrderByWithRelationInput], cursor: PerfomanceAnalyticWhereUniqueInput, take: Int, skip: Int, distinct: [PerfomanceAnalyticScalarFieldEnum]): Int!
+  aggregatePerfomanceAnalytic(where: PerfomanceAnalyticWhereInput, orderBy: [PerfomanceAnalyticOrderByWithRelationInput], cursor: PerfomanceAnalyticWhereUniqueInput, take: Int, skip: Int): AggregatePerfomanceAnalytic
+  findUniqueAds(where: AdsWhereUniqueInput!): Ads
+  findFirstAds(where: AdsWhereInput, orderBy: [AdsOrderByWithRelationInput], cursor: AdsWhereUniqueInput, take: Int, skip: Int, distinct: [AdsScalarFieldEnum]): Ads
+  findManyAds(where: AdsWhereInput, orderBy: [AdsOrderByWithRelationInput], cursor: AdsWhereUniqueInput, take: Int, skip: Int, distinct: [AdsScalarFieldEnum]): [Ads!]!
+  findManyAdsCount(where: AdsWhereInput, orderBy: [AdsOrderByWithRelationInput], cursor: AdsWhereUniqueInput, take: Int, skip: Int, distinct: [AdsScalarFieldEnum]): Int!
+  aggregateAds(where: AdsWhereInput, orderBy: [AdsOrderByWithRelationInput], cursor: AdsWhereUniqueInput, take: Int, skip: Int): AggregateAds
+  findUniqueGenre(where: GenreWhereUniqueInput!): Genre
+  findFirstGenre(where: GenreWhereInput, orderBy: [GenreOrderByWithRelationInput], cursor: GenreWhereUniqueInput, take: Int, skip: Int, distinct: [GenreScalarFieldEnum]): Genre
+  findManyGenre(where: GenreWhereInput, orderBy: [GenreOrderByWithRelationInput], cursor: GenreWhereUniqueInput, take: Int, skip: Int, distinct: [GenreScalarFieldEnum]): [Genre!]!
+  findManyGenreCount(where: GenreWhereInput, orderBy: [GenreOrderByWithRelationInput], cursor: GenreWhereUniqueInput, take: Int, skip: Int, distinct: [GenreScalarFieldEnum]): Int!
+  aggregateGenre(where: GenreWhereInput, orderBy: [GenreOrderByWithRelationInput], cursor: GenreWhereUniqueInput, take: Int, skip: Int): AggregateGenre
+  findUniqueAuthor(where: AuthorWhereUniqueInput!): Author
+  findFirstAuthor(where: AuthorWhereInput, orderBy: [AuthorOrderByWithRelationInput], cursor: AuthorWhereUniqueInput, take: Int, skip: Int, distinct: [AuthorScalarFieldEnum]): Author
+  findManyAuthor(where: AuthorWhereInput, orderBy: [AuthorOrderByWithRelationInput], cursor: AuthorWhereUniqueInput, take: Int, skip: Int, distinct: [AuthorScalarFieldEnum]): [Author!]!
+  findManyAuthorCount(where: AuthorWhereInput, orderBy: [AuthorOrderByWithRelationInput], cursor: AuthorWhereUniqueInput, take: Int, skip: Int, distinct: [AuthorScalarFieldEnum]): Int!
+  aggregateAuthor(where: AuthorWhereInput, orderBy: [AuthorOrderByWithRelationInput], cursor: AuthorWhereUniqueInput, take: Int, skip: Int): AggregateAuthor
+  findUniqueUser(where: UserWhereUniqueInput!): User
+  findFirstUser(where: UserWhereInput, orderBy: [UserOrderByWithRelationInput], cursor: UserWhereUniqueInput, take: Int, skip: Int, distinct: [UserScalarFieldEnum]): User
+  findManyUser(where: UserWhereInput, orderBy: [UserOrderByWithRelationInput], cursor: UserWhereUniqueInput, take: Int, skip: Int, distinct: [UserScalarFieldEnum]): [User!]!
+  findManyUserCount(where: UserWhereInput, orderBy: [UserOrderByWithRelationInput], cursor: UserWhereUniqueInput, take: Int, skip: Int, distinct: [UserScalarFieldEnum]): Int!
+  aggregateUser(where: UserWhereInput, orderBy: [UserOrderByWithRelationInput], cursor: UserWhereUniqueInput, take: Int, skip: Int): AggregateUser
+  test: Boolean
+  comicSearch(query: String!, offset: Int, limit: Int, type: String, allowHentai: Boolean = false): ComicSearch
+  genreSearch(query: String!, offset: Int, limit: Int): AuthorSearch
+  authorSearch(query: String!, offset: Int, limit: Int): AuthorSearch
+  me: User
+}
+
+enum QueryMode {
+  default
+  insensitive
+}
+
+type Report {
+  id: Int!
+  userId: Int
+  user: User
+  name: String!
+  message: String
+  contextIdentifier: String!
+  contextType: String!
+  resolved: Boolean!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type ReportAvgAggregateOutputType {
+  id: Float
+  userId: Float
+}
+
+input ReportAvgOrderByAggregateInput {
+  id: SortOrder
+  userId: SortOrder
+}
+
+type ReportCountAggregateOutputType {
+  id: Int!
+  userId: Int!
+  name: Int!
+  message: Int!
+  contextIdentifier: Int!
+  contextType: Int!
+  resolved: Int!
+  createdAt: Int!
+  updatedAt: Int!
+  _all: Int!
+}
+
+input ReportCountOrderByAggregateInput {
+  id: SortOrder
+  userId: SortOrder
+  name: SortOrder
+  message: SortOrder
+  contextIdentifier: SortOrder
+  contextType: SortOrder
+  resolved: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+}
+
+input ReportCreateInput {
+  user: UserCreateNestedOneWithoutReportsInput
+  name: String!
+  message: String
+  contextIdentifier: String!
+  contextType: String!
+  resolved: Boolean
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input ReportCreateManyInput {
+  id: Int
+  userId: Int
+  name: String!
+  message: String
+  contextIdentifier: String!
+  contextType: String!
+  resolved: Boolean
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input ReportCreateManyUserInput {
+  id: Int
+  name: String!
+  message: String
+  contextIdentifier: String!
+  contextType: String!
+  resolved: Boolean
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input ReportCreateManyUserInputEnvelope {
+  data: ReportCreateManyUserInput!
+  skipDuplicates: Boolean
+}
+
+input ReportCreateNestedManyWithoutUserInput {
+  create: [ReportCreateWithoutUserInput]
+  connectOrCreate: [ReportCreateOrConnectWithoutUserInput]
+  createMany: ReportCreateManyUserInputEnvelope
+  connect: [ReportWhereUniqueInput]
+}
+
+input ReportCreateOrConnectWithoutUserInput {
+  where: ReportWhereUniqueInput!
+  create: ReportUncheckedCreateWithoutUserInput!
+}
+
+input ReportCreateWithoutUserInput {
+  name: String!
+  message: String
+  contextIdentifier: String!
+  contextType: String!
+  resolved: Boolean
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input ReportListRelationFilter {
+  every: ReportWhereInput
+  some: ReportWhereInput
+  none: ReportWhereInput
+}
+
+type ReportMaxAggregateOutputType {
+  id: Int
+  userId: Int
+  name: String
+  message: String
+  contextIdentifier: String
+  contextType: String
+  resolved: Boolean
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input ReportMaxOrderByAggregateInput {
+  id: SortOrder
+  userId: SortOrder
+  name: SortOrder
+  message: SortOrder
+  contextIdentifier: SortOrder
+  contextType: SortOrder
+  resolved: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+}
+
+type ReportMinAggregateOutputType {
+  id: Int
+  userId: Int
+  name: String
+  message: String
+  contextIdentifier: String
+  contextType: String
+  resolved: Boolean
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input ReportMinOrderByAggregateInput {
+  id: SortOrder
+  userId: SortOrder
+  name: SortOrder
+  message: SortOrder
+  contextIdentifier: SortOrder
+  contextType: SortOrder
+  resolved: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+}
+
+input ReportOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input ReportOrderByWithAggregationInput {
+  id: SortOrder
+  userId: SortOrder
+  name: SortOrder
+  message: SortOrder
+  contextIdentifier: SortOrder
+  contextType: SortOrder
+  resolved: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  _count: ReportCountOrderByAggregateInput
+  _avg: ReportAvgOrderByAggregateInput
+  _max: ReportMaxOrderByAggregateInput
+  _min: ReportMinOrderByAggregateInput
+  _sum: ReportSumOrderByAggregateInput
+}
+
+input ReportOrderByWithRelationInput {
+  id: SortOrder
+  userId: SortOrder
+  user: UserOrderByWithRelationInput
+  name: SortOrder
+  message: SortOrder
+  contextIdentifier: SortOrder
+  contextType: SortOrder
+  resolved: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+}
+
+enum ReportScalarFieldEnum {
+  id
+  userId
+  name
+  message
+  contextIdentifier
+  contextType
+  resolved
+  createdAt
+  updatedAt
+}
+
+input ReportScalarWhereInput {
+  AND: [ReportScalarWhereInput]
+  OR: [ReportScalarWhereInput]
+  NOT: [ReportScalarWhereInput]
+  id: IntFilter
+  userId: IntNullableFilter
+  name: StringFilter
+  message: StringNullableFilter
+  contextIdentifier: StringFilter
+  contextType: StringFilter
+  resolved: BoolFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+}
+
+input ReportScalarWhereWithAggregatesInput {
+  AND: [ReportScalarWhereWithAggregatesInput]
+  OR: [ReportScalarWhereWithAggregatesInput]
+  NOT: [ReportScalarWhereWithAggregatesInput]
+  id: IntWithAggregatesFilter
+  userId: IntNullableWithAggregatesFilter
+  name: StringWithAggregatesFilter
+  message: StringNullableWithAggregatesFilter
+  contextIdentifier: StringWithAggregatesFilter
+  contextType: StringWithAggregatesFilter
+  resolved: BoolWithAggregatesFilter
+  createdAt: DateTimeWithAggregatesFilter
+  updatedAt: DateTimeWithAggregatesFilter
+}
+
+type ReportSumAggregateOutputType {
+  id: Int
+  userId: Int
+}
+
+input ReportSumOrderByAggregateInput {
+  id: SortOrder
+  userId: SortOrder
+}
+
+input ReportUncheckedCreateInput {
+  id: Int
+  userId: Int
+  name: String!
+  message: String
+  contextIdentifier: String!
+  contextType: String!
+  resolved: Boolean
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input ReportUncheckedCreateNestedManyWithoutUserInput {
+  create: [ReportCreateWithoutUserInput]
+  connectOrCreate: [ReportCreateOrConnectWithoutUserInput]
+  createMany: ReportCreateManyUserInputEnvelope
+  connect: [ReportWhereUniqueInput]
+}
+
+input ReportUncheckedCreateWithoutUserInput {
+  id: Int
+  name: String!
+  message: String
+  contextIdentifier: String!
+  contextType: String!
+  resolved: Boolean
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input ReportUncheckedUpdateInput {
+  id: IntFieldUpdateOperationsInput
+  userId: NullableIntFieldUpdateOperationsInput
+  name: StringFieldUpdateOperationsInput
+  message: NullableStringFieldUpdateOperationsInput
+  contextIdentifier: StringFieldUpdateOperationsInput
+  contextType: StringFieldUpdateOperationsInput
+  resolved: BoolFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input ReportUncheckedUpdateManyInput {
+  id: IntFieldUpdateOperationsInput
+  userId: NullableIntFieldUpdateOperationsInput
+  name: StringFieldUpdateOperationsInput
+  message: NullableStringFieldUpdateOperationsInput
+  contextIdentifier: StringFieldUpdateOperationsInput
+  contextType: StringFieldUpdateOperationsInput
+  resolved: BoolFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input ReportUncheckedUpdateManyWithoutReportsInput {
+  id: IntFieldUpdateOperationsInput
+  name: StringFieldUpdateOperationsInput
+  message: NullableStringFieldUpdateOperationsInput
+  contextIdentifier: StringFieldUpdateOperationsInput
+  contextType: StringFieldUpdateOperationsInput
+  resolved: BoolFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input ReportUncheckedUpdateManyWithoutUserInput {
+  create: [ReportCreateWithoutUserInput]
+  connectOrCreate: [ReportCreateOrConnectWithoutUserInput]
+  upsert: [ReportUpsertWithWhereUniqueWithoutUserInput]
+  createMany: ReportCreateManyUserInputEnvelope
+  set: [ReportWhereUniqueInput]
+  disconnect: [ReportWhereUniqueInput]
+  delete: [ReportWhereUniqueInput]
+  connect: [ReportWhereUniqueInput]
+  update: [ReportUpdateWithWhereUniqueWithoutUserInput]
+  updateMany: [ReportUpdateManyWithWhereWithoutUserInput]
+  deleteMany: [ReportScalarWhereInput]
+}
+
+input ReportUncheckedUpdateWithoutUserInput {
+  id: IntFieldUpdateOperationsInput
+  name: StringFieldUpdateOperationsInput
+  message: NullableStringFieldUpdateOperationsInput
+  contextIdentifier: StringFieldUpdateOperationsInput
+  contextType: StringFieldUpdateOperationsInput
+  resolved: BoolFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input ReportUpdateInput {
+  user: UserUpdateOneWithoutReportsInput
+  name: StringFieldUpdateOperationsInput
+  message: NullableStringFieldUpdateOperationsInput
+  contextIdentifier: StringFieldUpdateOperationsInput
+  contextType: StringFieldUpdateOperationsInput
+  resolved: BoolFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input ReportUpdateManyMutationInput {
+  name: StringFieldUpdateOperationsInput
+  message: NullableStringFieldUpdateOperationsInput
+  contextIdentifier: StringFieldUpdateOperationsInput
+  contextType: StringFieldUpdateOperationsInput
+  resolved: BoolFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input ReportUpdateManyWithoutUserInput {
+  create: [ReportCreateWithoutUserInput]
+  connectOrCreate: [ReportCreateOrConnectWithoutUserInput]
+  upsert: [ReportUpsertWithWhereUniqueWithoutUserInput]
+  createMany: ReportCreateManyUserInputEnvelope
+  set: [ReportWhereUniqueInput]
+  disconnect: [ReportWhereUniqueInput]
+  delete: [ReportWhereUniqueInput]
+  connect: [ReportWhereUniqueInput]
+  update: [ReportUpdateWithWhereUniqueWithoutUserInput]
+  updateMany: [ReportUpdateManyWithWhereWithoutUserInput]
+  deleteMany: [ReportScalarWhereInput]
+}
+
+input ReportUpdateManyWithWhereWithoutUserInput {
+  where: ReportScalarWhereInput!
+  data: ReportUncheckedUpdateManyWithoutReportsInput!
+}
+
+input ReportUpdateWithoutUserInput {
+  name: StringFieldUpdateOperationsInput
+  message: NullableStringFieldUpdateOperationsInput
+  contextIdentifier: StringFieldUpdateOperationsInput
+  contextType: StringFieldUpdateOperationsInput
+  resolved: BoolFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input ReportUpdateWithWhereUniqueWithoutUserInput {
+  where: ReportWhereUniqueInput!
+  data: ReportUncheckedUpdateWithoutUserInput!
+}
+
+input ReportUpsertWithWhereUniqueWithoutUserInput {
+  where: ReportWhereUniqueInput!
+  update: ReportUncheckedUpdateWithoutUserInput!
+  create: ReportUncheckedCreateWithoutUserInput!
+}
+
+input ReportWhereInput {
+  AND: [ReportWhereInput]
+  OR: [ReportWhereInput]
+  NOT: [ReportWhereInput]
+  id: IntFilter
+  userId: IntNullableFilter
+  user: UserWhereInput
+  name: StringFilter
+  message: StringNullableFilter
+  contextIdentifier: StringFilter
+  contextType: StringFilter
+  resolved: BoolFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+}
+
+input ReportWhereUniqueInput {
+  id: Int
+}
+
+type SanityCheck {
+  status: String
+  chapters: [Chapter]
+}
+
+type SanityEclipse {
+  status: Boolean
+  message: String
+}
+
+enum SortOrder {
+  asc
+  desc
+}
+
+input StringFieldUpdateOperationsInput {
+  set: String
+}
+
+input StringFilter {
+  equals: String
+  in: [String]
+  notIn: [String]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  mode: QueryMode
+  not: NestedStringFilter
+}
+
+input StringNullableFilter {
+  equals: String
+  in: [String]
+  notIn: [String]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  mode: QueryMode
+  not: NestedStringNullableFilter
+}
+
+input StringNullableListFilter {
+  equals: [String]
+  has: String
+  hasEvery: [String]
+  hasSome: [String]
+  isEmpty: Boolean
+}
+
+input StringNullableWithAggregatesFilter {
+  equals: String
+  in: [String]
+  notIn: [String]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  mode: QueryMode
+  not: NestedStringNullableWithAggregatesFilter
+  _count: NestedIntNullableFilter
+  _min: NestedStringNullableFilter
+  _max: NestedStringNullableFilter
+}
+
+input StringWithAggregatesFilter {
+  equals: String
+  in: [String]
+  notIn: [String]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  mode: QueryMode
+  not: NestedStringWithAggregatesFilter
+  _count: NestedIntFilter
+  _min: NestedStringFilter
+  _max: NestedStringFilter
+}
+
+"""The `Upload` scalar type represents a file upload."""
+scalar Upload
+
+type User {
+  id: Int!
+  email: String!
+  name: String
+  isAdmin: Boolean!
+  allowHentai: Boolean!
+  password: String!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  reports(where: ReportWhereInput, orderBy: ReportOrderByWithRelationInput, cursor: ReportWhereUniqueInput, take: Int, skip: Int, distinct: ReportScalarFieldEnum): [Report!]!
+  comicbookmarks(where: ComicBookmarkWhereInput, orderBy: ComicBookmarkOrderByWithRelationInput, cursor: ComicBookmarkWhereUniqueInput, take: Int, skip: Int, distinct: ComicBookmarkScalarFieldEnum): [ComicBookmark!]!
+  viewedChapters(where: ViewedChapterWhereInput, orderBy: ViewedChapterOrderByWithRelationInput, cursor: ViewedChapterWhereUniqueInput, take: Int, skip: Int, distinct: ViewedChapterScalarFieldEnum): [ViewedChapter!]!
+  changelogs(where: ChangelogWhereInput, orderBy: ChangelogOrderByWithRelationInput, cursor: ChangelogWhereUniqueInput, take: Int, skip: Int, distinct: ChangelogScalarFieldEnum): [Changelog!]!
+  _count: UserCountOutputType!
+}
+
+type UserAvgAggregateOutputType {
+  id: Float
+}
+
+input UserAvgOrderByAggregateInput {
+  id: SortOrder
+}
+
+type UserCountAggregateOutputType {
+  id: Int!
+  email: Int!
+  name: Int!
+  isAdmin: Int!
+  allowHentai: Int!
+  createdAt: Int!
+  updatedAt: Int!
+  _all: Int!
+}
+
+input UserCountOrderByAggregateInput {
+  id: SortOrder
+  email: SortOrder
+  name: SortOrder
+  isAdmin: SortOrder
+  allowHentai: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+}
+
+type UserCountOutputType {
+  reports: Int!
+  comicbookmarks: Int!
+  viewedChapters: Int!
+  changelogs: Int!
+}
+
+input UserCreateInput {
+  email: String!
+  name: String
+  isAdmin: Boolean
+  allowHentai: Boolean
+  createdAt: DateTime
+  updatedAt: DateTime
+  reports: ReportCreateNestedManyWithoutUserInput
+  comicbookmarks: ComicBookmarkCreateNestedManyWithoutUserInput
+  viewedChapters: ViewedChapterCreateNestedManyWithoutUserInput
+  changelogs: ChangelogCreateNestedManyWithoutUserInput
+}
+
+input UserCreateManyInput {
+  id: Int
+  email: String!
+  name: String
+  isAdmin: Boolean
+  allowHentai: Boolean
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input UserCreateNestedOneWithoutChangelogsInput {
+  create: UserUncheckedCreateWithoutChangelogsInput
+  connectOrCreate: UserCreateOrConnectWithoutChangelogsInput
+  connect: UserWhereUniqueInput
+}
+
+input UserCreateNestedOneWithoutComicbookmarksInput {
+  create: UserUncheckedCreateWithoutComicbookmarksInput
+  connectOrCreate: UserCreateOrConnectWithoutComicbookmarksInput
+  connect: UserWhereUniqueInput
+}
+
+input UserCreateNestedOneWithoutReportsInput {
+  create: UserUncheckedCreateWithoutReportsInput
+  connectOrCreate: UserCreateOrConnectWithoutReportsInput
+  connect: UserWhereUniqueInput
+}
+
+input UserCreateNestedOneWithoutViewedChaptersInput {
+  create: UserUncheckedCreateWithoutViewedChaptersInput
+  connectOrCreate: UserCreateOrConnectWithoutViewedChaptersInput
+  connect: UserWhereUniqueInput
+}
+
+input UserCreateOrConnectWithoutChangelogsInput {
+  where: UserWhereUniqueInput!
+  create: UserUncheckedCreateWithoutChangelogsInput!
+}
+
+input UserCreateOrConnectWithoutComicbookmarksInput {
+  where: UserWhereUniqueInput!
+  create: UserUncheckedCreateWithoutComicbookmarksInput!
+}
+
+input UserCreateOrConnectWithoutReportsInput {
+  where: UserWhereUniqueInput!
+  create: UserUncheckedCreateWithoutReportsInput!
+}
+
+input UserCreateOrConnectWithoutViewedChaptersInput {
+  where: UserWhereUniqueInput!
+  create: UserUncheckedCreateWithoutViewedChaptersInput!
+}
+
+input UserCreateWithoutChangelogsInput {
+  email: String!
+  name: String
+  isAdmin: Boolean
+  allowHentai: Boolean
+  createdAt: DateTime
+  updatedAt: DateTime
+  reports: ReportCreateNestedManyWithoutUserInput
+  comicbookmarks: ComicBookmarkCreateNestedManyWithoutUserInput
+  viewedChapters: ViewedChapterCreateNestedManyWithoutUserInput
+}
+
+input UserCreateWithoutComicbookmarksInput {
+  email: String!
+  name: String
+  isAdmin: Boolean
+  allowHentai: Boolean
+  createdAt: DateTime
+  updatedAt: DateTime
+  reports: ReportCreateNestedManyWithoutUserInput
+  viewedChapters: ViewedChapterCreateNestedManyWithoutUserInput
+  changelogs: ChangelogCreateNestedManyWithoutUserInput
+}
+
+input UserCreateWithoutReportsInput {
+  email: String!
+  name: String
+  isAdmin: Boolean
+  allowHentai: Boolean
+  createdAt: DateTime
+  updatedAt: DateTime
+  comicbookmarks: ComicBookmarkCreateNestedManyWithoutUserInput
+  viewedChapters: ViewedChapterCreateNestedManyWithoutUserInput
+  changelogs: ChangelogCreateNestedManyWithoutUserInput
+}
+
+input UserCreateWithoutViewedChaptersInput {
+  email: String!
+  name: String
+  isAdmin: Boolean
+  allowHentai: Boolean
+  createdAt: DateTime
+  updatedAt: DateTime
+  reports: ReportCreateNestedManyWithoutUserInput
+  comicbookmarks: ComicBookmarkCreateNestedManyWithoutUserInput
+  changelogs: ChangelogCreateNestedManyWithoutUserInput
+}
+
+type UserMaxAggregateOutputType {
+  id: Int
+  email: String
+  name: String
+  isAdmin: Boolean
+  allowHentai: Boolean
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input UserMaxOrderByAggregateInput {
+  id: SortOrder
+  email: SortOrder
+  name: SortOrder
+  isAdmin: SortOrder
+  allowHentai: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+}
+
+type UserMinAggregateOutputType {
+  id: Int
+  email: String
+  name: String
+  isAdmin: Boolean
+  allowHentai: Boolean
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input UserMinOrderByAggregateInput {
+  id: SortOrder
+  email: SortOrder
+  name: SortOrder
+  isAdmin: SortOrder
+  allowHentai: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+}
+
+input UserOrderByWithAggregationInput {
+  id: SortOrder
+  email: SortOrder
+  name: SortOrder
+  isAdmin: SortOrder
+  allowHentai: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  _count: UserCountOrderByAggregateInput
+  _avg: UserAvgOrderByAggregateInput
+  _max: UserMaxOrderByAggregateInput
+  _min: UserMinOrderByAggregateInput
+  _sum: UserSumOrderByAggregateInput
+}
+
+input UserOrderByWithRelationInput {
+  id: SortOrder
+  email: SortOrder
+  name: SortOrder
+  isAdmin: SortOrder
+  allowHentai: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  reports: ReportOrderByRelationAggregateInput
+  comicbookmarks: ComicBookmarkOrderByRelationAggregateInput
+  viewedChapters: ViewedChapterOrderByRelationAggregateInput
+  changelogs: ChangelogOrderByRelationAggregateInput
+}
+
+input UserRelationFilter {
+  is: UserWhereInput
+  isNot: UserWhereInput
+}
+
+enum UserScalarFieldEnum {
+  id
+  email
+  name
+  isAdmin
+  allowHentai
+  password
+  createdAt
+  updatedAt
+}
+
+input UserScalarWhereWithAggregatesInput {
+  AND: [UserScalarWhereWithAggregatesInput]
+  OR: [UserScalarWhereWithAggregatesInput]
+  NOT: [UserScalarWhereWithAggregatesInput]
+  id: IntWithAggregatesFilter
+  email: StringWithAggregatesFilter
+  name: StringNullableWithAggregatesFilter
+  isAdmin: BoolWithAggregatesFilter
+  allowHentai: BoolWithAggregatesFilter
+  createdAt: DateTimeWithAggregatesFilter
+  updatedAt: DateTimeWithAggregatesFilter
+}
+
+type UserSumAggregateOutputType {
+  id: Int
+}
+
+input UserSumOrderByAggregateInput {
+  id: SortOrder
+}
+
+input UserUncheckedCreateInput {
+  id: Int
+  email: String!
+  name: String
+  isAdmin: Boolean
+  allowHentai: Boolean
+  createdAt: DateTime
+  updatedAt: DateTime
+  reports: ReportUncheckedCreateNestedManyWithoutUserInput
+  comicbookmarks: ComicBookmarkUncheckedCreateNestedManyWithoutUserInput
+  viewedChapters: ViewedChapterUncheckedCreateNestedManyWithoutUserInput
+  changelogs: ChangelogUncheckedCreateNestedManyWithoutUserInput
+}
+
+input UserUncheckedCreateWithoutChangelogsInput {
+  id: Int
+  email: String!
+  name: String
+  isAdmin: Boolean
+  allowHentai: Boolean
+  createdAt: DateTime
+  updatedAt: DateTime
+  reports: ReportUncheckedCreateNestedManyWithoutUserInput
+  comicbookmarks: ComicBookmarkUncheckedCreateNestedManyWithoutUserInput
+  viewedChapters: ViewedChapterUncheckedCreateNestedManyWithoutUserInput
+}
+
+input UserUncheckedCreateWithoutComicbookmarksInput {
+  id: Int
+  email: String!
+  name: String
+  isAdmin: Boolean
+  allowHentai: Boolean
+  createdAt: DateTime
+  updatedAt: DateTime
+  reports: ReportUncheckedCreateNestedManyWithoutUserInput
+  viewedChapters: ViewedChapterUncheckedCreateNestedManyWithoutUserInput
+  changelogs: ChangelogUncheckedCreateNestedManyWithoutUserInput
+}
+
+input UserUncheckedCreateWithoutReportsInput {
+  id: Int
+  email: String!
+  name: String
+  isAdmin: Boolean
+  allowHentai: Boolean
+  createdAt: DateTime
+  updatedAt: DateTime
+  comicbookmarks: ComicBookmarkUncheckedCreateNestedManyWithoutUserInput
+  viewedChapters: ViewedChapterUncheckedCreateNestedManyWithoutUserInput
+  changelogs: ChangelogUncheckedCreateNestedManyWithoutUserInput
+}
+
+input UserUncheckedCreateWithoutViewedChaptersInput {
+  id: Int
+  email: String!
+  name: String
+  isAdmin: Boolean
+  allowHentai: Boolean
+  createdAt: DateTime
+  updatedAt: DateTime
+  reports: ReportUncheckedCreateNestedManyWithoutUserInput
+  comicbookmarks: ComicBookmarkUncheckedCreateNestedManyWithoutUserInput
+  changelogs: ChangelogUncheckedCreateNestedManyWithoutUserInput
+}
+
+input UserUncheckedUpdateInput {
+  id: IntFieldUpdateOperationsInput
+  email: StringFieldUpdateOperationsInput
+  name: NullableStringFieldUpdateOperationsInput
+  isAdmin: BoolFieldUpdateOperationsInput
+  allowHentai: BoolFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  reports: ReportUncheckedUpdateManyWithoutUserInput
+  comicbookmarks: ComicBookmarkUncheckedUpdateManyWithoutUserInput
+  viewedChapters: ViewedChapterUncheckedUpdateManyWithoutUserInput
+  changelogs: ChangelogUncheckedUpdateManyWithoutUserInput
+}
+
+input UserUncheckedUpdateManyInput {
+  id: IntFieldUpdateOperationsInput
+  email: StringFieldUpdateOperationsInput
+  name: NullableStringFieldUpdateOperationsInput
+  isAdmin: BoolFieldUpdateOperationsInput
+  allowHentai: BoolFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input UserUncheckedUpdateWithoutChangelogsInput {
+  id: IntFieldUpdateOperationsInput
+  email: StringFieldUpdateOperationsInput
+  name: NullableStringFieldUpdateOperationsInput
+  isAdmin: BoolFieldUpdateOperationsInput
+  allowHentai: BoolFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  reports: ReportUncheckedUpdateManyWithoutUserInput
+  comicbookmarks: ComicBookmarkUncheckedUpdateManyWithoutUserInput
+  viewedChapters: ViewedChapterUncheckedUpdateManyWithoutUserInput
+}
+
+input UserUncheckedUpdateWithoutComicbookmarksInput {
+  id: IntFieldUpdateOperationsInput
+  email: StringFieldUpdateOperationsInput
+  name: NullableStringFieldUpdateOperationsInput
+  isAdmin: BoolFieldUpdateOperationsInput
+  allowHentai: BoolFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  reports: ReportUncheckedUpdateManyWithoutUserInput
+  viewedChapters: ViewedChapterUncheckedUpdateManyWithoutUserInput
+  changelogs: ChangelogUncheckedUpdateManyWithoutUserInput
+}
+
+input UserUncheckedUpdateWithoutReportsInput {
+  id: IntFieldUpdateOperationsInput
+  email: StringFieldUpdateOperationsInput
+  name: NullableStringFieldUpdateOperationsInput
+  isAdmin: BoolFieldUpdateOperationsInput
+  allowHentai: BoolFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  comicbookmarks: ComicBookmarkUncheckedUpdateManyWithoutUserInput
+  viewedChapters: ViewedChapterUncheckedUpdateManyWithoutUserInput
+  changelogs: ChangelogUncheckedUpdateManyWithoutUserInput
+}
+
+input UserUncheckedUpdateWithoutViewedChaptersInput {
+  id: IntFieldUpdateOperationsInput
+  email: StringFieldUpdateOperationsInput
+  name: NullableStringFieldUpdateOperationsInput
+  isAdmin: BoolFieldUpdateOperationsInput
+  allowHentai: BoolFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  reports: ReportUncheckedUpdateManyWithoutUserInput
+  comicbookmarks: ComicBookmarkUncheckedUpdateManyWithoutUserInput
+  changelogs: ChangelogUncheckedUpdateManyWithoutUserInput
+}
+
+input UserUpdateInput {
+  email: StringFieldUpdateOperationsInput
+  name: NullableStringFieldUpdateOperationsInput
+  isAdmin: BoolFieldUpdateOperationsInput
+  allowHentai: BoolFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  reports: ReportUpdateManyWithoutUserInput
+  comicbookmarks: ComicBookmarkUpdateManyWithoutUserInput
+  viewedChapters: ViewedChapterUpdateManyWithoutUserInput
+  changelogs: ChangelogUpdateManyWithoutUserInput
+}
+
+input UserUpdateManyMutationInput {
+  email: StringFieldUpdateOperationsInput
+  name: NullableStringFieldUpdateOperationsInput
+  isAdmin: BoolFieldUpdateOperationsInput
+  allowHentai: BoolFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input UserUpdateOneRequiredWithoutChangelogsInput {
+  create: UserUncheckedCreateWithoutChangelogsInput
+  connectOrCreate: UserCreateOrConnectWithoutChangelogsInput
+  upsert: UserUpsertWithoutChangelogsInput
+  connect: UserWhereUniqueInput
+  update: UserUncheckedUpdateWithoutChangelogsInput
+}
+
+input UserUpdateOneRequiredWithoutComicbookmarksInput {
+  create: UserUncheckedCreateWithoutComicbookmarksInput
+  connectOrCreate: UserCreateOrConnectWithoutComicbookmarksInput
+  upsert: UserUpsertWithoutComicbookmarksInput
+  connect: UserWhereUniqueInput
+  update: UserUncheckedUpdateWithoutComicbookmarksInput
+}
+
+input UserUpdateOneRequiredWithoutViewedChaptersInput {
+  create: UserUncheckedCreateWithoutViewedChaptersInput
+  connectOrCreate: UserCreateOrConnectWithoutViewedChaptersInput
+  upsert: UserUpsertWithoutViewedChaptersInput
+  connect: UserWhereUniqueInput
+  update: UserUncheckedUpdateWithoutViewedChaptersInput
+}
+
+input UserUpdateOneWithoutReportsInput {
+  create: UserUncheckedCreateWithoutReportsInput
+  connectOrCreate: UserCreateOrConnectWithoutReportsInput
+  upsert: UserUpsertWithoutReportsInput
+  disconnect: Boolean
+  delete: Boolean
+  connect: UserWhereUniqueInput
+  update: UserUncheckedUpdateWithoutReportsInput
+}
+
+input UserUpdateWithoutChangelogsInput {
+  email: StringFieldUpdateOperationsInput
+  name: NullableStringFieldUpdateOperationsInput
+  isAdmin: BoolFieldUpdateOperationsInput
+  allowHentai: BoolFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  reports: ReportUpdateManyWithoutUserInput
+  comicbookmarks: ComicBookmarkUpdateManyWithoutUserInput
+  viewedChapters: ViewedChapterUpdateManyWithoutUserInput
+}
+
+input UserUpdateWithoutComicbookmarksInput {
+  email: StringFieldUpdateOperationsInput
+  name: NullableStringFieldUpdateOperationsInput
+  isAdmin: BoolFieldUpdateOperationsInput
+  allowHentai: BoolFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  reports: ReportUpdateManyWithoutUserInput
+  viewedChapters: ViewedChapterUpdateManyWithoutUserInput
+  changelogs: ChangelogUpdateManyWithoutUserInput
+}
+
+input UserUpdateWithoutReportsInput {
+  email: StringFieldUpdateOperationsInput
+  name: NullableStringFieldUpdateOperationsInput
+  isAdmin: BoolFieldUpdateOperationsInput
+  allowHentai: BoolFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  comicbookmarks: ComicBookmarkUpdateManyWithoutUserInput
+  viewedChapters: ViewedChapterUpdateManyWithoutUserInput
+  changelogs: ChangelogUpdateManyWithoutUserInput
+}
+
+input UserUpdateWithoutViewedChaptersInput {
+  email: StringFieldUpdateOperationsInput
+  name: NullableStringFieldUpdateOperationsInput
+  isAdmin: BoolFieldUpdateOperationsInput
+  allowHentai: BoolFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  reports: ReportUpdateManyWithoutUserInput
+  comicbookmarks: ComicBookmarkUpdateManyWithoutUserInput
+  changelogs: ChangelogUpdateManyWithoutUserInput
+}
+
+input UserUpsertWithoutChangelogsInput {
+  update: UserUncheckedUpdateWithoutChangelogsInput!
+  create: UserUncheckedCreateWithoutChangelogsInput!
+}
+
+input UserUpsertWithoutComicbookmarksInput {
+  update: UserUncheckedUpdateWithoutComicbookmarksInput!
+  create: UserUncheckedCreateWithoutComicbookmarksInput!
+}
+
+input UserUpsertWithoutReportsInput {
+  update: UserUncheckedUpdateWithoutReportsInput!
+  create: UserUncheckedCreateWithoutReportsInput!
+}
+
+input UserUpsertWithoutViewedChaptersInput {
+  update: UserUncheckedUpdateWithoutViewedChaptersInput!
+  create: UserUncheckedCreateWithoutViewedChaptersInput!
+}
+
+input UserWhereInput {
+  AND: [UserWhereInput]
+  OR: [UserWhereInput]
+  NOT: [UserWhereInput]
+  id: IntFilter
+  email: StringFilter
+  name: StringNullableFilter
+  isAdmin: BoolFilter
+  allowHentai: BoolFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  reports: ReportListRelationFilter
+  comicbookmarks: ComicBookmarkListRelationFilter
+  viewedChapters: ViewedChapterListRelationFilter
+  changelogs: ChangelogListRelationFilter
+}
+
+input UserWhereUniqueInput {
+  id: Int
+  email: String
+}
+
+type ViewedChapter {
+  id: Int!
+  chapterId: Int!
+  chapter: Chapter!
+  userId: Int!
+  user: User!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type ViewedChapterAvgAggregateOutputType {
+  id: Float
+  chapterId: Float
+  userId: Float
+}
+
+input ViewedChapterAvgOrderByAggregateInput {
+  id: SortOrder
+  chapterId: SortOrder
+  userId: SortOrder
+}
+
+type ViewedChapterCountAggregateOutputType {
+  id: Int!
+  chapterId: Int!
+  userId: Int!
+  createdAt: Int!
+  updatedAt: Int!
+  _all: Int!
+}
+
+input ViewedChapterCountOrderByAggregateInput {
+  id: SortOrder
+  chapterId: SortOrder
+  userId: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+}
+
+input ViewedChapterCreateInput {
+  chapter: ChapterCreateNestedOneWithoutUserviewersInput!
+  user: UserCreateNestedOneWithoutViewedChaptersInput!
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input ViewedChapterCreateManyChapterInput {
+  id: Int
+  userId: Int!
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input ViewedChapterCreateManyChapterInputEnvelope {
+  data: ViewedChapterCreateManyChapterInput!
+  skipDuplicates: Boolean
+}
+
+input ViewedChapterCreateManyInput {
+  id: Int
+  chapterId: Int!
+  userId: Int!
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input ViewedChapterCreateManyUserInput {
+  id: Int
+  chapterId: Int!
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input ViewedChapterCreateManyUserInputEnvelope {
+  data: ViewedChapterCreateManyUserInput!
+  skipDuplicates: Boolean
+}
+
+input ViewedChapterCreateNestedManyWithoutChapterInput {
+  create: [ViewedChapterCreateWithoutChapterInput]
+  connectOrCreate: [ViewedChapterCreateOrConnectWithoutChapterInput]
+  createMany: ViewedChapterCreateManyChapterInputEnvelope
+  connect: [ViewedChapterWhereUniqueInput]
+}
+
+input ViewedChapterCreateNestedManyWithoutUserInput {
+  create: [ViewedChapterCreateWithoutUserInput]
+  connectOrCreate: [ViewedChapterCreateOrConnectWithoutUserInput]
+  createMany: ViewedChapterCreateManyUserInputEnvelope
+  connect: [ViewedChapterWhereUniqueInput]
+}
+
+input ViewedChapterCreateOrConnectWithoutChapterInput {
+  where: ViewedChapterWhereUniqueInput!
+  create: ViewedChapterUncheckedCreateWithoutChapterInput!
+}
+
+input ViewedChapterCreateOrConnectWithoutUserInput {
+  where: ViewedChapterWhereUniqueInput!
+  create: ViewedChapterUncheckedCreateWithoutUserInput!
+}
+
+input ViewedChapterCreateWithoutChapterInput {
+  user: UserCreateNestedOneWithoutViewedChaptersInput!
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input ViewedChapterCreateWithoutUserInput {
+  chapter: ChapterCreateNestedOneWithoutUserviewersInput!
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input ViewedChapterListRelationFilter {
+  every: ViewedChapterWhereInput
+  some: ViewedChapterWhereInput
+  none: ViewedChapterWhereInput
+}
+
+type ViewedChapterMaxAggregateOutputType {
+  id: Int
+  chapterId: Int
+  userId: Int
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input ViewedChapterMaxOrderByAggregateInput {
+  id: SortOrder
+  chapterId: SortOrder
+  userId: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+}
+
+type ViewedChapterMinAggregateOutputType {
+  id: Int
+  chapterId: Int
+  userId: Int
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input ViewedChapterMinOrderByAggregateInput {
+  id: SortOrder
+  chapterId: SortOrder
+  userId: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+}
+
+input ViewedChapterOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input ViewedChapterOrderByWithAggregationInput {
+  id: SortOrder
+  chapterId: SortOrder
+  userId: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  _count: ViewedChapterCountOrderByAggregateInput
+  _avg: ViewedChapterAvgOrderByAggregateInput
+  _max: ViewedChapterMaxOrderByAggregateInput
+  _min: ViewedChapterMinOrderByAggregateInput
+  _sum: ViewedChapterSumOrderByAggregateInput
+}
+
+input ViewedChapterOrderByWithRelationInput {
+  id: SortOrder
+  chapterId: SortOrder
+  chapter: ChapterOrderByWithRelationInput
+  userId: SortOrder
+  user: UserOrderByWithRelationInput
+  createdAt: SortOrder
+  updatedAt: SortOrder
+}
+
+enum ViewedChapterScalarFieldEnum {
+  id
+  chapterId
+  userId
+  createdAt
+  updatedAt
+}
+
+input ViewedChapterScalarWhereInput {
+  AND: [ViewedChapterScalarWhereInput]
+  OR: [ViewedChapterScalarWhereInput]
+  NOT: [ViewedChapterScalarWhereInput]
+  id: IntFilter
+  chapterId: IntFilter
+  userId: IntFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+}
+
+input ViewedChapterScalarWhereWithAggregatesInput {
+  AND: [ViewedChapterScalarWhereWithAggregatesInput]
+  OR: [ViewedChapterScalarWhereWithAggregatesInput]
+  NOT: [ViewedChapterScalarWhereWithAggregatesInput]
+  id: IntWithAggregatesFilter
+  chapterId: IntWithAggregatesFilter
+  userId: IntWithAggregatesFilter
+  createdAt: DateTimeWithAggregatesFilter
+  updatedAt: DateTimeWithAggregatesFilter
+}
+
+type ViewedChapterSumAggregateOutputType {
+  id: Int
+  chapterId: Int
+  userId: Int
+}
+
+input ViewedChapterSumOrderByAggregateInput {
+  id: SortOrder
+  chapterId: SortOrder
+  userId: SortOrder
+}
+
+input ViewedChapterUncheckedCreateInput {
+  id: Int
+  chapterId: Int!
+  userId: Int!
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input ViewedChapterUncheckedCreateNestedManyWithoutChapterInput {
+  create: [ViewedChapterCreateWithoutChapterInput]
+  connectOrCreate: [ViewedChapterCreateOrConnectWithoutChapterInput]
+  createMany: ViewedChapterCreateManyChapterInputEnvelope
+  connect: [ViewedChapterWhereUniqueInput]
+}
+
+input ViewedChapterUncheckedCreateNestedManyWithoutUserInput {
+  create: [ViewedChapterCreateWithoutUserInput]
+  connectOrCreate: [ViewedChapterCreateOrConnectWithoutUserInput]
+  createMany: ViewedChapterCreateManyUserInputEnvelope
+  connect: [ViewedChapterWhereUniqueInput]
+}
+
+input ViewedChapterUncheckedCreateWithoutChapterInput {
+  id: Int
+  userId: Int!
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input ViewedChapterUncheckedCreateWithoutUserInput {
+  id: Int
+  chapterId: Int!
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input ViewedChapterUncheckedUpdateInput {
+  id: IntFieldUpdateOperationsInput
+  chapterId: IntFieldUpdateOperationsInput
+  userId: IntFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input ViewedChapterUncheckedUpdateManyInput {
+  id: IntFieldUpdateOperationsInput
+  chapterId: IntFieldUpdateOperationsInput
+  userId: IntFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input ViewedChapterUncheckedUpdateManyWithoutChapterInput {
+  create: [ViewedChapterCreateWithoutChapterInput]
+  connectOrCreate: [ViewedChapterCreateOrConnectWithoutChapterInput]
+  upsert: [ViewedChapterUpsertWithWhereUniqueWithoutChapterInput]
+  createMany: ViewedChapterCreateManyChapterInputEnvelope
+  set: [ViewedChapterWhereUniqueInput]
+  disconnect: [ViewedChapterWhereUniqueInput]
+  delete: [ViewedChapterWhereUniqueInput]
+  connect: [ViewedChapterWhereUniqueInput]
+  update: [ViewedChapterUpdateWithWhereUniqueWithoutChapterInput]
+  updateMany: [ViewedChapterUpdateManyWithWhereWithoutChapterInput]
+  deleteMany: [ViewedChapterScalarWhereInput]
+}
+
+input ViewedChapterUncheckedUpdateManyWithoutUserInput {
+  create: [ViewedChapterCreateWithoutUserInput]
+  connectOrCreate: [ViewedChapterCreateOrConnectWithoutUserInput]
+  upsert: [ViewedChapterUpsertWithWhereUniqueWithoutUserInput]
+  createMany: ViewedChapterCreateManyUserInputEnvelope
+  set: [ViewedChapterWhereUniqueInput]
+  disconnect: [ViewedChapterWhereUniqueInput]
+  delete: [ViewedChapterWhereUniqueInput]
+  connect: [ViewedChapterWhereUniqueInput]
+  update: [ViewedChapterUpdateWithWhereUniqueWithoutUserInput]
+  updateMany: [ViewedChapterUpdateManyWithWhereWithoutUserInput]
+  deleteMany: [ViewedChapterScalarWhereInput]
+}
+
+input ViewedChapterUncheckedUpdateManyWithoutUserviewersInput {
+  id: IntFieldUpdateOperationsInput
+  userId: IntFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input ViewedChapterUncheckedUpdateManyWithoutViewedChaptersInput {
+  id: IntFieldUpdateOperationsInput
+  chapterId: IntFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input ViewedChapterUncheckedUpdateWithoutChapterInput {
+  id: IntFieldUpdateOperationsInput
+  userId: IntFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input ViewedChapterUncheckedUpdateWithoutUserInput {
+  id: IntFieldUpdateOperationsInput
+  chapterId: IntFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input ViewedChapterUpdateInput {
+  chapter: ChapterUpdateOneRequiredWithoutUserviewersInput
+  user: UserUpdateOneRequiredWithoutViewedChaptersInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input ViewedChapterUpdateManyMutationInput {
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input ViewedChapterUpdateManyWithoutChapterInput {
+  create: [ViewedChapterCreateWithoutChapterInput]
+  connectOrCreate: [ViewedChapterCreateOrConnectWithoutChapterInput]
+  upsert: [ViewedChapterUpsertWithWhereUniqueWithoutChapterInput]
+  createMany: ViewedChapterCreateManyChapterInputEnvelope
+  set: [ViewedChapterWhereUniqueInput]
+  disconnect: [ViewedChapterWhereUniqueInput]
+  delete: [ViewedChapterWhereUniqueInput]
+  connect: [ViewedChapterWhereUniqueInput]
+  update: [ViewedChapterUpdateWithWhereUniqueWithoutChapterInput]
+  updateMany: [ViewedChapterUpdateManyWithWhereWithoutChapterInput]
+  deleteMany: [ViewedChapterScalarWhereInput]
+}
+
+input ViewedChapterUpdateManyWithoutUserInput {
+  create: [ViewedChapterCreateWithoutUserInput]
+  connectOrCreate: [ViewedChapterCreateOrConnectWithoutUserInput]
+  upsert: [ViewedChapterUpsertWithWhereUniqueWithoutUserInput]
+  createMany: ViewedChapterCreateManyUserInputEnvelope
+  set: [ViewedChapterWhereUniqueInput]
+  disconnect: [ViewedChapterWhereUniqueInput]
+  delete: [ViewedChapterWhereUniqueInput]
+  connect: [ViewedChapterWhereUniqueInput]
+  update: [ViewedChapterUpdateWithWhereUniqueWithoutUserInput]
+  updateMany: [ViewedChapterUpdateManyWithWhereWithoutUserInput]
+  deleteMany: [ViewedChapterScalarWhereInput]
+}
+
+input ViewedChapterUpdateManyWithWhereWithoutChapterInput {
+  where: ViewedChapterScalarWhereInput!
+  data: ViewedChapterUncheckedUpdateManyWithoutUserviewersInput!
+}
+
+input ViewedChapterUpdateManyWithWhereWithoutUserInput {
+  where: ViewedChapterScalarWhereInput!
+  data: ViewedChapterUncheckedUpdateManyWithoutViewedChaptersInput!
+}
+
+input ViewedChapterUpdateWithoutChapterInput {
+  user: UserUpdateOneRequiredWithoutViewedChaptersInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input ViewedChapterUpdateWithoutUserInput {
+  chapter: ChapterUpdateOneRequiredWithoutUserviewersInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input ViewedChapterUpdateWithWhereUniqueWithoutChapterInput {
+  where: ViewedChapterWhereUniqueInput!
+  data: ViewedChapterUncheckedUpdateWithoutChapterInput!
+}
+
+input ViewedChapterUpdateWithWhereUniqueWithoutUserInput {
+  where: ViewedChapterWhereUniqueInput!
+  data: ViewedChapterUncheckedUpdateWithoutUserInput!
+}
+
+input ViewedChapterUpsertWithWhereUniqueWithoutChapterInput {
+  where: ViewedChapterWhereUniqueInput!
+  update: ViewedChapterUncheckedUpdateWithoutChapterInput!
+  create: ViewedChapterUncheckedCreateWithoutChapterInput!
+}
+
+input ViewedChapterUpsertWithWhereUniqueWithoutUserInput {
+  where: ViewedChapterWhereUniqueInput!
+  update: ViewedChapterUncheckedUpdateWithoutUserInput!
+  create: ViewedChapterUncheckedCreateWithoutUserInput!
+}
+
+input ViewedChapterWhereInput {
+  AND: [ViewedChapterWhereInput]
+  OR: [ViewedChapterWhereInput]
+  NOT: [ViewedChapterWhereInput]
+  id: IntFilter
+  chapterId: IntFilter
+  chapter: ChapterWhereInput
+  userId: IntFilter
+  user: UserWhereInput
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+}
+
+input ViewedChapterWhereUniqueInput {
+  id: Int
+}
+

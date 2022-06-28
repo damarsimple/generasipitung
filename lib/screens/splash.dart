@@ -40,6 +40,7 @@ class Splash extends StatelessWidget {
                   },
                 ),
               ),
+              const SizedBox(height: 10),
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(

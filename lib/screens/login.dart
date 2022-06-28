@@ -21,11 +21,13 @@ class _LoginState extends State<Login> {
 
   void handleLogin() {
     loading = true;
+    // ignore: unused_local_variable
     String username = usernameController.text;
-    // String password = passwordController.text;
+    // ignore: unused_local_variable
+    String password = passwordController.text;
 
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('Processing Data $username')),
+      const SnackBar(content: Text('Memproses login...')),
     );
     Future.delayed(const Duration(milliseconds: 1000), () {
       Navigator.pushNamedAndRemoveUntil(
@@ -138,16 +140,17 @@ class _LoginState extends State<Login> {
                             Text("MASUK DENGAN GOOGLE")
                           ]),
                       onPressed: () {
-                        toast(context, "Sedang dalam pembangunan");
+                        toast(context, "Sedang dalam pengembangan");
                       },
                     ),
                   ),
+                  const SizedBox(height: 10),
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
                       child: const Text("DAFTAR"),
                       onPressed: () {
-                        toast(context, "Sedang dalam pembangunan");
+                        toast(context, "Sedang dalam pengembangan");
                       },
                     ),
                   ),
