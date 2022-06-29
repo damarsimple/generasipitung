@@ -1,0 +1,15 @@
+mutation Login($email: String!, $password: String!) {
+  login(email: $email, password: $password) {
+    token
+    success
+    message
+    user {
+      id
+      name
+      email
+      profilePicturePath
+      createdAt
+      updatedAt
+    }
+  }
+}

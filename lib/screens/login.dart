@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:generasipitung/graphql/login.graphql.dart';
+import 'package:generasipitung/graphql_config.dart';
 
 import '../helpers/helper.dart';
 
@@ -21,21 +23,32 @@ class _LoginState extends State<Login> {
 
   void handleLogin() {
     loading = true;
-    // ignore: unused_local_variable
     String username = usernameController.text;
-    // ignore: unused_local_variable
     String password = passwordController.text;
+    var cl = GraphQLConfiguration();
 
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Memproses login...')),
-    );
-    Future.delayed(const Duration(milliseconds: 1000), () {
-      Navigator.pushNamedAndRemoveUntil(
-          context, "/dashboard", (Route<dynamic> route) => false);
-    });
+    cl
+        .clientToQuery()
+        .value
+        .mutate$Login(Options$Mutation$Login(
+          variables: Variables$Mutation$Login(
+            email: username,
+            password: password,
+          ),
+        ))
+        .then((value) {
+      if (value.parsedData!.login!.success == true) {
+        GraphQLConfiguration.setToken(
+            value.parsedData!.login!.token.toString());
+        Navigator.pushNamedAndRemoveUntil(
+            context, "/dashboard", (Route<dynamic> route) => false);
+      } else {
+        toast(context, value.parsedData!.login!.message.toString());
+      }
 
-    setState(() {
-      loading = false;
+      setState(() {
+        loading = false;
+      });
     });
   }
 
@@ -85,6 +98,9 @@ class _LoginState extends State<Login> {
                   ),
                   const SizedBox(height: 20),
                   TextFormField(
+                    obscureText: true,
+                    enableSuggestions: false,
+                    autocorrect: false,
                     controller: passwordController,
                     decoration: const InputDecoration(
                       hintText: 'Masukkan password anda',

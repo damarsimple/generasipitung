@@ -11,14 +11,24 @@ class GameQuestion {
 
 var questions = [
   GameQuestion(
-    'What\'s the name of this game?',
-    ['Flutter', 'Dart', 'Flutter Game', 'Dart Game'],
-    2,
+    'Tata urutan Peraturan Perundang-undangan di Indonesia diatur dalam Undang-Undang Nomor ',
+    ['11 Tahun 2012', '12 Tahun 2011', '12 Tahun 2012', '11 Tahun 2011'],
+    1,
   ),
   GameQuestion(
-    'What\'s the name of that game?',
-    ['Flutter', 'Dart', 'Flutter ', 'Dart Game'],
-    2,
+    'Lembaga yang berwenang mengubah dan menetapkan UUD sesuai amanat pasal 3 ayat (1) UUD Negara Republik Indonesia Tahun 1945 adalah?',
+    ['MPR', 'BPUPKI', 'PPKI', 'DPR'],
+    3,
+  ),
+  GameQuestion(
+    'Tata urutan Peraturan Perundang-undangan di Indonesia diatur dalam Undang-Undang Nomor ',
+    [
+      'UU dan Perpu',
+      'Peraturan Pemerintah',
+      'Peraturan Presiden',
+      'Peraturan Daerah Provinsi'
+    ],
+    3,
   ),
 ];
 
