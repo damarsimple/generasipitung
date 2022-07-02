@@ -18,7 +18,7 @@ class Profile extends StatelessWidget {
       body: SingleChildScrollView(
           child: Column(
               children: [
-        AboutItem('Logout', Icons.arrow_right, '/about'),
+        AboutItem('Logout', Icons.arrow_right, '/login'),
         AboutItem('Tentang Kami', Icons.arrow_right, '/about'),
       ]
                   .map((e) => InkWell(

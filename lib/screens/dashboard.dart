@@ -1,7 +1,72 @@
+// ignore_for_file: unnecessary_const
+
 import 'package:flutter/material.dart';
+import 'package:generasipitung/card/card.dart';
 import 'package:generasipitung/components/materi_card.dart';
-import 'package:generasipitung/screens/tugas.dart';
+import 'package:generasipitung/views/tugas_view.dart';
 import 'package:get/get.dart';
+
+class HomeBody extends StatelessWidget {
+  const HomeBody({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Card(
+          child: Container(
+            margin: const EdgeInsets.all(10),
+            child: InkWell(
+              onTap: () {
+                Get.toNamed("/tugas");
+              },
+              child: Column(
+                children: [
+                  Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: const [
+                        Text(
+                          'Tugas Minggu Ini',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          'Lihat Tugas',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ]),
+                  const SizedBox(height: 20),
+                  Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: const [
+                        Text('Rangkuman Materi Perundang - Undangan'),
+                        Text('Senin 10.00 PM')
+                      ]),
+                  const SizedBox(height: 20),
+                  const Text('Dan 10 tugas lainya ...'),
+                ],
+              ),
+            ),
+          ),
+        ),
+        SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(children: const <Widget>[
+              MateriCard(
+                id: '123',
+                name: 'Contoh Kasus Pelanggaran',
+                url: 'https://picsum.photos/250?image=9',
+              ),
+              MateriCard(
+                id: '123',
+                name: 'Contoh Kasus Pelanggaran',
+                url: 'https://picsum.photos/250?image=9',
+              ),
+            ])),
+        const SizedBox(height: 20),
+      ],
+    );
+  }
+}
 
 class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -12,25 +77,10 @@ class Dashboard extends StatefulWidget {
 
 class DashboardController extends GetxController {
   var currentIndex = 0.obs;
-}
+  var isRegister = false.obs;
 
-class Tugas extends StatelessWidget {
-  const Tugas({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: const [
-            TugasCard(
-                name: 'Tugas Minggu Ini',
-                description: 'Lorem ipsum color dame amet silt'),
-          ],
-        ),
-      ),
-    );
+  void register() {
+    isRegister.toggle();
   }
 }
 
@@ -44,52 +94,9 @@ class Absen extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: const [
-            TugasCard(
+            AbsenCard(
                 name: 'Absen Minggu Ini',
-                description: 'Lorem ipsum color dame amet silt'),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class TugasCard extends StatelessWidget {
-  const TugasCard({
-    Key? key,
-    required this.name,
-    required this.description,
-  }) : super(key: key);
-
-  final String name;
-  final String description;
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  name,
-                  style: const TextStyle(fontWeight: FontWeight.bold),
-                ),
-                const SizedBox(height: 20),
-                Text(
-                  description,
-                ),
-                const SizedBox(height: 10),
-              ],
-            ),
-            const Center(
-                child: Icon(
-              Icons.arrow_right,
-              color: Colors.purple,
-            )),
+                description: 'Silahkan absen minggu ini'),
           ],
         ),
       ),
@@ -284,84 +291,114 @@ class _DashboardState extends State<Dashboard> {
   }
 
   List<Widget> widgets = [
-    const Home(),
+    const HomeBody(),
     const Game(),
-    const Tugas(),
+    const TugasView(),
     const Quiz(),
     const Absen()
   ];
 
   @override
   Widget build(BuildContext context) {
-    return Obx(() => Scaffold(
-          appBar: AppBar(
-            //  backgroundColor: Colors.white,
-            leading: Padding(
-              padding: const EdgeInsets.only(left: 1),
-              child: IconButton(
-                icon: const Icon(Icons.menu),
-                onPressed: () {},
+    return Obx(() => controller.isRegister.isFalse
+        ? Center(
+            child: Card(
+              child: Padding(
+                padding: const EdgeInsets.all(24),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(
+                        'Masukkan kode registrasi anda sebelum melanjutkan'),
+                    const SizedBox(height: 10),
+                    const TextField(
+                      decoration: const InputDecoration(
+                        labelText: 'Kode Registrasi',
+                        border: OutlineInputBorder(),
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    ElevatedButton(
+                      onPressed: () {
+                        controller.register();
+                      },
+                      child: const Text('DAFTAR APLIKASI'),
+                    ),
+                  ],
+                ),
               ),
             ),
-            title: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const <Widget>[]),
-            actions: <Widget>[
-              InkWell(
-                onTap: () => Navigator.of(context).pushNamed("/notifications"),
+          )
+        : Scaffold(
+            appBar: AppBar(
+              //  backgroundColor: Colors.white,
+              leading: Padding(
+                padding: const EdgeInsets.only(left: 1),
                 child: IconButton(
-                  icon: const Icon(Icons.notifications),
+                  icon: const Icon(Icons.menu),
                   onPressed: () {},
                 ),
               ),
-              InkWell(
-                onTap: () => Navigator.of(context).pushNamed("/chats"),
-                child: IconButton(
-                  icon: const Icon(Icons.chat),
-                  onPressed: () {},
+              title: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const <Widget>[]),
+              actions: <Widget>[
+                InkWell(
+                  onTap: () =>
+                      Navigator.of(context).pushNamed("/notifications"),
+                  child: IconButton(
+                    icon: const Icon(Icons.notifications),
+                    onPressed: () {},
+                  ),
                 ),
-              ),
-              InkWell(
-                onTap: () => Navigator.of(context).pushNamed("/profile"),
-                child: const CircleAvatar(
-                  backgroundImage: AssetImage('assets/profile.jpg'),
-                  radius: 20,
+                InkWell(
+                  onTap: () => Navigator.of(context).pushNamed("/chats"),
+                  child: IconButton(
+                    icon: const Icon(Icons.chat),
+                    onPressed: () {},
+                  ),
                 ),
-              ),
-            ],
-          ),
-          body: SingleChildScrollView(
-              child: widgets.elementAt(controller.currentIndex.toInt())),
-          bottomNavigationBar: BottomNavigationBar(
-            items: const <BottomNavigationBarItem>[
-              BottomNavigationBarItem(
-                icon: Icon(Icons.home),
-                label: 'Materi',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.gamepad),
-                label: 'Game',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.task),
-                label: 'Tugas',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.book),
-                label: 'Quiz',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.book_online_sharp),
-                label: 'Absen',
-              ),
-            ],
-            currentIndex: controller.currentIndex.toInt(),
-            onTap: onItem,
-            type: BottomNavigationBarType.fixed, // Fixed
-            backgroundColor: Colors.blue, // <-- This works for fixed
-            selectedItemColor: Colors.white,
-            unselectedItemColor: Colors.black,
-          ),
-        ));
+                InkWell(
+                  onTap: () => Navigator.of(context).pushNamed("/profile"),
+                  child: const CircleAvatar(
+                    backgroundImage: AssetImage('assets/profile.jpg'),
+                    radius: 20,
+                  ),
+                ),
+              ],
+            ),
+            body: SingleChildScrollView(
+                child: widgets.elementAt(controller.currentIndex.toInt())),
+            bottomNavigationBar: BottomNavigationBar(
+              items: const <BottomNavigationBarItem>[
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.home),
+                  label: 'Materi',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.gamepad),
+                  label: 'Game',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.task),
+                  label: 'Tugas',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.book),
+                  label: 'Quiz',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.book_online_sharp),
+                  label: 'Absen',
+                ),
+              ],
+              currentIndex: controller.currentIndex.toInt(),
+              onTap: onItem,
+              type: BottomNavigationBarType.fixed, // Fixed
+              backgroundColor: Colors.blue, // <-- This works for fixed
+              selectedItemColor: Colors.white,
+              unselectedItemColor: Colors.black,
+            ),
+          ));
   }
 }

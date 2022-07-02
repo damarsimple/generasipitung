@@ -96,14 +96,61 @@ class _GamePlayState extends State<GamePlay> {
                           .toList()
                     ],
                   ))
-              : Center(
-                  child: ElevatedButton(
-                    onPressed: () {
-                      setState(() {
-                        gameStart = true;
-                      });
-                    },
-                    child: const Text('Mulai Quiz'),
+              : Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Column(
+                    children: [
+                      const Image(image: AssetImage('assets/malioboro.jpg')),
+                      const SizedBox(height: 20),
+                      const Text(
+                        'Game bersama bu sri',
+                        textAlign: TextAlign.left,
+                        style: TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        ),
+                      ),
+                      const SizedBox(height: 20),
+                      const Text('Bermain di Malioboro bersama saya'),
+                      const SizedBox(height: 20),
+                      Expanded(
+                          child: ListView(
+                        children: <Widget>[
+                          const Card(
+                            child: ListTile(
+                              leading: FlutterLogo(),
+                              title: const Text('Akmal Firmansyah'),
+                            ),
+                          ),
+                          ...[
+                            'Damar Albarin Syamsu',
+                            'Fadilatul Fajri',
+                            'Nisa Indana',
+                            'Fiyan Wahyu Dwi'
+                          ].map(
+                            (e) => Card(
+                              child: ListTile(
+                                leading: const FlutterLogo(),
+                                title: Text(e),
+                                trailing: const Icon(Icons.logout),
+                              ),
+                            ),
+                          )
+                        ],
+                      )),
+                      SizedBox(
+                        width: double.infinity,
+                        child: ElevatedButton(
+                          onPressed: () {
+                            setState(() {
+                              gameStart = true;
+                            });
+                          },
+                          child: const Text('Mulai Quiz'),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
     );

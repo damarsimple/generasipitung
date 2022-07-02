@@ -7,39 +7,7 @@ class About extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        //  backgroundColor: Colors.white,
-        leading: Padding(
-          padding: const EdgeInsets.only(left: 1),
-          child: IconButton(
-            icon: const Icon(Icons.menu),
-            onPressed: () {},
-          ),
-        ),
-        title: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const <Widget>[]),
-        actions: <Widget>[
-          InkWell(
-            onTap: () => Navigator.of(context).pushNamed("/notifications"),
-            child: IconButton(
-              icon: const Icon(Icons.notifications),
-              onPressed: () {},
-            ),
-          ),
-          InkWell(
-            onTap: () => Navigator.of(context).pushNamed("/chats"),
-            child: IconButton(
-              icon: const Icon(Icons.chat),
-              onPressed: () {},
-            ),
-          ),
-          const InkWell(
-            child: CircleAvatar(
-              backgroundImage: AssetImage('assets/profile.jpg'),
-              radius: 20,
-            ),
-          ),
-        ],
+        title: const Text('About'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -56,19 +24,19 @@ class About extends StatelessWidget {
                     'image': 'assets/akmal.png',
                   },
                   {
-                    'name': 'Akmal Firmansyah',
+                    'name': 'Nisa Indana Nur Fitriani',
                     'image': 'assets/nisa.png',
                   },
                   {
-                    'name': 'Akmal Firmansyah',
+                    'name': 'Fadilatul Fajri',
                     'image': 'assets/fajri.png',
                   },
                   {
-                    'name': 'Akmal Firmansyah',
+                    'name': 'Fiyan Wahyu Dwi Putri',
                     'image': 'assets/fiyan.png',
                   },
                   {
-                    'name': 'Akmal Firmansyah',
+                    'name': 'Prof. Dr. Mukhamad Murdiyono M.Pd',
                     'image': 'assets/dosen.png',
                   }
                 ]

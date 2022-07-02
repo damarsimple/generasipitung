@@ -27,28 +27,34 @@ class _LoginState extends State<Login> {
     String password = passwordController.text;
     var cl = GraphQLConfiguration();
 
-    cl
-        .clientToQuery()
-        .value
-        .mutate$Login(Options$Mutation$Login(
-          variables: Variables$Mutation$Login(
-            email: username,
-            password: password,
-          ),
-        ))
-        .then((value) {
-      if (value.parsedData!.login!.success == true) {
-        GraphQLConfiguration.setToken(
-            value.parsedData!.login!.token.toString());
-        Navigator.pushNamedAndRemoveUntil(
-            context, "/dashboard", (Route<dynamic> route) => false);
-      } else {
-        toast(context, value.parsedData!.login!.message.toString());
-      }
+    // cl
+    //     .clientToQuery()
+    //     .value
+    //     .mutate$Login(Options$Mutation$Login(
+    //       variables: Variables$Mutation$Login(
+    //         email: username,
+    //         password: password,
+    //       ),
+    //     ))
+    //     .then((value) {
+    //   if (value.parsedData!.login!.success == true) {
+    //     GraphQLConfiguration.setToken(
+    //         value.parsedData!.login!.token.toString());
+    //     Navigator.pushNamedAndRemoveUntil(
+    //         context, "/dashboard", (Route<dynamic> route) => false);
+    //   } else {
+    //     toast(context, value.parsedData!.login!.message.toString());
+    //   }
 
-      setState(() {
-        loading = false;
-      });
+    //   setState(() {
+    //     loading = false;
+    //   });
+    // });
+
+    Navigator.pushNamedAndRemoveUntil(
+        context, "/dashboard", (Route<dynamic> route) => false);
+    setState(() {
+      loading = false;
     });
   }
 

@@ -8,6 +8,8 @@ import 'package:generasipitung/screens/materi.dart';
 import 'package:generasipitung/screens/materi_view.dart';
 import 'package:generasipitung/screens/profile.dart';
 import 'package:generasipitung/screens/splash.dart';
+import 'package:generasipitung/screens/tugas.dart';
+import 'package:generasipitung/screens/tugas_view.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
@@ -44,7 +46,8 @@ class MyApp extends StatelessWidget {
         '/about': (context) => const About(),
         '/profile': (context) => const Profile(),
         '/gameplay': (context) => const GamePlay(),
-        '/tugas': (context) => const Tugas(),
+        '/tugas': (context) => const TugasScreen(),
+        '/tugas_view': (context) => const TugasViewInside(),
       },
     );
   }
